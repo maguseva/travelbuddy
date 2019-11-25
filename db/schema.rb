@@ -10,10 +10,86 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_152542) do
+ActiveRecord::Schema.define(version: 2019_11_25_165228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "package_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["package_id"], name: "index_bookings_on_package_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "cars", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.integer "price"
+    t.string "photo"
+    t.string "type"
+    t.string "company_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "company_policies", force: :cascade do |t|
+    t.bigint "company_id"
+    t.integer "max_price_train"
+    t.integer "max_price_hotel"
+    t.integer "max_price_car"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_company_policies_on_company_id"
+  end
+
+  create_table "hotels", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.integer "stars"
+    t.integer "price"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "packages", force: :cascade do |t|
+    t.bigint "hotel_id"
+    t.bigint "train_id"
+    t.bigint "car_id"
+    t.string "dep_city"
+    t.string "arr_city"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_packages_on_car_id"
+    t.index ["hotel_id"], name: "index_packages_on_hotel_id"
+    t.index ["train_id"], name: "index_packages_on_train_id"
+  end
+
+  create_table "trains", force: :cascade do |t|
+    t.string "carrier_name"
+    t.string "dep_city"
+    t.string "arr_city"
+    t.string "train_number"
+    t.integer "price"
+    t.string "category"
+    t.string "photo"
+    t.string "dep_time"
+    t.string "arr_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +103,10 @@ ActiveRecord::Schema.define(version: 2019_11_25_152542) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "packages"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "company_policies", "companies"
+  add_foreign_key "packages", "cars"
+  add_foreign_key "packages", "hotels"
+  add_foreign_key "packages", "trains"
 end
