@@ -13,12 +13,13 @@ class PackagesController < ApplicationController
 
   def show
     # @booking = Booking.new
-    # @bookings = @package.bookings
+    # @bookings = @package.booking
   end
 
   private
 
   def set_package
     @package = Package.find(params[:id])
+    authorize @package
   end
 end

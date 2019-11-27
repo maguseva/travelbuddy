@@ -4,4 +4,8 @@ class PackagePolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def show?
+    true
+  end
 end
