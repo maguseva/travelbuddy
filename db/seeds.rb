@@ -291,7 +291,3 @@ days_amount = 7
 }
 
 puts "Data seeded"
-# array of startdays - range
-# array of end dates- range
-# iterate over with each_with_index
-
