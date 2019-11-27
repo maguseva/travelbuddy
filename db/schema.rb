@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 2019_11_27_140714) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "bahncard", default: "no value"
+    t.string "bahncard"
     t.bigint "company_id"
     t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true

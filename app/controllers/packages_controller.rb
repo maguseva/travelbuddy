@@ -5,7 +5,7 @@ class PackagesController < ApplicationController
   def index
     @packages = policy_scope(Package).order(price: :desc)
     if params[:query].present?
-      @packages = Package.search_by_name(params[:query])
+      @packages = Package.where(dep_city: params[:dep_city], arr_city: params[:arr_city], start_date: params[:start_date], end_date: params[:end_date])
     else
       @packages = Package.all
     end
@@ -13,7 +13,7 @@ class PackagesController < ApplicationController
 
   def show
     # @booking = Booking.new
-    # @bookings = @package.booking
+    # @bookings = @package.bookings
   end
 
   private

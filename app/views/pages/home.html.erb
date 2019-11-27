@@ -1,2 +1,50 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" id= "home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1544971590-a6d2ed58c7df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80);">
+  <div class="container">
+
+    <div class="row justify-content-between">
+      <div class="col-6">
+        <h1 class="text-left">TRAVELBUDDY</h1>
+        <h2 id="subheader-home">Business-Trips made easy</h2>
+        <br>
+      </div>
+    </div>
+
+    <div class="row justify-content-between">
+      <div class="col-6 container">
+        <div class="cards">
+          <div class="card-category"><%= image_tag "train_icon.png" %></div>
+          <div class="card-category"><%= image_tag "hotel_icon.png" %></div>
+          <div class="card-category"><%= image_tag "car_icon.png" %></div>
+        </div>
+      </div>
+
+      <div class="col-6 container">
+        <div class="search-form">
+          <%= form_tag packages_path, method: :get do %>
+
+              <div class="form-group form-group-duo">
+                <div class="labeled-input">
+                  <label for="dep_city">From</label>
+                  <%= text_field_tag :dep_city, nil, as: :string, required: false %>
+                </div>
+                <div class="labeled-input">
+                  <label for="arr_city">To</label>
+                  <%= text_field_tag :arr_city, nil, as: :string, required: false %>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="labeled-input">
+                  <label for="dates">Dates</label>
+                    <%= text_field_tag :start_date, nil, as: :string, required: false, class: "datepicker" %>
+                    <%#= text_field_tag :end_date, nil, as: :string, required: false, class: "datepicker", id: "end_date" %>
+                </div>
+              </div>
+            <%= submit_tag "Search", class: "btn" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
