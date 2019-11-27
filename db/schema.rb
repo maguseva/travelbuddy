@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_165228) do
+ActiveRecord::Schema.define(version: 2019_11_26_171342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_165228) do
     t.string "address"
     t.integer "price"
     t.string "photo"
-    t.string "type"
+    t.string "car_category"
     t.string "company_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -60,11 +60,11 @@ ActiveRecord::Schema.define(version: 2019_11_25_165228) do
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
   end
 
   create_table "packages", force: :cascade do |t|
     t.bigint "hotel_id"
-    t.bigint "train_id"
     t.bigint "car_id"
     t.string "dep_city"
     t.string "arr_city"
@@ -72,9 +72,12 @@ ActiveRecord::Schema.define(version: 2019_11_25_165228) do
     t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "train_from_id"
+    t.bigint "train_to_id"
     t.index ["car_id"], name: "index_packages_on_car_id"
     t.index ["hotel_id"], name: "index_packages_on_hotel_id"
-    t.index ["train_id"], name: "index_packages_on_train_id"
+    t.index ["train_from_id"], name: "index_packages_on_train_from_id"
+    t.index ["train_to_id"], name: "index_packages_on_train_to_id"
   end
 
   create_table "trains", force: :cascade do |t|
@@ -108,5 +111,6 @@ ActiveRecord::Schema.define(version: 2019_11_25_165228) do
   add_foreign_key "company_policies", "companies"
   add_foreign_key "packages", "cars"
   add_foreign_key "packages", "hotels"
-  add_foreign_key "packages", "trains"
+  add_foreign_key "packages", "trains", column: "train_from_id"
+  add_foreign_key "packages", "trains", column: "train_to_id"
 end
