@@ -1,2 +1,27 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="container">
+  <%= form_tag packages_path, method: :get do %>
+    <%#= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a movie"
+    %>
+    <div class="form-inputs">
+      <div class="form-group">
+        <label for="dep_city">From</label>
+        <%= text_field_tag :dep_city, nil, as: :string, required: false %>
+        <label for="dep_city">To</label>
+        <%= text_field_tag :arr_city, nil, as: :string, required: false %>
+      </div>
+      <div class="form-group">
+        <label for="dep_city">Dates</label>
+          <%= text_field_tag :start_date, nil, as: :string, required: false, class: "datepicker" %>
+          <%#= text_field_tag :end_date, nil, as: :string, required: false, class: "datepicker", id: "form-control" %>
+        </div>
+      </div>
+      <%= submit_tag "Search", class: "btn" %>
+    <% end %>
+  </div>
+</div>
