@@ -1,0 +1,29 @@
+<h1 id="list-page">The best packages</h1>
+
+<div class="container">
+  <div class="row">
+    <% @packages.each do |package| %>
+      <div class="col-md-6 col-lg-4" id="planet-card">
+        <%= link_to package_path(package) do %>
+          <div class="card" >
+            <div class="train-card">
+              <p><%= package.train.train_number %></p>
+            </div>
+            <div class="hotel-card">
+              <p><%= package.hotel.name %></p>
+            </div>
+            <div class="car-card">
+              <p><%= package.car.name %> €</p>
+            </div>
+            <!-- <img src="<%= planet.photo %>" class="card-img-top" alt="..." style="background-image"> -->
+            <!-- <div class="card-body">
+              <h5 class="card-title"><%= package.hotel.name %></h5>
+              <p class="card-title"><%= package.car.name %> €</p>
+              <p class="card-title"><%= package.train_from.train_number %> €</p>
+            </div> -->
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
