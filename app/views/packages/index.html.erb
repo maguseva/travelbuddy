@@ -1,0 +1,38 @@
+<h1 class="text-center">The best packages</h1>
+
+<div class="container">
+  <div id="packages">
+    <% @packages.each do |package| %>
+      <div class="row">
+        <div class="package-card">
+          <div class="card-item">
+            <img src="<%= package.train_to.photo %>" alt="train" class="card-item-img">
+            <h4><%= package.train_to.carrier_name %></h4>
+            <small><%= package.train_from.dep_time %> <%= package.train_from.dep_city %> - <%= package.train_from.arr_time %> <%= package.train_from.arr_city %></small> <br>
+            <small><%= package.start_date.strftime('%b %d, %Y') %></small> <br>
+            <small><%= package.train_to.dep_time %> <%= package.train_to.dep_city %> - <%= package.train_to.arr_time %> <%= package.train_to.arr_city %></small> <br>
+            <small><%= package.end_date.strftime('%b %d, %Y') %></small> <br>
+            <!-- <p><%= package.train_to.price %> euro</p>
+            <p><%= package.train_from.price %> euro</p> -->
+          </div>
+          <div class="card-item">
+            <img src="<%= package.hotel.photo %>" alt="train" class="card-item-img">
+            <h4><%= package.hotel.name %></h4>
+            <small><%= package.start_date.strftime('%b %d, %Y') %> - <%= package.end_date.strftime('%b %d, %Y') %></small>
+            <!-- <p><%= package.hotel.price %> € per night</p> -->
+          </div>
+          <div class="card-item">
+            <img src="<%= package.car.photo %>" alt="train" class="card-item-img">
+            <h4><%= package.car.name %></h4>
+            <small><%= package.start_date.strftime('%b %d, %Y') %> - <%= package.end_date.strftime('%b %d, %Y') %></small>
+            <!-- <p><%= package.car.price %> € per night</p> -->
+          </div>
+          <div class="total-price-item">
+            <p><%= package.price %> €</p>
+            <%= link_to 'Select', package_path(package), class: "btn" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
