@@ -17,7 +17,7 @@ Hotel.create!(
   address: "Berlin",
   stars: 5,
   price: 200,
-  photo: ""
+  photo: "https://images.unsplash.com/photo-1444201983204-c43cbd584d93?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9"
   )
 
 puts "Creating train data"
@@ -30,7 +30,7 @@ Train.create!(
   category: "2nd Class",
   dep_time: "08:00",
   arr_time: "12:45",
-  photo: ""
+  photo: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg"
   )
 
 puts "Creating car data"
@@ -40,7 +40,7 @@ Car.create!(
   price: 150,
   car_category: "#",
   company_name: "Sixt",
-  photo: ""
+  photo: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg"
   )
 
 puts "Creating packages data"
@@ -52,4 +52,17 @@ Package.create!(
   arr_city: "Munich",
   start_date: "2019-11-27",
   end_date: "2019-11-28"
+  )
+
+puts "Creating company"
+Company.create!(name: "fontoso")
+
+
+puts "Creating users data"
+User.create!(
+  first_name: "Julian",
+  last_name: "Bodenschatz",
+  email: "test@test.it",
+  password: "test@test.it",
+  company: Company.first
   )

@@ -1,7 +1,8 @@
+
 <div class="container col-sm-6 col-md-8 col-lg-10" >
   <div class="row">
     <div class="package-header-box col-6">
-      <div class="package-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <div class="package-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @package.hotel.photo %>)">
         Hotel Photo
       </div>
     </div>
@@ -12,38 +13,59 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12">
-    <h2>From To Where</h2>
+    <div class="col-12" id="trip-summary">
+    <br>
     </div>
   </div>
   <div class="row">
-    <div class="col-8">
+    <div class="col-8" id="package-frame">
       <div class="package-item">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
-        <div class="package-item-infos">
-          <h2>Train</h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
+         <%= image_tag @package.train.photo %>
+<!--         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+ -->      <div class="package-item-infos">
+            <h2>Train: <%= @package.train.carrier_name%></h2>
+              <p><%=@package.train.category%></p>
+              <p>Train Number 123124<%=@package.train.train_number%></p>
+              <p><strong>Outward trip</strong></p>
+              <p><%=@package.train.dep_city%> Hbf  <%=@package.start_date %>, <%=@package.train.dep_time%> </p>
+              <p><%=@package.train.arr_city%> Hbf <%=@package.end_date %>, <%=@package.train.arr_time%></p>
+              <p><strong>Return trip</strong></p>
+              <p><%=@package.train.dep_city%> Hbf  <%=@package.start_date %>, <%=@package.train.dep_time%> </p>
+              <p><%=@package.train.arr_city%> Hbf <%=@package.end_date %>, <%=@package.train.arr_time%></p>
+            <h5 align="right"><%=@package.train.price%>€</h5>
         </div>
       </div>
       <div class="package-item">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+         <%= image_tag @package.hotel.photo %>
         <div class="package-item-infos">
-          <h2>Hotel</h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
+          <h2><%= @package.hotel.name%> <%@package.hotel.stars.times do%>
+             ⭐️
+          <% end %></h2>
+          <p>FROM:  <%=@package.start_date %>To:  <%=@package.end_date %></p>
+          <p><%=@package.hotel.address %></p>
+          <h5 align="right"><%=@package.hotel.price%>€</h5>
         </div>
       </div>
       <div class="package-item">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+        <%= image_tag @package.car.photo %>
         <div class="package-item-infos">
-          <h2>Rental Car</h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
+          <h2><%= @package.car.name%></h2>
+            <p><%=@package.car.car_category%></p>
+            <p><%=@package.car.company_name%></p>
+            <p><%=@package.start_date %> <%=@package.end_date %></p>
+            <p><%=@package.car.address %></p>
+          <h5 align="right"><%=@package.car.price%>€</h5>
         </div>
       </div>
     </div>
-    <div class="col-4">
-      <h2>User Data und Button</h2>
-      <a href="#" class="btn btn-primary">Book</a>
+    <div class="col-4" id="booking-form">
+      <h2> <%=@package.train.dep_city%> - <%=@package.train.arr_city%> </h2>
+        <p>Start Date:   <%=@package.start_date %>   End Date:<%=@package.end_date %></p>
+        <p>From: <%=@package.train.dep_city%> To: <%=@package.train.arr_city%> </p>
+        <p>Total Price: 930 €</p>
+        <%= simple_form_for [@package, @booking] do |f| %>
+        <%= f.submit "Book your trip", class: "btn btn-danger btn-block" %>
+        <% end %>
     </div>
   </div>
 </div>
-

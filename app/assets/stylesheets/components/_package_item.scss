@@ -1,11 +1,12 @@
 .package-item {
   overflow: hidden;
-  height: 100px;
+  height: 300px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .package-item img {
@@ -15,7 +16,7 @@
 }
 
 .package-item h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
 }
@@ -30,4 +31,13 @@
 
 .package-item .package-item-infos {
   padding: 16px;
+}
+
+.package-item-infos {
+  width: 850px;
+  text-justify: center;
+}
+
+.package-item p{
+  font-size: 16px;
 }

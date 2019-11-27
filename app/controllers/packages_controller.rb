@@ -5,7 +5,8 @@ class PackagesController < ApplicationController
   def index; end
 
   def show
-    # @booking = Booking.new
+      @booking = Booking.new
+      @user = current_user
     # @bookings = @package.bookings
   end
 
