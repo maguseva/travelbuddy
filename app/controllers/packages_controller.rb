@@ -3,7 +3,7 @@ class PackagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @packages = policy_scope(Package).geocoded
+    @packages = policy_scope(Package).order(price: :desc)
     if params[:query].present?
       @packages = Package.search_by_name(params[:query])
     else
