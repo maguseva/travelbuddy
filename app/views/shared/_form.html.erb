@@ -1,16 +1,23 @@
 <!-- _form.html.erb -->
-<%= simple_form_for [@packages] do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
+<%= form_tag packages_path, method: :get do %>
+  <%#= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a movie"
+  %>
   <div class="form-inputs">
-    <%= f.input :dep_city, as: :string, required: false, :label => "From" %>
-    <%= f.input :arr_city, as: :string, required: false, :label => "To" %>
-    <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-    <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", id: "end_date"} %>
+    <label for="deb_city">dasfg</label>
+    <%= text_field_tag :dep_city, nil, as: :string, required: false, label: "From" %>
+    <%= text_field_tag :arr_city, nil, as: :string, required: false, label: "To" %>
+    <%= text_field_tag :start_date, nil, as: :string, required: false, class: "datepicker" %>
+    <%= text_field_tag :end_date, nil, as: :string, required: false, class: "datepicker", id: "end_date" %>
   </div>
-
-  <div class="form-actions">
-    <%= f.submit "Refresh", class: "btn" %>
-  </div>
+  <%= submit_tag "Search", class: "btn" %>
 <% end %>
+
+
+
+
+<!--   <div class="form-actions">
+    <%#= f.submit "Refresh", class: "btn" %>
+  </div> -->
