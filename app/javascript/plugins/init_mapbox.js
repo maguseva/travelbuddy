@@ -13,7 +13,7 @@ const fitMapToMarkers = (map, markers) => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/julianab/ck3iteeni28fo1cmj5t4xnmwa'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
       markers.forEach((marker) => {

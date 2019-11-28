@@ -13,6 +13,16 @@ class Package < ApplicationRecord
   validates :dep_city, presence: true
   validates :arr_city, presence: true
   validates :price, presence: true, numericality: { greater_than: 0 }
-  geocoded_by :arr_city
-  after_validation :geocode, if: :will_save_change_to_arr_city?
+  geocoded_by :dep_city
+  after_validation :geocode, if: :will_save_change_to_dep_city?
+  after_create :set_arrival_coordinates
+
+  private
+
+  def set_arrival_coordinates
+    arrival = self.arr_city
+    self.latitude2 = Geocoder.search(arrival).first.data["lat"].to_f
+    self.longitude2 = Geocoder.search(arrival).first.data["lon"].to_f
+    self.save
+  end
 end
