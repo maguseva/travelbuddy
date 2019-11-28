@@ -20,19 +20,21 @@
   <div class="row">
     <div class="col-8" id="package-frame">
       <div class="package-item">
-         <%= image_tag @package.train.photo %>
+         <%= image_tag @package.train_from.photo %>
 <!--         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
  -->      <div class="package-item-infos">
-            <h2>Train: <%= @package.train.carrier_name%></h2>
-              <p><%=@package.train.category%></p>
-              <p>Train Number 123124<%=@package.train.train_number%></p>
+            <h2>Train: <%= @package.train_from.carrier_name%></h2>
               <p><strong>Outward trip</strong></p>
-              <p><%=@package.train.dep_city%> Hbf  <%=@package.start_date %>, <%=@package.train.dep_time%> </p>
-              <p><%=@package.train.arr_city%> Hbf <%=@package.end_date %>, <%=@package.train.arr_time%></p>
+              <p><%=@package.train_from.category%></p>
+              <p>Train Number: <%=@package.train_to.train_number%></p>
+              <p><%=@package.train_from.dep_city%> <%= @package.start_date.strftime('%b %d, %Y') %>, <%= @package.train_from.dep_time %></p>
+              <p><%=@package.train_from.arr_city%> <%= @package.end_date.strftime('%b %d, %Y') %>, <%= @package.train_from.arr_time %></p>
               <p><strong>Return trip</strong></p>
-              <p><%=@package.train.dep_city%> Hbf  <%=@package.start_date %>, <%=@package.train.dep_time%> </p>
-              <p><%=@package.train.arr_city%> Hbf <%=@package.end_date %>, <%=@package.train.arr_time%></p>
-            <h5 align="right"><%=@package.train.price%>€</h5>
+              <p><%=@package.train_to.category%></p>
+              <p>Train Number: <%=@package.train_from.train_number%></p>
+              <p><%=@package.train_to.dep_city%> <%= @package.start_date.strftime('%b %d, %Y') %>, <%= @package.train_to.dep_time %> </p>
+              <p><%=@package.train_to.arr_city%> <%= @package.end_date.strftime('%b %d, %Y') %>, <%= @package.train_to.arr_time %></p>
+            <h5 align="right"><%=@package.train_from.price + @package.train_to.price%>€</h5>
         </div>
       </div>
       <div class="package-item">
@@ -41,7 +43,7 @@
           <h2><%= @package.hotel.name%> <%@package.hotel.stars.times do%>
              ⭐️
           <% end %></h2>
-          <p>FROM:  <%=@package.start_date %>To:  <%=@package.end_date %></p>
+          <p>From:  <%=@package.start_date.strftime('%b %d, %Y') %> To:  <%=@package.end_date.strftime('%b %d, %Y') %></p>
           <p><%=@package.hotel.address %></p>
           <h5 align="right"><%=@package.hotel.price%>€</h5>
         </div>
@@ -52,17 +54,17 @@
           <h2><%= @package.car.name%></h2>
             <p><%=@package.car.car_category%></p>
             <p><%=@package.car.company_name%></p>
-            <p><%=@package.start_date %> <%=@package.end_date %></p>
+            <p><%=@package.start_date.strftime('%b %d, %Y')%> <%=@package.end_date.strftime('%b %d, %Y') %></p>
             <p><%=@package.car.address %></p>
           <h5 align="right"><%=@package.car.price%>€</h5>
         </div>
       </div>
     </div>
     <div class="col-4" id="booking-form">
-      <h2> <%=@package.train.dep_city%> - <%=@package.train.arr_city%> </h2>
-        <p>Start Date:   <%=@package.start_date %>   End Date:<%=@package.end_date %></p>
-        <p>From: <%=@package.train.dep_city%> To: <%=@package.train.arr_city%> </p>
-        <p>Total Price: 930 €</p>
+      <h2> <%=@package.dep_city%> - <%=@package.arr_city%> </h2>
+        <p>Start Date:   <%=@package.start_date.strftime('%b %d, %Y') %>   End Date:<%=@package.end_date.strftime('%b %d, %Y') %></p>
+        <p>From: <%=@package.dep_city%> To: <%=@package.arr_city%> </p>
+        <p>Total Price: <%=@package.price%> €</p>
         <%= simple_form_for [@package, @booking] do |f| %>
         <%= f.submit "Book your trip", class: "btn btn-danger btn-block" %>
         <% end %>

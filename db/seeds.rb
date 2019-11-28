@@ -101,6 +101,7 @@ Spa facilities at the Sheraton München Arabellapark include a heated pool, a Fi
 International food is served in the SixtySix Grill and Dine and Audrey’s Food & Flavour. Cocktails and snacks are available in the Arabella Bar, and the Paulaner beer garden is open in the summer.",
   address: 'Arabellastr. 5, Bogenhausen, 81925 Munich, Germany',
   photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1574775633/sheraton_yggvgw.png'
+  )
 
 # -----------------------------------------------------------------------------------------
 puts "Creating cars.."
