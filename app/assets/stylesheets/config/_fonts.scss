@@ -1,4 +1,9 @@
 // To use a font file (.woff) uncomment following lines
+
+$font_xsmall: 8px;
+$font_small: 12px;
+$font_medium: 16px;
+
 @font-face {
   font-family: "SFDisplay-Regular";
   src: font-url('SF_Display/SFDisplay-Regular.eot');
