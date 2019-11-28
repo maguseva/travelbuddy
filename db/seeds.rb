@@ -290,7 +290,7 @@ puts "Creating packages!"
 date_start = Date.today
 days_amount = 7
 (date_start..date_start + days_amount).each_with_index { |start_date, index|
-  (index + 1..days_amount).each { |end_date_index|
+  (1..days_amount-index).each { |end_date_index|
     3.times do
       tf = Train.where(dep_city: 'Berlin Hbf').where('price <= ?', User.first.company.company_policy.max_price_train).sample
       tt = Train.where(arr_city: 'Berlin Hbf').where('price <= ?', User.first.company.company_policy.max_price_train).sample
