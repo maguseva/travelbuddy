@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   # root to: 'packages#index'
   get 'home', to: 'pages#home', as: :home
-  get 'admin_home', to: 'pages#hr_home', as: :hr_home
+  get 'hr_home', to: 'pages#hr_home', as: :hr_home
   root to: 'passthrough#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
