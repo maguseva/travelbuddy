@@ -11,6 +11,7 @@ class PackagesController < ApplicationController
     else
       @packages = Package.all
     end
+    @class = "full-screen"
   end
 
   def show

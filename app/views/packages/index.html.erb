@@ -1,4 +1,6 @@
-<%= render 'shared/search_form' %>
+<div class="search-index">
+  <%= render 'shared/search_form', locals: { cl: @class } %>
+</div>
   <br>
   <% if @packages.empty? %>
     <p class="text-center">Sorry, we couldn't find any packages for your search.</p>
