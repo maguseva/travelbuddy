@@ -1,17 +1,38 @@
-// Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
-@import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
-
-// Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Inconsolata", "Raleway", "sans-serif";
-
 // To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+
+$font_xsmall: 8px;
+$font_small: 12px;
+$font_medium: 16px;
+
+@font-face {
+  font-family: "SFDisplay-Regular";
+  src: font-url('SF_Display/SFDisplay-Regular.eot');
+  src: font-url('SF_Display/SFDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+       font-url('SF_Display/SFDisplay-Regular.woff') format('woff'),
+       font-url('SF_Display/SFDisplay-Regular.woff2') format('woff2'),
+       font-url('SF_Display/SFDisplay-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+$displayregular: "SFDisplay-Regular";
+
+@font-face {
+  font-family: "SFDisplay-Semibold";
+  src: font-url('SF_Display/SFDisplay-Semibold.eot');
+  src: font-url('SF_Display/SFDisplay-Semibold.eot?#iefix') format('embedded-opentype'),
+       font-url('SF_Display/SFDisplay-Semibold.woff') format('woff'),
+       font-url('SF_Display/SFDisplay-Semibold.woff2') format('woff2'),
+       font-url('SF_Display/SFDisplay-Semibold.ttf') format('truetype');
+  font-display: swap;
+}
+$displaysemibold: "SFDisplay-Semibold";
+
+@font-face {
+  font-family: "SFDisplay-Light";
+  src: font-url('SF_Display/SFDisplay-Light.eot');
+  src: font-url('SF_Display/SFDisplay-Light.eot?#iefix') format('embedded-opentype'),
+       font-url('SF_Display/SFDisplay-Light.woff') format('woff'),
+       font-url('SF_Display/SFDisplay-Light.woff2') format('woff2'),
+       font-url('SF_Display/SFDisplay-Light.ttf') format('truetype');
+  font-display: swap;
+}
+$displaylight: "SFDisplay-Light";

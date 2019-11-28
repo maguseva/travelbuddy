@@ -1,18 +1,15 @@
-// .datepicker {
-//   width: 400px
-// }
-
 .search-form {
   position: relative;
-  background-color: white;
-  border-radius: 5px;
+  background-color: $black_primary;
+  border-radius: 12px;
   padding: 10px;
   text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  color: white;
+  width: 340px;
 
   form {
     margin: 0 auto;
-    width: 430px;
   }
 }
 
@@ -21,19 +18,21 @@
   bottom: 8px;
   right: 8px;
   border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 12px;
   text-align: center;
+  color: white;
+  background-color: $black_dark;
 }
 
 .search-form .btn:hover {
-  background-color: black;
+  background-color: $black_primary;
   color: white;
 }
 
 .search-form .form-group {
   display: flex;
   justify-content: center;
-  margin: 5px;
+  margin: 10px;
   padding: 5px;
 
   input {
@@ -43,8 +42,7 @@
 
 .form-group.form-group-duo {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 12px;
+  grid-template-columns: 1fr;
 }
 
 .labeled-input {

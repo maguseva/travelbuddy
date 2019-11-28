@@ -2,6 +2,22 @@
   justify-content: space-between;
   background-color: transparent;
   color: white;
+  position: absolute;
+  width: 100%;
+
+  .nav-item {
+    a.nav-link {
+      color: white;
+      border-radius: 12px;
+      background-color: $black_dark;
+      padding: 8px 16px;
+      font-size: $font_small;
+    }
+    a.nav-link:hover {
+      background-color: $black_primary;
+      color: white;
+    }
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
