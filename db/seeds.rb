@@ -278,20 +278,22 @@ date_start = Date.today
 days_amount = 7
 (date_start..date_start + days_amount).each_with_index { |start_date, index|
   (index + 1..days_amount).each { |end_date_index|
-    tf = Train.where(dep_city: 'Berlin Hbf').sample
-    tt = Train.where(arr_city: 'Berlin Hbf').sample
-    h = Hotel.all.sample
-    c = Car.all.sample
-    Package.create!(
-      start_date: start_date,
-      end_date: start_date + end_date_index,
-      hotel: h,
-      car: c,
-      train_from: tf,
-      train_to: tt,
-      dep_city: 'Berlin',
-      arr_city: 'Munich',
-      price: tf.price + tt.price + h.price * end_date_index + c.price * end_date_index)
+    3.times do
+      tf = Train.where(dep_city: 'Berlin Hbf').sample
+      tt = Train.where(arr_city: 'Berlin Hbf').sample
+      h = Hotel.all.sample
+      c = Car.all.sample
+      Package.create!(
+        start_date: start_date,
+        end_date: start_date + end_date_index,
+        hotel: h,
+        car: c,
+        train_from: tf,
+        train_to: tt,
+        dep_city: 'Berlin',
+        arr_city: 'Munich',
+        price: tf.price + tt.price + h.price * end_date_index + c.price * end_date_index)
+    end
   }
 }
 
