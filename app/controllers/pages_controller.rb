@@ -4,4 +4,6 @@ class PagesController < ApplicationController
   def home
     @class = ""
   end
+
+  def hr_home; end
 end

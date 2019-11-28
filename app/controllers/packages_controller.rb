@@ -28,4 +28,3 @@ class PackagesController < ApplicationController
     authorize @package
   end
 end
-

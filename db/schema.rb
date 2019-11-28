@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 2019_11_28_174628) do
 
   create_table "company_policies", force: :cascade do |t|
     t.bigint "company_id"
-    t.integer "max_price_train"
-    t.integer "max_price_hotel"
-    t.integer "max_price_car"
+    t.integer "max_price_train", default: 0
+    t.integer "max_price_hotel", default: 0
+    t.integer "max_price_car", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_company_policies_on_company_id"
@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_174628) do
     t.string "first_name"
     t.string "last_name"
     t.bigint "company_id"
+    t.boolean "admin", default: false, null: false
     t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
