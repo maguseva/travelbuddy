@@ -17,11 +17,12 @@ Package.destroy_all if Rails.env.development?
 puts "Creating a company"
 Company.create(name: "Test company")
 
-puts "Creating a user"
-User.create(email: "test@example.com", password: "123456", first_name: "Test first name", last_name: "Test last name", company: Company.first)
-
 puts "Creating a company policy"
 CompanyPolicy.create(company: Company.first, max_price_train: 150, max_price_hotel: 130, max_price_car: 35)
+
+puts "Creating users"
+User.create(email: "user@example.com", password: "123456", first_name: "Test first name", last_name: "Test last name", company: Company.first)
+User.create(email: "admin@example.com", password: "123456", first_name: "Test first name", last_name: "Test last name", company: Company.first, admin: true)
 
 puts "Creating hotels.."
 Hotel.create(
