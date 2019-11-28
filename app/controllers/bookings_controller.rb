@@ -1,8 +1,10 @@
 class BookingsController < ApplicationController
-  before_action :set_bookings, only: :show
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_bookings, only: [:show, :destroy]
+  # skip_before_action :authenticate_user!, only: [:index, :show]
 
-  def index; end
+  def index
+    @bookings = policy_scope(Booking)
+  end
 
   def show
   end
@@ -18,6 +20,11 @@ class BookingsController < ApplicationController
     else
       render 'packages/show'
     end
+  end
+
+  def destroy
+    @booking.destroy
+    redirect_to bookings_path
   end
 
   private

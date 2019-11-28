@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :packages, only: [:index, :show] do
     resources :bookings, only: [:create]
   end
-  resources :bookings, only: [:index, :show]
+  resources :bookings, only: [:index, :show, :destroy]
   resources :company_policies, only: [:edit, :update]
 end
 
