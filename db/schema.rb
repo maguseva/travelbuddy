@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_105909) do
+ActiveRecord::Schema.define(version: 2019_11_28_132203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 2019_11_28_105909) do
 
   create_table "company_policies", force: :cascade do |t|
     t.bigint "company_id"
-    t.integer "max_price_train"
-    t.integer "max_price_hotel"
-    t.integer "max_price_car"
+    t.integer "max_price_train", default: 0
+    t.integer "max_price_hotel", default: 0
+    t.integer "max_price_car", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_company_policies_on_company_id"

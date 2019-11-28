@@ -14,6 +14,15 @@ Car.destroy_all if Rails.env.development?
 Train.destroy_all if Rails.env.development?
 Package.destroy_all if Rails.env.development?
 
+puts "Creating a company"
+Company.create(name: "Test company")
+
+puts "Creating a user"
+User.create(email: "test@example.com", password: "123456", first_name: "Test first name", last_name: "Test last name", company: Company.first)
+
+puts "Creating a company policy"
+CompanyPolicy.create(company: Company.first, max_price_train: 150, max_price_hotel: 130, max_price_car: 35)
+
 puts "Creating hotels.."
 Hotel.create(
   name: 'Augusten Hotel München',
@@ -282,10 +291,10 @@ days_amount = 7
 (date_start..date_start + days_amount).each_with_index { |start_date, index|
   (index + 1..days_amount).each { |end_date_index|
     3.times do
-      tf = Train.where(dep_city: 'Berlin Hbf').sample
-      tt = Train.where(arr_city: 'Berlin Hbf').sample
-      h = Hotel.all.sample
-      c = Car.all.sample
+      tf = Train.where(dep_city: 'Berlin Hbf').where('price <= ?', User.first.company.company_policy.max_price_train).sample
+      tt = Train.where(arr_city: 'Berlin Hbf').where('price <= ?', User.first.company.company_policy.max_price_train).sample
+      h = Hotel.where('price <= ?', User.first.company.company_policy.max_price_hotel).sample
+      c = Car.where('price <= ?', User.first.company.company_policy.max_price_car).sample
       Package.create(
         start_date: start_date,
         end_date: start_date + end_date_index,
@@ -299,13 +308,6 @@ days_amount = 7
     end
   }
 }
-
-puts "Creating a company"
-Company.create(name: "Test company")
-
-puts "Creating a user"
-User.create(email: "test@example.com", password: "123456", first_name: "Test first name", last_name: "Test last name", company: Company.first)
-
 
 puts "Data seeded"
 
