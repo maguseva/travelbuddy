@@ -1,7 +1,7 @@
 .package-header {
   background-size: cover;
   background-position: center;
-  height: 250px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,4 +15,23 @@
 
 .package-header-box {
   padding: 1px;
+}
+
+#booking-form {
+  background:white;
+  height: 300px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+#booking-form h2 {
+ text-align: center;
+}
+
+#package-frame {
+  padding-left:0px;
 }

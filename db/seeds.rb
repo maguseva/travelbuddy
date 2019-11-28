@@ -76,6 +76,7 @@ Hotel.create!(
   name: 'Holiday Inn Munich City Centre',
   price: 210,
   stars: 5,
+
   description: "Just 500 m from the Deutsches Museum, this non-smoking hotel in Munich offers a large convention area. Rosenheimer Platz City Rail Station is 50 m away and just 2 stops from Marienplatz.
 
 Set within a shopping complex, the rooms at Holiday Inn Munich City Centre feature air conditioning, soundproofing, a flat-screen TV and coffee/tea facilities. The executive rooms offer views over the city.
@@ -296,3 +297,4 @@ days_amount = 7
 }
 
 puts "Data seeded"
+

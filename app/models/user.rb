@@ -14,6 +14,5 @@ class User < ApplicationRecord
 
   def assign_company
     self.company = Company.first
-    # raise
   end
 end

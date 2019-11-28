@@ -12,8 +12,8 @@ class PackagesController < ApplicationController
   end
 
   def show
-    # @booking = Booking.new
-    # @bookings = @package.bookings
+    @booking = Booking.new
+    @user = current_user
   end
 
   private
@@ -23,3 +23,4 @@ class PackagesController < ApplicationController
     authorize @package
   end
 end
+
