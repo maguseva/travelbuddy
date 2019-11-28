@@ -14,10 +14,6 @@ class BookingsController < ApplicationController
     @booking.status = "paid"
     @booking.user = current_user
     if @booking.save
-     #  confirm_booking(@booking)
-     # @booking.update(start_date: Date.parse(@booking.start_date.split(' ')[0]).strftime("%B %e, %Y"))
-     #  @booking.update(total_price:
-     #    (Date.parse(@booking.end_date) - Date.parse(@booking.start_date)).to_i * @booking.package.price.to_i)
       redirect_to booking_path(@booking)
     else
       render 'packages/show'
