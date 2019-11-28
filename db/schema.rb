@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_105909) do
+ActiveRecord::Schema.define(version: 2019_11_28_120156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 2019_11_28_105909) do
     t.bigint "train_from_id"
     t.bigint "train_to_id"
     t.integer "price", default: 0, null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["car_id"], name: "index_packages_on_car_id"
     t.index ["hotel_id"], name: "index_packages_on_hotel_id"
     t.index ["train_from_id"], name: "index_packages_on_train_from_id"
@@ -105,7 +107,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_105909) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "bahncard"
+    t.string "bahncard", default: "no value"
     t.bigint "company_id"
     t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true

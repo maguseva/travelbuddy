@@ -13,6 +13,7 @@ class PackagesController < ApplicationController
 
   def show
     @booking = Booking.new
+    @markers = [{ lat: @package.latitude, lng: @package.longitude }]
     @user = current_user
   end
 

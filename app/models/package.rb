@@ -13,4 +13,6 @@ class Package < ApplicationRecord
   validates :dep_city, presence: true
   validates :arr_city, presence: true
   validates :price, presence: true, numericality: { greater_than: 0 }
+  geocoded_by :arr_city
+  after_validation :geocode, if: :will_save_change_to_arr_city?
 end
