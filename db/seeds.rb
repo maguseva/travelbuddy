@@ -283,7 +283,7 @@ days_amount = 7
       tt = Train.where(arr_city: 'Berlin Hbf').sample
       h = Hotel.all.sample
       c = Car.all.sample
-      Package.create!(
+      Package.create(
         start_date: start_date,
         end_date: start_date + end_date_index,
         hotel: h,
