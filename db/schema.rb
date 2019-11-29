@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_174628) do
+ActiveRecord::Schema.define(version: 2019_11_29_135833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_174628) do
     t.float "longitude"
     t.float "latitude2"
     t.float "longitude2"
+    t.boolean "outdated", default: false, null: false
     t.index ["car_id"], name: "index_packages_on_car_id"
     t.index ["hotel_id"], name: "index_packages_on_hotel_id"
     t.index ["train_from_id"], name: "index_packages_on_train_from_id"

@@ -1,3 +1,5 @@
+require_relative '../services/seeds_regenerator.rb'
+
 class CompanyPoliciesController < ApplicationController
   before_action :set_company_policy, only: [:edit, :update]
 
@@ -8,6 +10,7 @@ class CompanyPoliciesController < ApplicationController
     if @company_policy.update(company_policy_params)
       redirect_to hr_home_path
       flash[:notice] = "Company policy has been successfully updated"
+      SeedsRegenerator.new.regenerate_packages(@company_policy)
     else
       render :edit
     end
