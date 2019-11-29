@@ -7,14 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Cleaning the db.."
-Booking.destroy_all if Rails.env.development?
-Package.destroy_all if Rails.env.development?
-Train.destroy_all if Rails.env.development?
-Hotel.destroy_all if Rails.env.development?
-Car.destroy_all if Rails.env.development?
-CompanyPolicy.destroy_all if Rails.env.development?
-User.destroy_all if Rails.env.development?
-Company.destroy_all if Rails.env.development?
+Booking.destroy_all # if Rails.env.development?
+Package.destroy_all # if Rails.env.development?
+Train.destroy_all # if Rails.env.development?
+Hotel.destroy_all # if Rails.env.development?
+Car.destroy_all # if Rails.env.development?
+CompanyPolicy.destroy_all # if Rails.env.development?
+User.destroy_all # if Rails.env.development?
+Company.destroy_all # if Rails.env.development?
 
 
 puts "Creating a company"
