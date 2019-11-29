@@ -7,12 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Cleaning the db.."
-Company.destroy_all if Rails.env.development?
-User.destroy_all if Rails.env.development?
+Booking.destroy_all if Rails.env.development?
+Package.destroy_all if Rails.env.development?
+Train.destroy_all if Rails.env.development?
 Hotel.destroy_all if Rails.env.development?
 Car.destroy_all if Rails.env.development?
-Train.destroy_all if Rails.env.development?
-Package.destroy_all if Rails.env.development?
+CompanyPolicy.destroy_all if Rails.env.development?
+User.destroy_all if Rails.env.development?
+Company.destroy_all if Rails.env.development?
 
 
 puts "Creating a company"
@@ -293,7 +295,7 @@ puts "Creating packages!"
 date_start = Date.today
 days_amount = 7
 (date_start..date_start + days_amount).each_with_index { |start_date, index|
-  (index..days_amount-index).each { |end_date_index|
+  (1..days_amount-index).each { |end_date_index|
     3.times do
       tf = Train.where(dep_city: 'Berlin Hbf').where('price <= ?', User.first.company.company_policy.max_price_train).sample
       tt = Train.where(arr_city: 'Berlin Hbf').where('price <= ?', User.first.company.company_policy.max_price_train).sample
