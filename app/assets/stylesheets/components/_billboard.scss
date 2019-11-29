@@ -1,0 +1,50 @@
+.billboard {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 46px;
+  margin: 0 auto -440px;
+  width: 860px;
+  height: 460px;
+  top: -130px;
+  background: $gradient-small;
+  border: 1px solid rgba(255,255,255, 0.4);
+  color: white;
+
+  .billboard-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 36px;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 1px;
+      top: 17px;
+      left: 50%;
+      transform: translateX(-65%);
+      background-color: white;
+    }
+
+    .billboard-details-city {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        margin-bottom: -5px;
+        font-size: 21px;
+        font-family: $displaysemibold;
+      }
+
+      i {
+        font-size: 14px;
+        font-family: $displaylight;
+        font-style: normal;
+      }
+    }
+
+  }
+
+}
