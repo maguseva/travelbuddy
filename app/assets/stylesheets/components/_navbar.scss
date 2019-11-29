@@ -29,10 +29,7 @@
   width: 40px;
 }
 
-.home .navbar-lewagon {
-  position: absolute;
-}
-
-.nav-item #align-left {
-  text-align: left;
+.nav-flex {
+  display: flex;
+  align-item: center;
 }
