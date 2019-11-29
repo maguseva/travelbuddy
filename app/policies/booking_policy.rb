@@ -1,8 +1,11 @@
 class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      # scope.all TODO make it work with all bookings
-      scope.where(user: user)
+      if user.admin
+        scope.all
+      else
+        scope.where(user: user)
+      end
     end
   end
 
@@ -15,6 +18,6 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    record.user == user || user.admin
   end
 end
