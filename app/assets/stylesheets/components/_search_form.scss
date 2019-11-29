@@ -18,10 +18,13 @@
   bottom: 8px;
   right: 8px;
   border: 1px solid black;
-  border-radius: 12px;
   text-align: center;
   color: white;
+  border-radius: 12px;
   background-color: $black_dark;
+  background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
+  padding: 8px 16px;
+  font-size: $font_medium;
 }
 
 .search-form .btn:hover {
@@ -61,7 +64,7 @@
 
 .full-screen {
   position: relative;
-  background-color: $black_dark;
+  background-color: $black_primary;
   border-radius: 12px;
   padding: 10px;
   text-align: center;
@@ -80,10 +83,13 @@
   bottom: 8px;
   right: 8px;
   border: 1px solid black;
-  border-radius: 12px;
   text-align: center;
   color: white;
+  border-radius: 12px;
   background-color: $black_dark;
+  background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
+  padding: 8px 16px;
+  font-size: $font_medium;
 }
 
 .full-screen .btn:hover {

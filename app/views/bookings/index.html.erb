@@ -1,14 +1,14 @@
 <!-- index.html.erb -->
-<div class="container">
+<div class="container page-top-space">
   <div class="row">
     <div class="col-12">
       <% if @bookings.empty? %>
-        <h1>You don't have any bookings yet</h1>
+        <h1 class="text-center">You don't have any bookings yet</h1>
         <div class="btn-center">
-          <%= link_to 'Book your first trip now', packages_path, class: "btn btn-danger" %>
+          <%= link_to 'Book your first trip now', packages_path, class: "btn btn-custom" %>
         </div>
       <% else %>
-        <h1>Your bookings</h1>
+        <h1 class="text-center">Your bookings</h1>
         <ul style="list-style-type: none;">
         <div class="container">
           <div class="row">
@@ -23,7 +23,7 @@
                     <br>
                   </div>
                   <div class="btn-bottom">
-                    <%= link_to 'Cancel this booking', booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel your booking for #{booking.package.start_date.strftime('%b %d, %Y')} - #{booking.package.end_date.strftime('%b %d, %Y')}?" }, class: "btn btn-danger" %>
+                    <%= link_to 'Cancel this booking', booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel your booking for #{booking.package.start_date.strftime('%b %d, %Y')} - #{booking.package.end_date.strftime('%b %d, %Y')}?" }, class: "btn btn-custom" %>
                   </div>
                 </li>
               <% end %>
