@@ -3,46 +3,6 @@
   height: 420px;
 }
 
-.card-product {
-  overflow: hidden;
-  height: 190px;
-  max-width: 25%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  padding: 0px;
-  margin: 10px;
-  background-color:rgb(10,10,10);
-  border-radius:15px;
-}
-
-.card-product img {
-  height: 100%;
-  width: 100px;
-  object-fit: cover;
-}
-
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  color:white;
-  margin: 0;
-}
-
-.card-product p {
-  font-size: 12px;
-  color:white;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product .card-product-infos {
-  padding-left: 16px;
-}
-
-
 .banner {
   background-size: cover;
   background-position: center;
@@ -55,12 +15,9 @@
   padding-left:180px;
 }
 
-.card-product-infos {
-  width:280px;
-  height:170px;
-}
 
 #booking-btn {
   width:600px;
   padding-left:650px;
+  color: white;
 }

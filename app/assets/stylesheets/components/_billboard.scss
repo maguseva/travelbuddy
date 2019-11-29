@@ -44,7 +44,28 @@
         font-style: normal;
       }
     }
-
   }
+}
+    .billboard-vanity {
+      display: flex;
+      flex-direction: column;
+      width: 80px;
 
+      span {
+        margin-bottom: -5px;
+        font-size: 21px;
+        font-family: $displaysemibold;
+        }
+
+        i {
+          font-size: 14px;
+          font-family: $displaylight;
+          font-style: normal;
+        }
+       }
+
+    .billboard-vanities {
+      display: flex;
+      grid-gap: 36px;
+      position: relative;
 }
