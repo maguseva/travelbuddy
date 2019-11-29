@@ -1,51 +1,85 @@
-<div class="container"></div>
-<h1>bookings show page</h1>
-<div class="container col-sm-6 col-md-8 col-lg-10" >
-  <div class="row">
-    <div class="package-header-box col-6">
-      <div class="package-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        Hotel Photo
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1554222413-74348b32d66e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9);">
+  <div class="container">
+    <h1>Your booking has been  <strong>confirmed</strong></h1>
+    <p>Have a nice trip from Berlin to Munich.</p>
+  </div>
+</div>
+
+<div class="container page-top-space">
+  <div class="billboard">
+    <div class="billboard-details">
+      <div class="billboard-details-city">
+        <span><%=@booking.package.train_from.dep_city%></span>
+        <i><%= @booking.package.start_date.strftime('%b %d, %Y') %></i>
+      </div>
+      <div class="billboard-details-city">
+        <span><%=@booking.package.train_from.arr_city%></span>
+        <i><%= @booking.package.end_date.strftime('%b %d, %Y') %></i>
       </div>
     </div>
-    <div class="package-header-box col-6">
-      <div class="package-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        Map
+
+    <div class="billboard-vanities">
+      <div class="billboard-vanity">
+        <span>2</span>
+        <i>night</i>
+      </div>
+      <div class="billboard-vanity">
+        <span>1</span>
+        <i>rental car</i>
+      </div>
+      <div class="billboard-vanity">
+        <span>5</span>
+        <i>stars hostel</i>
       </div>
     </div>
   </div>
+
   <div class="row">
-    <div class="col-12">
-    <h2>From To Where</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-8">
-      <div class="package-item">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
-        <div class="package-item-infos">
-          <h2>Train</h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
-        </div>
-      </div>
-      <div class="package-item">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
-        <div class="package-item-infos">
-          <h2>Hotel</h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
-        </div>
-      </div>
-      <div class="package-item">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
-        <div class="package-item-infos">
-          <h2>Rental Car</h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
+    <div class="col-4">
+      <div class="card-train">
+        <%= image_tag @booking.package.train_from.photo %>
+        <div class="card-train-infos">
+          <h2><strong>Outward trip</strong></h2>
+            <p><%=@booking.package.train_from.dep_city%> <%= @booking.package.start_date.strftime('%b %d, %Y') %>, <%= @booking.package.train_from.dep_time %></p>
+            <p><%=@booking.package.train_from.arr_city%> <%= @booking.package.end_date.strftime('%b %d, %Y') %>, <%= @booking.package.train_from.arr_time %></p>
+          <br>
+          <h2><strong>Return trip</strong></h2>
+            <p><%=@booking.package.train_to.dep_city%> <%= @booking.package.start_date.strftime('%b %d, %Y') %>, <%= @booking.package.train_to.dep_time %> </p>
+            <p><%=@booking.package.train_to.arr_city%> <%= @booking.package.end_date.strftime('%b %d, %Y') %>, <%= @booking.package.train_to.arr_time %></p>
+          <h2 align="right"><%=@booking.package.train_from.price + @booking.package.train_to.price%>€</h2>
         </div>
       </div>
     </div>
     <div class="col-4">
-      <h2>User Data und Button</h2>
-      <a href="#" class="btn btn-primary">Book</a>
+      <div class="card-hotel">
+         <%= image_tag @booking.package.hotel.photo %>
+         <div class="card-hotel-infos">
+          <h2>
+            <%= @booking.package.hotel.name%> <%@booking.package.hotel.stars.times do %>
+              ⭐️
+            <% end %>
+          </h2>
+          <p>From: <%=@booking.package.start_date.strftime('%b %d, %Y') %> To:  <%=@booking.package.end_date.strftime('%b %d, %Y') %></p>
+          <p><%=@booking.package.hotel.address %></p>
+          <br>
+          <br>
+          <h2 align="right"><%=@booking.package.hotel.price%>€</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card-car">
+        <%= image_tag @booking.package.car.photo %>
+        <div class="card-car-infos">
+          <h2 style="margin-bottom: 23px"><%= @booking.package.car.name%></h2>
+            <p><%=@booking.package.car.car_category%></p>
+            <p><%=@booking.package.car.company_name%></p>
+            <p><%=@booking.package.start_date.strftime('%b %d, %Y')%> <%=@booking.package.end_date.strftime('%b %d, %Y') %></p>
+            <p><%=@booking.package.car.address %></p>
+          <br>
+          <h2 align="right"><%=@booking.package.car.price%>€</h2>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-

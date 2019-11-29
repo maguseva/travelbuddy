@@ -1,0 +1,20 @@
+
+  <div class="col-4">
+      <div class="card-hotel">
+         <%= image_tag @package.hotel.photo %>
+         <div class="card-hotel-infos">
+          <h2>
+            <%= @package.hotel.name%> <%@package.hotel.stars.times do %>
+              ⭐️
+            <% end %>
+          </h2>
+          <p>From: <%=@package.start_date.strftime('%b %d, %Y') %> To:  <%=@package.end_date.strftime('%b %d, %Y') %></p>
+          <p><%=@package.hotel.address %></p>
+          <br>
+          <br>
+          <br>
+          <h2 align="right"><%=@package.hotel.price%>€</h2>
+        </div>
+      </div>
+    </div>
+

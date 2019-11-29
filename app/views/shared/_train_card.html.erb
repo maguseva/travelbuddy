@@ -1,0 +1,16 @@
+
+    <div class="col-4">
+      <div class="card-train">
+        <%= image_tag @package.train_from.photo %>
+        <div class="card-train-infos">
+          <h2><strong>Outward trip</strong></h2>
+            <p><%=@package.train_from.dep_city%> <%= @package.start_date.strftime('%b %d, %Y') %>, <%= @package.train_from.dep_time %></p>
+            <p><%=@package.train_from.arr_city%> <%= @package.end_date.strftime('%b %d, %Y') %>, <%= @package.train_from.arr_time %></p>
+          <br>
+          <h2><strong>Return trip</strong></h2>
+            <p><%=@package.train_to.dep_city%> <%= @package.start_date.strftime('%b %d, %Y') %>, <%= @package.train_to.dep_time %> </p>
+            <p><%=@package.train_to.arr_city%> <%= @package.end_date.strftime('%b %d, %Y') %>, <%= @package.train_to.arr_time %></p>
+          <h2 align="right"><%=@package.train_from.price + @package.train_to.price%>€</h2>
+        </div>
+      </div>
+    </div>

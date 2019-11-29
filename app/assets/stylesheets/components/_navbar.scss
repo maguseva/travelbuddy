@@ -1,17 +1,17 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: transparent;
+  background: $gradient-extra-small;
   color: white;
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
+  z-index: 10;
 
   .nav-item {
     a.nav-link {
       color: white;
       border-radius: 12px;
       background-color: $black_dark;
-      background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
       padding: 8px 16px;
       font-size: $font_small;
     }
