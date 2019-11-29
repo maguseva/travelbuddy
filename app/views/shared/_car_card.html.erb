@@ -1,0 +1,14 @@
+    <div class="col-4">
+      <div class="card-car">
+        <%= image_tag @package.car.photo %>
+        <div class="card-car-infos">
+          <h2 style="margin-bottom: 23px"><%= @package.car.name%></h2>
+            <p><%=@package.car.car_category%></p>
+            <p><%=@package.car.company_name%></p>
+            <p><%=@package.start_date.strftime('%b %d, %Y')%> <%=@package.end_date.strftime('%b %d, %Y') %></p>
+            <p><%=@package.car.address %></p>
+          <br>
+          <h2 align="right"><%=@package.car.price%>€</h2>
+        </div>
+      </div>
+    </div>
