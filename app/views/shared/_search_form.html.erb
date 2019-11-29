@@ -1,5 +1,5 @@
 <div class="col-6 container">
-  <div class="search-form">
+  <div class="search-form <%= locals[:cl] %>">
     <%= form_tag packages_path, method: :get do %>
 
       <div class="form-inputs">

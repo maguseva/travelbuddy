@@ -2,7 +2,8 @@
   justify-content: space-between;
   background-color: transparent;
   color: white;
-  position: absolute;
+  position: fixed;
+  top: 0;
   width: 100%;
 
   .nav-item {
@@ -26,4 +27,9 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-flex {
+  display: flex;
+  align-item: center;
 }

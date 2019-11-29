@@ -1,0 +1,38 @@
+<!-- index.html.erb -->
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <% if @bookings.empty? %>
+        <h1>You don't have any bookings yet</h1>
+        <div class="btn-center">
+          <%= link_to 'Book your first trip now', packages_path, class: "btn btn-danger" %>
+        </div>
+      <% else %>
+        <h1>Your bookings</h1>
+        <ul style="list-style-type: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <%@bookings.each do |booking| %>
+                <li class="booking-item">
+                  <div>
+                    <p><strong>Booking from: <%= booking.created_at.strftime('%a, %d %b %Y %l:%M %p') %> </strong></p>
+                    <p><strong>Booking status: <%= booking.status %> </strong></p>
+                    <p><strong>Dates: </strong><%= booking.package.start_date.strftime('%b %d, %Y') %> - <%= booking.package.end_date.strftime('%b %d, %Y') %></p>
+                    <p><strong>Total price: </strong><%= booking.package.price %> €</p>
+                    <br>
+                  </div>
+                  <div class="btn-bottom">
+                    <%= link_to 'Cancel this booking', booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel your booking for #{booking.package.start_date.strftime('%b %d, %Y')} - #{booking.package.end_date.strftime('%b %d, %Y')}?" }, class: "btn btn-danger" %>
+                  </div>
+                </li>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
+
