@@ -4,7 +4,7 @@ class PackagesController < ApplicationController
 
   def index
     @packages = policy_scope(Package)
-    if params[:query]
+    if params[:start_date]
       converted_start_date = params[:start_date].split(' ').first
       converted_end_date = params[:start_date].split(' ').last
     end

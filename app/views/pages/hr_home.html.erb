@@ -1,11 +1,11 @@
 
 <%if current_user.admin %>
-  <div class="container">
+  <div class="container page-top-space">
     <div class="row">
       <div class="column">
-        <%= link_to 'Company policy', edit_company_policy_path(current_user.company.company_policy)%>
-        <%= link_to 'Set up payment', "#" %>
-        <%= link_to 'HR dashboard', "#"%>
+        <%= link_to 'Company policy', edit_company_policy_path(current_user.company.company_policy), class: "card-train"%>
+        <%= link_to 'Set up payment', "#", class: "card-train" %>
+        <%= link_to 'HR dashboard', "#", class: "card-train" %>
       </div>
     </div>
   </div>

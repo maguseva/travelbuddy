@@ -5,7 +5,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container page-top-space">
   <div class="billboard">
     <div class="billboard-details">
       <div class="billboard-details-city">
@@ -33,8 +33,9 @@
       </div>
     </div>
   </div>
+
   <div class="row">
-      <div class="col-4">
+    <div class="col-4">
       <div class="card-train">
         <%= image_tag @booking.package.train_from.photo %>
         <div class="card-train-infos">
@@ -49,7 +50,7 @@
         </div>
       </div>
     </div>
-   <div class="col-4">
+    <div class="col-4">
       <div class="card-hotel">
          <%= image_tag @booking.package.hotel.photo %>
          <div class="card-hotel-infos">
@@ -66,7 +67,6 @@
         </div>
       </div>
     </div>
-
     <div class="col-4">
       <div class="card-car">
         <%= image_tag @booking.package.car.photo %>
@@ -81,6 +81,5 @@
         </div>
       </div>
     </div>
-
-
   </div>
+</div>
