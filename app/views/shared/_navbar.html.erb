@@ -9,26 +9,31 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <div class="navbar-nav mr-auto">
         <% if user_signed_in? %>
-          <li class="nav-item">
-             <%= current_user.first_name %> <%= current_user.last_name %> (<%= current_user.company.name %>)
-          </li>
-          <li class="nav-item">
-            <%= link_to "My Bookings", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-          </li>
+          <div class="nav-flex">
+            <div class="nav-item">
+              <%= current_user.first_name %> <%= current_user.last_name %> (<%= current_user.company.name %>)
+            </div>
+          </div>
+          <div class="nav-flex">
+            <div class="nav-item">
+              <%= link_to "My Bookings", "#", class: "nav-link" %>
+            </div>
+            <div class="nav-item">
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            </div>
+          </div>
         <% else %>
-          <li class="nav-item">
+          <div class="nav-item">
             <%= link_to new_user_session_path, class: "nav-link" do %>
               <i class="fas fa-cog"></i> Login
             <% end %>
-          </li>
+          </div>
         <% end %>
-      </ul>
+      </div>
     </div>
 
   </div>
