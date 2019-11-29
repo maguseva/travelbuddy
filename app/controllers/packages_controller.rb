@@ -7,7 +7,7 @@ class PackagesController < ApplicationController
     converted_start_date = params[:start_date].split(' ').first
     converted_end_date = params[:start_date].split(' ').last
     if params[:dep_city].present? && params[:arr_city].present? && params[:start_date].present?
-      @packages = Package.where(dep_city: params[:dep_city], arr_city: params[:arr_city], start_date: converted_start_date, end_date: converted_end_date)
+      @packages = Package.where(dep_city: params[:dep_city].capitalize, arr_city: params[:arr_city].capitalize, start_date: converted_start_date, end_date: converted_end_date)
     else
       @packages = Package.all
     end
