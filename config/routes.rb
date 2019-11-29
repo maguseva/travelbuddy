@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:index, :show, :destroy]
   resources :company_policies, only: [:edit, :update]
+  get 'all_bookings', to: 'pages#all_bookings', as: :all_bookings
 end
 

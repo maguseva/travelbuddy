@@ -6,6 +6,10 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking)
   end
 
+  def hr_index
+    @bookings = policy_scope(Booking.all)
+  end
+
   def show
   end
 
@@ -24,7 +28,11 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to bookings_path
+    if current_user.admin
+      redirect_to all_bookings_path
+    else
+      redirect_to bookings_path
+    end
   end
 
   private
