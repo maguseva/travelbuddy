@@ -1,9 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class="column">
-      <%= link_to 'Company policy', edit_company_policy_path(current_user.company.company_policy)%>
-      <%= link_to 'Set up payment', "#" %>
-      <%= link_to 'HR dashboard', "#"%>
+
+<%if current_user.admin %>
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        <%= link_to 'Company policy', edit_company_policy_path(current_user.company.company_policy)%>
+        <%= link_to 'Set up payment', "#" %>
+        <%= link_to 'HR dashboard', "#"%>
+      </div>
     </div>
   </div>
-</div>
+<% else %>
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        <h1>You're not authorized to perform this action</h1>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -6,4 +6,8 @@ class PagesController < ApplicationController
   end
 
   def hr_home; end
+
+  def all_bookings
+    @bookings = Booking.all
+  end
 end

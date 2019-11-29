@@ -18,12 +18,12 @@ Company.destroy_all # if Rails.env.development?
 
 
 puts "Creating a company"
-Company.create!(name: "Test company")
+Company.create!(name: "LeWagon")
 
 
 puts "Creating users"
-User.create!(email: "user@example.com", password: "123456", first_name: "Test first name", last_name: "Test last name", company: Company.first)
-User.create!(email: "admin@example.com", password: "123456", first_name: "Test first name", last_name: "Test last name", admin: true, company: Company.first)
+User.create!(email: "user@example.com", password: "123456", first_name: "Moritz", last_name: "Gosmann", company: Company.first)
+User.create!(email: "admin@example.com", password: "123456", first_name: "HR", last_name: "person", admin: true, company: Company.first)
 
 puts "Creating a company policy"
 CompanyPolicy.create!(company: Company.first, max_price_train: 150, max_price_hotel: 130, max_price_car: 35)
