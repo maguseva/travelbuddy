@@ -37,12 +37,11 @@
     <%= render 'shared/train_card' %>
     <%= render 'shared/hotel_card' %>
     <%= render 'shared/car_card' %>
-
   </div>
   <div class="row">
     <div class="col-12 text-center">
       <%= simple_form_for [@package, @booking] do |f| %>
-      <%= f.submit "Book your trip", class: "btn-lg btn-danger" %>
+        <%= f.submit "Book your trip", class: "btn-lg btn-danger" %>
       <% end %>
     </div>
   </div>
