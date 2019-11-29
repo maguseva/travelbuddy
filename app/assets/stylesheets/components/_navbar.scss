@@ -11,12 +11,15 @@
       color: white;
       border-radius: 12px;
       background-color: $black_dark;
+      background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
       padding: 8px 16px;
       font-size: $font_small;
     }
     a.nav-link:hover {
-      background-color: $black_primary;
+      background-color: $grey_primary;
+
       color: white;
+      border: 1px solid $black_dark;
     }
   }
 }
