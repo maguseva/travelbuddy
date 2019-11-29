@@ -14,18 +14,21 @@ Car.destroy_all if Rails.env.development?
 Train.destroy_all if Rails.env.development?
 Package.destroy_all if Rails.env.development?
 
-puts "Creating a company"
-Company.create(name: "Test company")
 
-puts "Creating a company policy"
-CompanyPolicy.create(company: Company.first, max_price_train: 150, max_price_hotel: 130, max_price_car: 35)
+puts "Creating a company"
+Company.create!(name: "Test company")
+
 
 puts "Creating users"
-User.create(email: "user@example.com", password: "123456", first_name: "Test first name", last_name: "Test last name", company: Company.first)
-User.create(email: "admin@example.com", password: "123456", first_name: "Test first name", last_name: "Test last name", company: Company.first, admin: true)
+User.create!(email: "user@example.com", password: "123456", first_name: "Test first name", last_name: "Test last name", company: Company.first)
+User.create!(email: "admin@example.com", password: "123456", first_name: "Test first name", last_name: "Test last name", admin: true, company: Company.first)
+
+puts "Creating a company policy"
+CompanyPolicy.create!(company: Company.first, max_price_train: 150, max_price_hotel: 130, max_price_car: 35)
+
 
 puts "Creating hotels.."
-Hotel.create(
+Hotel.create!(
   name: 'Augusten Hotel München',
   price: 106,
   stars: 3,
@@ -48,7 +51,7 @@ We speak your language!",
   photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1574775896/augusten_cc9yxo.png'
   )
 
-Hotel.create(
+Hotel.create!(
   name: 'ibis Hotel München City',
   price: 134,
   stars: 2,
@@ -67,7 +70,7 @@ This is our guests' favourite part of Munich, according to independent reviews. 
   photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1574775896/ibis_lpeubh.png'
   )
 
-Hotel.create(
+Hotel.create!(
   name: 'Hotel Mirabell',
   price: 126,
   stars: 3,
@@ -84,7 +87,7 @@ The main train station is only 400 m from the Mirabell. From here, trams, S-Bahn
   photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1574775896/mirabell_gmtlfb.png'
   )
 
-Hotel.create(
+Hotel.create!(
   name: 'Holiday Inn Munich City Centre',
   price: 210,
   stars: 5,
@@ -100,7 +103,7 @@ The Munich Holiday Inn’s reception is open 24 hours a day. Free WiFi is availa
   photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1574775896/holidayinn_dpnmnl.png'
   )
 
-Hotel.create(
+Hotel.create!(
   name: 'Sheraton München Arabellapark Hotel',
   price: 130,
   stars: 4,
@@ -117,7 +120,7 @@ International food is served in the SixtySix Grill and Dine and Audrey’s Food 
 
 # -----------------------------------------------------------------------------------------
 puts "Creating cars.."
-Car.create(
+Car.create!(
   company_name: 'Sixt',
   price: 32,
   name: 'VW Golf',
@@ -126,7 +129,7 @@ Car.create(
   photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1574776631/sixt_fx4gg9.png'
   )
 
-Car.create(
+Car.create!(
   company_name: 'Sixt',
   price: 81,
   name: 'Mercedes-Benz A-Class',
@@ -135,7 +138,7 @@ Car.create(
   photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1574777588/mercedes_dn05zj.png'
   )
 
-Car.create(
+Car.create!(
   company_name: 'Sixt',
   price: 29,
   name: 'Fiat 500',
@@ -144,7 +147,7 @@ Car.create(
   photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1574777827/fiat_qcjhw5.png'
   )
 
-Car.create(
+Car.create!(
   company_name: 'Rentalcars.com',
   price: 35,
   name: 'BMW 1 Series',
@@ -153,7 +156,7 @@ Car.create(
   photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1574778063/bmw_lugyem.png'
   )
 
-Car.create(
+Car.create!(
   company_name:'Rentalcars.com',
   price: 45,
   name: 'Ford Eco Sport',
@@ -164,7 +167,7 @@ Car.create(
 
 # -----------------------------------------------------------------------------------------
 puts "Creating trains.."
-Train.create(
+Train.create!(
   carrier_name: 'DB',
   price: 99,
   train_number: 'ICE501',
@@ -177,7 +180,7 @@ Train.create(
   )
 
 
-Train.create(
+Train.create!(
   carrier_name: 'DB',
   price: 101,
   train_number: 'ICE701',
@@ -189,7 +192,7 @@ Train.create(
   arr_time: '12:42'
   )
 
-Train.create(
+Train.create!(
   carrier_name: 'DB',
   price: 104,
   train_number: 'ICE701',
@@ -213,7 +216,7 @@ Train.create!(
   arr_time: '20:01'
   )
 
-Train.create(
+Train.create!(
   carrier_name: 'DB',
   price: 123,
   train_number: 'ICE1605',
@@ -225,7 +228,7 @@ Train.create(
   arr_time: '23:02'
   )
 
-Train.create(
+Train.create!(
   carrier_name: 'DB',
   price: 153,
   train_number: 'ICE1008',
@@ -237,7 +240,7 @@ Train.create(
   arr_time: '10:24'
   )
 
-Train.create(
+Train.create!(
   carrier_name: 'DB',
   price: 155,
   train_number: 'ICE 602',
@@ -249,7 +252,7 @@ Train.create(
   arr_time: '11:29'
   )
 
-Train.create(
+Train.create!(
   carrier_name: 'DB',
   price: 89,
   train_number: 'ICE 706',
@@ -261,7 +264,7 @@ Train.create(
   arr_time: '18:33'
   )
 
-Train.create(
+Train.create!(
   carrier_name: 'DB',
   price: 95,
   train_number: 'ICE 1002',
@@ -273,7 +276,7 @@ Train.create(
   arr_time: '20:26'
   )
 
-Train.create(
+Train.create!(
   carrier_name: 'DB',
   price: 67,
   train_number: 'ICE 1700',
@@ -290,13 +293,13 @@ puts "Creating packages!"
 date_start = Date.today
 days_amount = 7
 (date_start..date_start + days_amount).each_with_index { |start_date, index|
-  (index + 1..days_amount).each { |end_date_index|
+  (1..days_amount-index).each { |end_date_index|
     3.times do
       tf = Train.where(dep_city: 'Berlin Hbf').where('price <= ?', User.first.company.company_policy.max_price_train).sample
       tt = Train.where(arr_city: 'Berlin Hbf').where('price <= ?', User.first.company.company_policy.max_price_train).sample
       h = Hotel.where('price <= ?', User.first.company.company_policy.max_price_hotel).sample
       c = Car.where('price <= ?', User.first.company.company_policy.max_price_car).sample
-      Package.create(
+      Package.create!(
         start_date: start_date,
         end_date: start_date + end_date_index,
         hotel: h,
