@@ -68,4 +68,23 @@
       display: flex;
       grid-gap: 36px;
       position: relative;
+
+}
+
+    #total-package-price {
+      color: white;
+      font-style: bold;
+      font-size: 16px;
+    }
+
+
+.cards-row {
+  display: flex;
+  width: 85vw;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.billboard-card {
+  width: 30%;
 }
