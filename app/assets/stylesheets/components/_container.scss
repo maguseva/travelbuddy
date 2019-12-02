@@ -3,6 +3,10 @@
   height: 420px;
 }
 
+.mapboxgl-ctrl-attrib, .mapboxgl-ctrl {
+  display: none !important;
+}
+
 
 #wrapper2-style {
   background-color:transparent;

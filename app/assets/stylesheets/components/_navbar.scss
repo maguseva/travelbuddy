@@ -26,6 +26,14 @@
   }
 }
 
+.navbar-lewagon-white {
+  background: white;
+
+  .nav-item {
+    color: black;
+  }
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }

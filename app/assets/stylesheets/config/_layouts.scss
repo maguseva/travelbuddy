@@ -3,3 +3,19 @@
 .page-top-space {
   padding-top: 180px;
 }
+
+.page-content {
+  position: relative;
+  margin-top: -60px;
+}
+
+.hr-content {
+  padding-top: 120px;
+  background-color: white;
+  min-height: 100vh;
+
+  .container {
+    background: $gradient-small;
+    padding: 30px;
+  }
+}
