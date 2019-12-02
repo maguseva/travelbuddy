@@ -30,7 +30,24 @@
   background: white;
 
   .nav-item {
-    color: black;
+    color: $black_dark;
+    a.nav-link {
+      color: white;
+      border-radius: 12px;
+      background-color: $black_dark;
+      padding: 8px 16px;
+      font-size: $font_small;
+      font-family: $displaylight;
+      background: $gradient-small;
+      border: 1px solid $black_dark;
+
+      &:hover {
+        background: white;
+        color: $black_dark;
+        border: 1px solid $black_dark;
+        opacity: 1;
+      }
+    }
   }
 }
 
