@@ -1,91 +1,56 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1554222413-74348b32d66e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9);">
-  <div class="container">
-    <h1>Your booking has been  <strong>confirmed</strong></h1>
-    <p>Have a nice trip from Berlin to Munich.</p>
+<div class="container-fluid">
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1519227372434-34232246bdad?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9);">
+  <div class="booking-headline container text-align-center">
+    <h1 style="text-align:center"><strong>✓ Booking confirmed</strong></h1>
+
   </div>
 </div>
 
-<div class="container page-top-space">
-  <div class="billboard">
-    <div class="billboard-details">
-      <div class="billboard-details-city">
-        <span><%=@booking.package.train_from.dep_city%></span>
-        <i><%= @booking.package.start_date.strftime('%b %d, %Y') %></i>
+  <div class="container">
+    <div class="billboard">
+      <div class="billboard-details">
+        <div class="billboard-details-city">
+          <span><%= @booking.package.train_from.dep_city %></span>
+          <i><%= @booking.package.start_date.strftime('%b %d, %Y') %></i>
+        </div>
+        <div class="billboard-details-city">
+          <span><%= @booking.package.train_from.arr_city %></span>
+          <i><%= @booking.package.end_date.strftime('%b %d, %Y') %></i>
+        </div>
       </div>
-      <div class="billboard-details-city">
-        <span><%=@booking.package.train_from.arr_city%></span>
-        <i><%= @booking.package.end_date.strftime('%b %d, %Y') %></i>
+      <div class="billboard-vanities">
+        <div class="billboard-vanity">
+          <span> <%= (@booking.package.end_date - @booking.package.start_date).to_i %></span>
+          <i>Night(s)</i>
+        </div>
+        <div class="billboard-vanity">
+          <span> <%= @booking.package.hotel.stars %></span>
+          <i>Stars Hotel</i>
+        </div>
+         <div class="billboard-vanity">
+          <span>1</span>
+          <i>Rental Car</i>
+        </div>
       </div>
     </div>
 
-    <div class="billboard-vanities">
-      <div class="billboard-vanity">
-        <span>2</span>
-        <i>night</i>
-      </div>
-      <div class="billboard-vanity">
-        <span>1</span>
-        <i>rental car</i>
-      </div>
-      <div class="billboard-vanity">
-        <span>5</span>
-        <i>stars hostel</i>
-      </div>
-    </div>
   </div>
+</div>
 
-  <div class="row">
-    <div class="col-4">
-      <div class="card-train">
-        <%= image_tag @booking.package.train_from.photo %>
-        <div class="card-train-infos">
-          <h2><strong>Outward trip</strong></h2>
-            <p><%=@booking.package.train_from.dep_city%> <%= @booking.package.start_date.strftime('%b %d, %Y') %>, <%= @booking.package.train_from.dep_time %></p>
-            <p><%=@booking.package.train_from.arr_city%> <%= @booking.package.end_date.strftime('%b %d, %Y') %>, <%= @booking.package.train_from.arr_time %></p>
-          <br>
-          <h2><strong>Return trip</strong></h2>
-            <p><%=@booking.package.train_to.dep_city%> <%= @booking.package.start_date.strftime('%b %d, %Y') %>, <%= @booking.package.train_to.dep_time %> </p>
-            <p><%=@booking.package.train_to.arr_city%> <%= @booking.package.end_date.strftime('%b %d, %Y') %>, <%= @booking.package.train_to.arr_time %></p>
-          <h2 class="train-price"><%=@booking.package.train_from.price + @booking.package.train_to.price%>€</h2>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card-hotel">
-         <%= image_tag @booking.package.hotel.photo %>
-         <div class="card-hotel-infos">
-          <h2>
-            <%= @booking.package.hotel.name%> <%@booking.package.hotel.stars.times do %>
-              ⭐️
-            <% end %>
-          </h2>
-          <p>From: <%=@booking.package.start_date.strftime('%b %d, %Y') %> To:  <%=@booking.package.end_date.strftime('%b %d, %Y') %></p>
-          <p><%=@booking.package.hotel.address %></p>
-          <br>
-          <br>
-          <h2 class="hotel-price"><%=@booking.package.hotel.price%>€</h2>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card-car">
-        <%= image_tag @booking.package.car.photo %>
-        <div class="card-car-infos">
-          <h2 style="margin-bottom: 23px"><%= @booking.package.car.name%></h2>
-            <p><%=@booking.package.car.car_category%></p>
-            <p><%=@booking.package.car.company_name%></p>
-            <p><%=@booking.package.start_date.strftime('%b %d, %Y')%> <%=@booking.package.end_date.strftime('%b %d, %Y') %></p>
-            <p><%=@booking.package.car.address %></p>
-          <br>
-          <h2 class="car-price"><%=@booking.package.car.price%>€</h2>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="cards-row">
+  <%= render 'shared/booking_train_card' %>
+  <%= render 'shared/booking_hotel_card' %>
+  <%= render 'shared/booking_car_card' %>
+</div>
+
+<br>
+
+<div class="container">
   <div class="row">
     <div class="col-12 text-center">
-      <%= link_to 'View your bookings', bookings_path, class: "btn btn-danger" %>
-      <%= link_to 'Cancel this booking', booking_path(@booking), method: :delete, data: { confirm: "Are you sure you want to cancel your booking for #{@booking.package.start_date.strftime('%b %d, %Y')} - #{@booking.package.end_date.strftime('%b %d, %Y')}?" }, class: "btn btn-danger" %>
+      <%= link_to 'View your bookings', bookings_path, class: "btn btn-custom" %>
+      <%= link_to 'Cancel this booking', booking_path(@booking), method: :delete, data: { confirm: "Are you sure you want to cancel your booking for #{@booking.package.start_date.strftime('%b %d, %Y')} - #{@booking.package.end_date.strftime('%b %d, %Y')}?" }, class: "btn btn-custom" %>
     </div>
   </div>
 </div>

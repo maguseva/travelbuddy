@@ -47,7 +47,7 @@
   <div class="row">
     <div class="col-12 text-center">
       <%= simple_form_for [@package, @booking] do |f| %>
-        <%= f.submit "Book your trip (#{@package.price} €)",
+        <%= f.submit "Book your trip  |  #{@package.price} €",
             class: "btn-custom"
           %>
       <% end %>

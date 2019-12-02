@@ -1,0 +1,41 @@
+<div class="billboard-card">
+  <div class="card card-2">
+    <div class="card-content">
+      <div class="schedules">
+        <ul>
+          <li class="tab active">Inward</li>
+          <li class="tab">Outward</li>
+        </ul>
+        <div class="schedule">
+          <span>
+            <abbr><%= @booking.package.train_from.dep_city %> – <%=@booking.package.train_from.arr_city%></abbr>
+            <small>
+              <i><%= @booking.package.train_from.category %></i>
+              <p><%= @booking.package.start_date.strftime('%b %d, %Y') %>, <%= @booking.package.train_from.dep_time %> – <%= @booking.package.train_from.arr_time %></p>
+            </small>
+          </span>
+        </div>
+        <div class="schedule hidden">
+          <span>
+            <abbr><%= @booking.package.train_to.dep_city %> – <%=@booking.package.train_to.arr_city%></abbr>
+            <small>
+              <i><%= @booking.package.train_from.category %></i>
+              <p><%= @booking.package.start_date.strftime('%b %d, %Y') %>, <%= @booking.package.train_to.dep_time %> – <%= @booking.package.train_to.arr_time %></p>
+            </small>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="card-provider">
+      <img src="" alt="logo">
+      <small>
+        Deutsche Bahn
+        <br>
+        <%= @booking.package.train_from.train_number %>
+      </small>
+    </div>
+    <div class="card-price">
+      <p><%= @booking.package.train_from.price + @booking.package.train_to.price %>€ per Trip</p>
+    </div>
+  </div>
+</div>
