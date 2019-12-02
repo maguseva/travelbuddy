@@ -17,13 +17,13 @@
       <div class="card-provider">
         <img src="" alt="logo">
         <small>
-          <%= @package.car.address.split(",")[0] %>
+          <%= @package.hotel.address.split(",")[0] %>
           <br>
-          <%= @package.car.address.split(",")[1] %>
+          <%= @package.hotel.address.split(",")[1] %>
         </small>
       </div>
       <div class="card-price">
-        <p><%=@package.hotel.price*(@package.end_date - @package.start_date).to_i%>€</p>
+        <p><%=@package.hotel.price*(@package.end_date - @package.start_date).to_i%>€ per Night</p>
       </div>
     </div>
 </div>

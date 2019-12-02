@@ -45,9 +45,10 @@
   <div class="row">
     <div class="col-12 text-center">
       <%= simple_form_for [@package, @booking] do |f| %>
-        <%= f.submit "Book your trip", class: "btn-lg btn-danger" %>
+        <%= f.submit "Book your trip (#{@package.price} €)",
+            class: "btn-lg btn-danger"
+          %>
       <% end %>
-      <p id="total-package-price">Total Price <%= (@package.train_from.price + @package.train_to.price + @package.hotel.price*(@package.end_date - @package.start_date).to_i + @package.car.price) %> €</p>
     </div>
   </div>
 </div>

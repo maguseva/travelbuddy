@@ -6,6 +6,7 @@
         <span>
           <abbr><%= @package.car.name %></abbr>
             <small>
+              <i><%= @package.car.car_category %></i>
               <p><%= @package.start_date.strftime('%b %d, %Y') %> – <%= @package.end_date.strftime('%b %d, %Y') %></p>
             </small>
           </span>
@@ -20,7 +21,7 @@
         </small>
       </div>
       <div class="card-price">
-        <p><%=@package.car.price*(@package.end_date - @package.start_date).to_i%>€</p>
+        <p><%=@package.car.price*(@package.end_date - @package.start_date).to_i%>€ per Day</p>
       </div>
     </div>
 </div>

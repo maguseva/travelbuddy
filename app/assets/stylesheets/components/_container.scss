@@ -1,6 +1,14 @@
 #map {
   width: 100%;
   height: 420px;
+
+  .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
+    display: none;
+  }
+
+  a.mapboxgl-ctrl-logo {
+    display: none;
+  }
 }
 
 
