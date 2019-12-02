@@ -1,11 +1,25 @@
 
 <%if current_user.admin %>
   <div class="container page-top-space">
+    <div class="row hr-header">
+      <div class="column">
+        <h1><%= current_user.company.name %></h1>
+        <p class="no-margin-bottom">From <strong><%= Date.new(2019,12,01).strftime('%b %d') %></strong> to <strong><%= Date.today.strftime('%b %d, %Y') %></strong></p>
+      </div>
+      <div class="column content-down">
+        <%= link_to 'Dashboard', hr_home_path %>
+        <%= link_to 'Company policy', edit_company_policy_path(current_user.company.company_policy) %>
+        <%= link_to 'Corporate payment', "#" %>
+      </div>
+      <div class="column content-down total-price">
+        <p class="content-down no-margin-bottom" id="total-price">€ <%= number_with_delimiter(Company.first.spend_total, :delimiter => ' ') %><i class="fas fa-sort-up"></i></p>
+        <small class="no-margin-bottom">Total costs in selected month</small>
+      </div>
+    </div>
     <div class="row">
       <div class="column">
-        <%= link_to 'Company policy', edit_company_policy_path(current_user.company.company_policy), class: "card-train"%>
-        <%= link_to 'Set up payment', "#", class: "card-train" %>
-        <p> Total spend: <%= Company.first.spend_total %> €</p>
+        <br><br>
+        <h2>Costs per category</h2>
         <p> Trains: <%= Company.first.spend_on_trains %> €</p>
         <p> Hotels: <%= Company.first.spend_on_hotels %> €</p>
         <p> Cars: <%= Company.first.spend_on_cars %> €</p>
@@ -16,7 +30,7 @@
   <div class="container page-top-space">
     <div class="row">
       <div class="column">
-        <h1>You're not authorized to perform this action</h1>
+        <h1 class="text-center">You're not authorized to perform this action</h1>
       </div>
     </div>
   </div>
