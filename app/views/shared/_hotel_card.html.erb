@@ -1,20 +1,29 @@
-
-  <div class="col-4">
-      <div class="card-hotel">
-         <%= image_tag @package.hotel.photo %>
-         <div class="card-hotel-infos">
-          <h2>
-            <%= @package.hotel.name%> <%@package.hotel.stars.times do %>
+<div class="billboard-card">
+  <div class="card card-2">
+    <div class="card-content">
+      <div class="misc">
+        <%= image_tag @package.hotel.photo %>
+        <span>
+          <abbr><%= @package.hotel.name %></abbr>
+          <small>
+            <i><% @package.hotel.stars.times do %>
               ⭐️
-            <% end %>
-          </h2>
-          <p>From: <%=@package.start_date.strftime('%b %d, %Y') %> To:  <%=@package.end_date.strftime('%b %d, %Y') %></p>
-          <p><%=@package.hotel.address %></p>
-          <br>
-          <br>
-          <br>
-          <h2 class="hotel-price"><%=@package.hotel.price%>€</h2>
+              <% end %></i>
+              <p><%= @package.start_date.strftime('%b %d, %Y') %> – <%= @package.end_date.strftime('%b %d, %Y') %></p>
+            </small>
+          </span>
         </div>
       </div>
+      <div class="card-provider">
+        <img src="" alt="logo">
+        <small>
+          <%= @package.hotel.address.split(",")[0] %>
+          <br>
+          <%= @package.hotel.address.split(",")[1] %>
+        </small>
+      </div>
+      <div class="card-price">
+        <p><%=@package.hotel.price*(@package.end_date - @package.start_date).to_i%>€ per Night</p>
+      </div>
     </div>
-
+</div>

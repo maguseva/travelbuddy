@@ -1,9 +1,10 @@
-<div class="container">
+<div class="container-fluid">
   <div class="container-fluid">
     <div class="row">
       <%= render 'shared/map'%>
     </div>
   </div>
+  <br>
 
   <div class="container">
     <div class="billboard">
@@ -20,30 +21,35 @@
 
       <div class="billboard-vanities">
         <div class="billboard-vanity">
-          <span>2</span>
-          <i>night</i>
+          <span> <%= (@package.end_date - @package.start_date).to_i %></span>
+          <i>Night(s)</i>
         </div>
         <div class="billboard-vanity">
+          <span> <%= @package.hotel.stars %></span>
+          <i>Stars Hotel</i>
+        </div>
+         <div class="billboard-vanity">
           <span>1</span>
-          <i>rental car</i>
-        </div>
-        <div class="billboard-vanity">
-          <span>5</span>
-          <i>stars hostel</i>
+          <i>Rental Car</i>
         </div>
       </div>
     </div>
 
   </div>
-  <div class="row">
-    <%= render 'shared/train_card' %>
-    <%= render 'shared/hotel_card' %>
-    <%= render 'shared/car_card' %>
-  </div>
+</div>
+<div class="cards-row">
+  <%= render 'shared/train_card' %>
+  <%= render 'shared/hotel_card' %>
+  <%= render 'shared/car_card' %>
+</div>
+<br>
+<div class="container">
   <div class="row">
     <div class="col-12 text-center">
       <%= simple_form_for [@package, @booking] do |f| %>
-        <%= f.submit "Book your trip", class: "btn-lg btn-danger" %>
+        <%= f.submit "Book your trip (#{@package.price} €)",
+            class: "btn-lg btn-danger"
+          %>
       <% end %>
     </div>
   </div>
