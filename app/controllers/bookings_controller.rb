@@ -10,8 +10,7 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking.all)
   end
 
-  def show
-  end
+  def show; end
 
   def create
     @booking = Booking.new(booking_params)
@@ -33,6 +32,22 @@ class BookingsController < ApplicationController
     else
       redirect_to bookings_path
     end
+  end
+
+  def spend_on_hotels
+    Booking.find_each.inject(0) { |sum, b| sum + b.package.hotel_price }
+  end
+
+  def spend_on_cars
+    Booking.find_each.inject(0) { |sum, b| sum + b.package.car_price }
+  end
+
+  def spend_on_trains
+    Booking.find_each.inject(0) { |sum, b| sum + b.package.train_price }
+  end
+
+  def spend_total
+    Booking.find_each.inject(0) { |sum, b| sum + b.package.price }
   end
 
   private
