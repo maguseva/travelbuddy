@@ -6,6 +6,9 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
 
+import { initAutocomplete } from '../plugins/init_autocomplete'
+initAutocomplete();
+
 // TABS
 const tabs = document.querySelectorAll('.tab');
 const tabsContent = document.querySelectorAll('.schedule');
@@ -16,3 +19,4 @@ tabs.forEach(tab => tab.addEventListener("click", (event) => {
     tabsContent.forEach( tc => tc.classList.toggle('hidden'));
   }
 }));
+

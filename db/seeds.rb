@@ -308,8 +308,8 @@ days_amount = 7
         car: c,
         train_from: tf,
         train_to: tt,
-        dep_city: 'Berlin',
-        arr_city: 'Munich',
+        dep_city: 'Berlin, Germany',
+        arr_city: 'Munich, Bayern, Germany',
         price: tf.price + tt.price + h.price * end_date_index + c.price * end_date_index)
     end
   }
