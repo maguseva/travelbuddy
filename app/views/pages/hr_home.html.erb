@@ -5,12 +5,15 @@
       <div class="column">
         <%= link_to 'Company policy', edit_company_policy_path(current_user.company.company_policy), class: "card-train"%>
         <%= link_to 'Set up payment', "#", class: "card-train" %>
-        <%= link_to 'HR dashboard', "#", class: "card-train" %>
+        <p> Total spend: <%= Company.first.spend_total %> €</p>
+        <p> Trains: <%= Company.first.spend_on_trains %> €</p>
+        <p> Hotels: <%= Company.first.spend_on_hotels %> €</p>
+        <p> Cars: <%= Company.first.spend_on_cars %> €</p>
       </div>
     </div>
   </div>
 <% else %>
-  <div class="container">
+  <div class="container page-top-space">
     <div class="row">
       <div class="column">
         <h1>You're not authorized to perform this action</h1>
