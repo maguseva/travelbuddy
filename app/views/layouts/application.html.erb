@@ -13,7 +13,7 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class="<%= action_name == 'hr_home' ? 'hr-content' : 'page-content'%>">
+    <div class="<%= request.path_info.include?('hr_home') ? 'hr-content' : 'page-content'%>">
       <%= yield %>
     </div>
     <%= javascript_include_tag 'application' %>

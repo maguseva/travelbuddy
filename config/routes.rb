@@ -9,8 +9,13 @@ Rails.application.routes.draw do
   resources :packages, only: [:index, :show] do
     resources :bookings, only: [:create]
   end
+
   resources :bookings, only: [:index, :show, :destroy]
-  resources :company_policies, only: [:edit, :update]
+
+  scope :hr_home do
+    resources :company_policies, only: [:edit, :update]
+  end
+
   get 'all_bookings', to: 'pages#all_bookings', as: :all_bookings
 end
 

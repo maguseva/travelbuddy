@@ -10,9 +10,11 @@
 }
 
 .hr-content {
-  padding-top: 120px;
+  padding-top: 60px;
   background-color: white;
   min-height: 100vh;
+  color: white; // TODO remove
+  font-weight: lighter;
 
   .container {
     background: $gradient-small;

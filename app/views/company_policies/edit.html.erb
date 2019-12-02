@@ -1,8 +1,8 @@
 <div class="container page-top-space">
+  <%= render 'shared/hr_header' %>
+  <%= render 'shared/hr_navigation' %>
   <div class="row">
-    <div class="col-8 offset-2">
-      <h2>Company policy for <strong><%= @company_policy.company.name %></strong></h2>
-
+    <div class="column">
       <%= simple_form_for(@company_policy) do |f| %>
         <strong><p>Train policy (ticket to one direction)</p></strong>
         <div class="form-inputs">

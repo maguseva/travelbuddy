@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= 'navbar-lewagon-white' if action_name == 'hr_home' %>">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= 'navbar-lewagon-white' if request.path_info.include?('hr_home') %>">
   <div class="container">
 
     <%= link_to home_path, class: "navbar-brand" do %>
