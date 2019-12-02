@@ -85,7 +85,7 @@ The Mirabell's 24-hour bar serves coffee, tea, non-alcoholic and alcoholic drink
 Guests can make free use of the internet corner in the lobby.
 
 The main train station is only 400 m from the Mirabell. From here, trams, S-Bahn (city rail) and underground trains can be caught. There is a direct link to München Franz Joseph Strauß Airport which takes 40 minutes. Private parking is available on-site for a fee. ",
-  address: 'Landwehrstr. 42, Eingang Goethestr., Ludwigsvorstadt, 80336 Munich, Germany',
+  address: 'Landwehrstr. 42, 80336 Munich, Germany',
   photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1574775896/mirabell_gmtlfb.png'
   )
 

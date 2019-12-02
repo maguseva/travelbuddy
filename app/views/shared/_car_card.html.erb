@@ -1,14 +1,27 @@
-    <div class="col-4">
-      <div class="card-car">
+<div class="billboard-card">
+  <div class="card card-2">
+    <div class="card-content">
+      <div class="misc">
         <%= image_tag @package.car.photo %>
-        <div class="card-car-infos">
-          <h2 style="margin-bottom: 23px"><%= @package.car.name%></h2>
-            <p><%=@package.car.car_category%></p>
-            <p><%=@package.car.company_name%></p>
-            <p><%=@package.start_date.strftime('%b %d, %Y')%> <%=@package.end_date.strftime('%b %d, %Y') %></p>
-            <p><%=@package.car.address %></p>
-          <br>
-          <h2 class="car-price"><%=@package.car.price%>€</h2>
+        <span>
+          <abbr><%= @package.car.name %></abbr>
+            <small>
+              <i><%= @package.car.car_category %></i>
+              <p><%= @package.start_date.strftime('%b %d, %Y') %> – <%= @package.end_date.strftime('%b %d, %Y') %></p>
+            </small>
+          </span>
         </div>
       </div>
+      <div class="card-provider">
+        <img src="" alt="logo">
+        <small>
+          <%= @package.car.address.split(",")[0] %>
+          <br>
+          <%= @package.car.address.split(",")[1] %>
+        </small>
+      </div>
+      <div class="card-price">
+        <p><%=@package.car.price*(@package.end_date - @package.start_date).to_i%>€ per Day</p>
+      </div>
     </div>
+</div>
