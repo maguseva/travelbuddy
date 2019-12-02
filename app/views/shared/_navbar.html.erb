@@ -19,9 +19,6 @@
             <div class="nav-item">
               <%= current_user.first_name %> <%= current_user.last_name %> (<%= current_user.company.name %>)
             </div>
-          </div>
-
-          <div class="nav-flex">
             <div class="nav-item">
               <%= link_to "My Bookings", bookings_path, class: "nav-link" %>
             </div>

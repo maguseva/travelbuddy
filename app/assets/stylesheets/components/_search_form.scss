@@ -1,6 +1,7 @@
 .search-form {
   position: relative;
   background-color: $black_primary;
+  background: $gradient-small;
   border-radius: 12px;
   padding: 10px;
   text-align: center;
@@ -71,7 +72,8 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   color: white;
   width: 100%;
-  margin: 50px auto;
+  margin-top: -20px;
+  margin-bottom: 20px;
 
   form {
     margin: 0 auto;
@@ -79,7 +81,6 @@
 }
 
 .full-screen .btn {
-  top: 8px;
   bottom: 8px;
   right: 8px;
   border: 1px solid black;
@@ -88,7 +89,7 @@
   border-radius: 12px;
   background-color: $black_dark;
   background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
-  padding: 8px 16px;
+  margin: 8px 16px;
   font-size: $font_medium;
 }
 
@@ -108,10 +109,15 @@
   }
 }
 
-.full-screen .form-group-duo {
+.full-screen .form-group .form-group-duo {
+  display: flex;
+}
+
+.full-screen .form-group-all {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 15px;
+  margin: -20px 0;
 }
 
 .full-screen .labeled-input {
@@ -119,4 +125,5 @@
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+  margin: 10px;
 }

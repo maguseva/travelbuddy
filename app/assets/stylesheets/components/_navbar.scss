@@ -6,20 +6,22 @@
   top: 0;
   width: 100%;
   z-index: 10;
+  font-size: $font_small;
 
   .nav-item {
+    margin: 5px;
     a.nav-link {
       color: white;
       border-radius: 12px;
       background-color: $black_dark;
       padding: 8px 16px;
       font-size: $font_small;
+      font-family: $displaylight;
+      background: $gradient-small;
     }
     a.nav-link:hover {
-      background-color: $grey_primary;
-
-      color: white;
-      border: 1px solid $black_dark;
+      background-color: $black_primary;
+      color: grey;
     }
   }
 }
@@ -34,5 +36,5 @@
 
 .nav-flex {
   display: flex;
-  align-item: center;
+  align-items: center;
 }

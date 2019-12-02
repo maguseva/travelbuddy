@@ -1,13 +1,17 @@
 // _button.scss
 .btn-custom {
-  top: 8px;
-  bottom: 8px;
-  right: 8px;
-  border: 1px solid black;
-  text-align: center;
   color: white;
   border-radius: 12px;
   background-color: $black_dark;
   padding: 8px 16px;
   font-size: $font_medium;
+  font-family: $displaylight;
+  background: $gradient-small;
+  border: 1px solid $black_dark;
+  text-decoration: none;
+}
+
+.btn-custom:hover {
+  color: grey;
+  text-decoration: none;
 }
