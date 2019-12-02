@@ -1,30 +1,35 @@
-<div class="col-6 container">
+<div class="col-12 container">
   <div class="search-form <%= locals[:cl] %>">
     <%= form_tag packages_path, method: :get do %>
 
       <div class="form-inputs">
 
-        <div class="form-group form-group-duo">
-          <div class="labeled-input">
-            <label for="dep_city">From</label>
-          <div class="labeled-input">
-              <%= text_field_tag :dep_city, nil, as: :string, required: false, value: params[:dep_city], id: "search-input-from"  %>
+        <div class="form-group-all">
+          <div class="form-group form-group-duo">
+            <div class="labeled-input">
+              <label for="dep_city">From</label>
+                <%= text_field_tag :dep_city, nil, as: :string, required: false, class: "form-control", value: params[:dep_city], id: "search-input-from" %>
+            </div>
+            <div class="labeled-input">
+              <label for="dep_city">To</label>
+                <%= text_field_tag :arr_city, nil, as: :string, required: false, class: "form-control", value: params[:arr_city] %>
+            </div>
           </div>
-          <div class="labeled-input">
-            <label for="dep_city">To</label>
-              <%= text_field_tag :arr_city, nil, as: :string, required: false, value: params[:arr_city] %>
-          </div>
-        </div>
 
-        <div class="form-group">
-          <div class="labeled-input">
-            <label for="dep_city">Dates</label>
-              <%= text_field_tag :start_date, nil, as: :string, required: false, class: "datepicker", value: params[:start_date] %>
-              <%#= text_field_tag :end_date, nil, as: :string, required: false, class: "datepicker", id: "end-date" %>
+          <div class="form-group">
+            <div class="labeled-input">
+              <label for="dep_city">Start</label>
+                <%= text_field_tag :start_date, nil, as: :string, required: false, class: "datepicker", value: params[:start_date] %>
+              <br>
+            </div>
+            <div class="labeled-input">
+              <label for="dep_city">End</label>
+                <%= text_field_tag :end_date, nil, as: :string, required: false, class: "datepicker form-control", value: params[:end_date] %>
+            </div>
           </div>
+          </div>
+          <%= submit_tag "Search", class: "btn-custom" %>
         </div>
-        <%= submit_tag "Search", class: "btn" %>
-
       </div>
     <% end %>
   </div>
