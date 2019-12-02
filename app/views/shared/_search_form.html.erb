@@ -7,7 +7,8 @@
         <div class="form-group form-group-duo">
           <div class="labeled-input">
             <label for="dep_city">From</label>
-              <%= text_field_tag :dep_city, nil, as: :string, required: false, value: params[:dep_city] %>
+          <div class="labeled-input">
+              <%= text_field_tag :dep_city, nil, as: :string, required: false, value: params[:dep_city], id: "search-input-from"  %>
           </div>
           <div class="labeled-input">
             <label for="dep_city">To</label>

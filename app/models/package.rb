@@ -17,6 +17,18 @@ class Package < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_dep_city?
   after_create :set_arrival_coordinates
 
+  include AlgoliaSearch
+
+  algoliasearch  do
+    attribute :dep_city, :start_date
+
+    attribute :price do
+      price.to_i
+    end
+
+    # Use all default configuration
+  end
+
   private
 
   def set_arrival_coordinates
