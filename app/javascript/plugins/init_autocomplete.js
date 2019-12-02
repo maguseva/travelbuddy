@@ -1,7 +1,12 @@
+import places from 'places.js';
+
 const initAutocomplete = () => {
-  const addressInput = document.getElementById('search-input-from');
-  if (addressInput) {
-    places({ container: addressInput });
+  const addressInputs = document.querySelectorAll('.search-input');
+  if (addressInputs) {
+    addressInputs.forEach(input => {
+      places({ container: addressInputs[0] })
+      places({ container: addressInputs[1] });
+    })
   }
 };
 
