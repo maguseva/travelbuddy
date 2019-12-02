@@ -1,12 +1,11 @@
 import "bootstrap";
 import "../plugins/flatpickr";
-
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 import { initMapbox } from '../plugins/init_mapbox';
-
-initMapbox();
-
+import { priceRange } from "../plugins/custom_price";
 import { initAutocomplete } from '../plugins/init_autocomplete'
+initMapbox();
+priceRange();
 initAutocomplete();
 
 // TABS
@@ -19,4 +18,3 @@ tabs.forEach(tab => tab.addEventListener("click", (event) => {
     tabsContent.forEach( tc => tc.classList.toggle('hidden'));
   }
 }));
-
