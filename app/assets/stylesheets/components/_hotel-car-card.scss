@@ -1,10 +1,10 @@
 
 :root {
   /*COLORS*/
-  --black: #000;
+  --black: #000000;
   --light-black: #1E1D1E;
   --grey: #686868;
-  --dard-grey: #181818;
+  --dark-grey: #181818;
 
   /*FONTS*/
   --title-font: 'Libre Baskerville', serif;
@@ -12,7 +12,7 @@
 
   /*GRADIENTS*/
   --gradient: linear-gradient(to bottom, var(--black) 10%, var(--light-black));
-  --gradient-darker: linear-gradient(to bottom, var(--black) 15%, var(--dard-grey));
+  --gradient-darker: linear-gradient(to bottom, var(--black) 15%, var(--dark-grey));
   --gradient-reversed: linear-gradient(to top, var(--black) 10%, var(--light-black));
 
   /*BOX SHADOW*/
