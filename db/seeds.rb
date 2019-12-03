@@ -351,10 +351,6 @@ date_start = Date.new(2019, 12, 1)
 days_amount = 3
 (date_start..date_start + days_amount).each_with_index { |start_date, index|
   (1..days_amount-index).each do |end_date_index|
-    tf = Train.where(dep_city: 'Berlin Hbf').where('price <= ?', User.first.company.company_policy.max_price_train).sample
-    tt = Train.where(arr_city: 'Berlin Hbf').where('price <= ?', User.first.company.company_policy.max_price_train).sample
-    h = Hotel.where('price <= ?', User.first.company.company_policy.max_price_hotel).sample
-    c = Car.where('price <= ?', User.first.company.company_policy.max_price_car).sample
     Booking.create!(
       user: User.where(admin: false).sample,
       package: Package.all.sample,
