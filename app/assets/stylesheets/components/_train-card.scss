@@ -25,36 +25,39 @@ body {
   font-family: var(--body-font);
 }
 
-span {
-  display: flex;
-  flex-direction: column;
-  font-family: var(--title-font);
-  font-weight: 400;
+.misc {
+  span {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--title-font);
+    font-weight: 400;
 
-  small {
-    font-family: var(--body-font);
-    font-weight: 300;
-    font-size: 0.7rem;
+    small {
+      font-family: var(--body-font);
+      font-weight: 300;
+      font-size: 0.7rem;
 
-    i {
-      display: block;
-      margin-bottom: 6px;
-      font-style: normal;
-      font-size: 0.9rem;
+      i {
+        display: block;
+        margin-bottom: 6px;
+        font-style: normal;
+        font-size: 0.9rem;
+      }
     }
   }
+
 }
 
 .card-1 {
-    grid-row-start: 2;
-    grid-column-start: 2 * 2 - 1;
-    grid-column-end: span 2;
-    background: var(--gradient-darker);
-    box-shadow: var(--shadow);
-    border-radius: 20px;
-    z-index: 1;
-    border: 1px solid rgba(250, 250, 250, 0.250);
-  }
+  grid-row-start: 2;
+  grid-column-start: 2 * 2 - 1;
+  grid-column-end: span 2;
+  background: var(--gradient-darker);
+  box-shadow: var(--shadow);
+  border-radius: 20px;
+  z-index: 1;
+  border: 1px solid rgba(250, 250, 250, 0.250);
+}
 
 .card {
   display: flex;

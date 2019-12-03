@@ -12,8 +12,10 @@ const showSliderValue = () => {
 
 const priceRange = () => {
   const rangeSlider = document.getElementById("company_policy_max_price_train");
-  rangeSlider.addEventListener("input", showSliderValue, false);
-  showSliderValue();
+  if (rangeSlider) {
+    rangeSlider.addEventListener("input", showSliderValue, false);
+    showSliderValue();
+  }
 }
 
 export { priceRange };
