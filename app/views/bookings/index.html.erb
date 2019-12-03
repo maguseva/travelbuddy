@@ -40,7 +40,7 @@
               </div>
             </div>
             <div class="card-provider">
-              <img src="" alt="logo">
+              <%= image_tag booking.package.train_from.photo %>
               <small>
                 Deutsche Bahn
                 <br>
@@ -68,7 +68,7 @@
               </div>
             </div>
             <div class="card-provider">
-              <img src="" alt="logo">
+              <%= image_tag booking.package.hotel.logo %>
               <small>
                 <%= booking.package.hotel.address.split(",")[0] %>
                 <br>
@@ -83,7 +83,7 @@
           <div class="card card-2 index-item">
             <div class="card-content">
               <div class="misc">
-                <%= image_tag booking.package.car.photo %>
+                <%= image_tag booking.package.car.picture %>
                 <span>
                   <abbr><%= booking.package.car.name %></abbr>
                   <small>
@@ -94,7 +94,7 @@
               </div>
             </div>
             <div class="card-provider">
-              <img src="" alt="logo">
+              <%= image_tag booking.package.car.photo %>
               <small>
                 <%= booking.package.car.address.split(",")[0] %>
                 <br>

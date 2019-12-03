@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="card-provider">
-        <img src="" alt="logo">
+        <%= image_tag @booking.package.hotel.logo %>
         <small>
           <%= @booking.package.hotel.address.split(",")[0] %>
           <br>
@@ -23,7 +23,7 @@
         </small>
       </div>
       <div class="card-price">
-        <p><%=@booking.package.hotel.price*(@booking.package.end_date - @booking.package.start_date).to_i%>€ per Night</p>
+         <p><%=@booking.package.hotel.price %>€ per Night</p>
       </div>
     </div>
 </div>

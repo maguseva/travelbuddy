@@ -250,7 +250,7 @@ Hotel.create!(
   stars: 4,
   description: "This hotel offers modern accommodation with free WiFi near the English Garden in Schwabing, Munich's Bohemian district. It features an outdoor terrace, a peaceful beer garden and modern spa & sauna facilities.
   The bright, spacious rooms at the Pullman Munich include a TV and a seating area with a work desk. Most rooms have a private balcony or a loggia.",
-  address: 'Theodor-Dombart-Straße 4,80805 Munich',
+  address: 'Dombart-Straße 4,80805 Munich',
   photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405979/Hotels/Pullman1_ybqsio.jpg',
   photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405978/Hotels/Pullman2_zbclkf.jpg',
   photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405978/Hotels/Pullman3_jrui7y.jpg',

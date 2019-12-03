@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="card-provider">
-      <img src="" alt="logo">
+      <%= image_tag @booking.package.train_from.photo %>
       <small>
         Deutsche Bahn
         <br>
@@ -35,7 +35,7 @@
       </small>
     </div>
     <div class="card-price">
-      <p><%= @booking.package.train_from.price + @booking.package.train_to.price %>€ per Trip</p>
+      <p><%= @booking.package.train_price %>€ per Trip</p>
     </div>
   </div>
 </div>
