@@ -168,6 +168,159 @@ Hotel.create!(
   )
 
 
+Hotel.create!(
+  name: 'Courtyard by Marriott Munich',
+  price: 153,
+  stars: 4,
+  description: "Free WiFi in all rooms, a Mediterranean bistro and modern gym are offered by this hotel. It is just a 3-minute walk from Munich Central Station and a 10-minute walk from Munich’s old town.
+  The Courtyard by Marriott Munich City Center has air-conditioned rooms with refrigerators and windows that you can open. Children under 12 years stay free of charge.",
+  address: 'Berliner Str. 93,80805 Munich',
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405969/Hotels/Marriott1_xi0tw2.jpg',
+  photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405968/Hotels/Marriott2_hl2q34.jpg',
+  photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405971/Hotels/Marriott_3_vyeoj6.jpg',
+  photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405970/Hotels/Marriott_5_pa9aaz.jpg',
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405969/Hotels/Marriott_4_dv0e3z.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575406801/Hotels/MarriottLogo_ecsyum.jpg'
+  )
+
+
+Hotel.create!(
+  name: 'Roomers',
+  price: 189,
+  stars: 5,
+  description: "Set in Munich, a 16-minute walk from Oktoberfest - Theresienwiese, Roomers Munich, Autograph Collection boasts free WiFi. Featuring a 24-hour front desk, this property also provides guests with a terrace. Local points of interest like Karlsplatz (Stachus) and Sendlinger Tor are both reachable within 2.1 km.
+  All guest rooms at the hotel are fitted with air conditioning, a flat-screen TV, and a private bathroom equipped with a hairdryer. In addition, selected rooms come with a balcony, a seating area, a hot tub and/or a wardrobe.",
+  address: 'Landsberger Str. 68,80339 Munich',
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405967/Hotels/Roomers1_bq9ias.jpg',
+  photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405968/Hotels/Roomers2_f2seqx.jpg',
+  photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405966/Hotels/Roomers3_v2rezs.jpg',
+  photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405965/Hotels/Roomers4_n6qwaa.jpg',
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405966/Hotels/Roomers5_phzxp0.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575406801/Hotels/RoomersLogo_dhhihj.jpg'
+  )
+
+Hotel.create!(
+  name: 'Eurostars',
+  price: 123,
+  stars: 4,
+  description: "Offering a stylish spa with indoor pool, sauna and fitness studio. Soundproofed rooms with free Wi-Fi, and a restaurant serving Mediterranean cuisine, this 4-star design hotel is just 750 m from Munich Central Station.
+  All of the air-conditioned rooms and apartments at the Eurostars Grand Central feature a flat-screen TV, an elegant desk, and fine wooden floors.",
+  address: 'Arnulfstraße 35,80339 Munich',
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405975/Hotels/Eurostars1_xca2hi.jpg',
+  photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405974/Hotels/Eurostars2_iycmui.jpg',
+  photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405975/Hotels/Eurostars3_y8fsqb.jpg',
+  photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405981/Hotels/Eurostars4_mn28tl.jpg',
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405974/Hotels/Eurostars5_tavovc.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575406802/Hotels/EurostarsLogo_ilmg0k.jpg'
+  )
+
+Hotel.create!(
+  name: 'Sofitel',
+  price: 221,
+  stars: 5,
+  description: "Extensively renovated in 2017, this 5-star hotel is an historic building offering modern interior design and free Wi-Fi, just 100 m from Munich Main Station. Spa facilities at the Sofitel Munich include an indoor swimming pool, sauna and a modern 24-hour fitness studio.
+  Sofitel Munich Bayerpost features a Wilhelmine facade and is on the site of the former Royal Bavarian Post Office. All rooms are air-conditioned and include a European king-size bed, flat-screen TV and an exclusive Nespresso© coffee machine and Hermes© toiletries.",
+  address: 'Bayerstraße 12,80335 Munich',
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405965/Hotels/Sofitel1_hsmoeg.jpg',
+  photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405973/Hotels/Sofitel2_g6iwoc.jpg',
+  photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405965/Hotels/Sofitel3_jqfuvf.jpg',
+  photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405980/Hotels/Sofitel4_raj3wq.jpg',
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405981/Hotels/Sofitel5_wqhsy2.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575406801/Hotels/SofitelLogo_p9i3ym.png'
+  )
+
+Hotel.create!(
+  name: 'Novotel Munich City',
+  price: 118,
+  stars: 4,
+  description: "The 4-star Novotel München City hotel provides air-conditioned rooms with hot drinks facilities. Rooms are decorated in soft colours and feature large windows.
+  The Flave restaurant and bar serves local and international cuisine. Guests can also enjoy some drinks.",
+  address: 'Hochstraße 11,81669 Munich',
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405981/Hotels/Novotel1_lkmoid.jpg',
+  photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405980/Hotels/Novotel2_plen00.jpg',
+  photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405980/Hotels/Novotel3_nig7sv.jpg',
+  photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405980/Hotels/Novotel4_oxo79f.jpg',
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405979/Hotels/Novotel5_xo05jd.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575406802/Hotels/NovotelLogo_mo82bb.png'
+  )
+
+Hotel.create!(
+  name: 'Pullman Munich',
+  price: 125,
+  stars: 4,
+  description: "This hotel offers modern accommodation with free WiFi near the English Garden in Schwabing, Munich's Bohemian district. It features an outdoor terrace, a peaceful beer garden and modern spa & sauna facilities.
+  The bright, spacious rooms at the Pullman Munich include a TV and a seating area with a work desk. Most rooms have a private balcony or a loggia.",
+  address: 'Theodor-Dombart-Straße 4,80805 Munich',
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405979/Hotels/Pullman1_ybqsio.jpg',
+  photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405978/Hotels/Pullman2_zbclkf.jpg',
+  photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405978/Hotels/Pullman3_jrui7y.jpg',
+  photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405977/Hotels/Pullman4_vyqgif.jpg',
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405979/Hotels/Pullman5_db9pld.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575406801/Hotels/PullmannLogo_wi57f2.png'
+  )
+
+Hotel.create!(
+  name: 'Innside',
+  price: 114,
+  stars: 4,
+  description: "This 4-star hotel in Munich’s Parkstadt Schwabing business park is a 20-minute walk from the English Garden. It offers modern accommodation, underground parking and a fully equipped fitness room.
+  All of the designer rooms and studio apartments include air conditioning and a flat-screen TV with free Sky channels. They also include free drinks from the minibar, which can be refilled once a day upon request.",
+  address: 'Mies-van-der-Rohe-Str. 10,80807 Munich',
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405976/Hotels/Innside1_vcqm8g.jpg',
+  photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405976/Hotels/Innside2_myf72o.jpg',
+  photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405976/Hotels/Innside3_uq88k3.jpg',
+  photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405976/Hotels/Innside4_rskhsg.jpg',
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405975/Hotels/Innside5_bmcafd.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575406801/Hotels/InnsideLogo_uvdtch.jpg'
+  )
+
+Hotel.create!(
+  name: 'Le Meridien',
+  price: 293,
+  stars: 5,
+  description: "Featuring an attractive lobby and a spa area with one of the city's longest hotel pools, this hotel is located just 50 m from Munich Main Station in the heart of the city. It offers designer interiors, free WiFi for up to 3 devices and free admission to selected cultural sights.
+  Le Méridien Munich offers air-conditioned rooms with rich carpets and a 42-inch flat-screen TV. The marble bathrooms include a modern shower. Many of the quiet rooms face the leafy courtyard. Guests can enjoy luxurious complimentary toiletries.",
+  address: 'Bayerstraße 41,80335 Munich',
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405973/Hotels/LeMeridien1_hpatey.jpg',
+  photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405973/Hotels/LeMeridien2_e2tu8h.jpg',
+  photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405972/Hotels/LeMeridien3_ysdjm5.jpg',
+  photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405973/Hotels/LeMeridien4_ocioay.jpg',
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405971/Hotels/LeMeridien5_bw9gkh.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575406801/Hotels/LeMeridienLogo_cozmf7.png'
+  )
+
+
+Hotel.create!(
+  name: 'NH Hotel Munich',
+  price: 109,
+  stars: 4,
+  description: "This 4-star hotel enjoys a quiet location just 300 m from the A94 motorway, 5 km from Munich’s Neue Messe Exhibition Centre. It offers free Wi-Fi, a summer terrace and spa facilities.
+  The spacious rooms at the NH München Messe feature modern décor and include soundproofing, air conditioning and satellite TV.",
+  address: 'Eggenfelder Straße 100,81929 Munich',
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405971/Hotels/NH_Munich_Messe1_itjygn.jpg',
+  photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405973/Hotels/HotelNH2_ynai3o.jpg',
+  photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405970/Hotels/HotelNH3_vi8qr6.jpg',
+  photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405971/Hotels/HotelNH4_kdhcky.jpg',
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405968/Hotels/HotelNH5_yhs4zy.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575406801/Hotels/NHHotelLogo_yk53wm.jpg'
+  )
+
+Hotel.create!(
+  name: 'Senator Hotel Munich',
+  price: 96,
+  stars: 3,
+  description: "Offering elegant rooms, broadband internet access, and varied breakfast buffets, this hotel is just a 3-minute walk from the Oktoberfest site and a 10-minute walk from Munich Train Station.
+  The Hotel Senator München has bright, contemporary-style rooms with cable TV and a work desk. Some include a private balcony or terrace.",
+  address: 'Martin-Greif Straße 11,80336 Munich',
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405968/Hotels/HotelSenator1_pewms1.jpg',
+  photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405967/Hotels/HotelSenator2_mermtd.jpg',
+  photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405966/Hotels/HotelSenator3_nflobe.jpg',
+  photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405965/Hotels/HotelSenator4_aw1vlq.jpg',
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575405964/Hotels/HotelSenator5_o1j2sz.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575411193/Hotels/senatorLogo_xyk7e1.jpg'
+  )
+
+
 # -----------------------------------------------------------------------------------------
 puts "Creating cars.."
 Car.create!(
