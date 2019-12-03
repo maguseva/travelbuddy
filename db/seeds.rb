@@ -31,7 +31,7 @@ CompanyPolicy.create!(company: Company.first, max_price_train: 150, max_price_ho
 
 puts "Creating hotels.."
 Hotel.create!(
-  name: 'Augusten Hotel München',
+  name: 'Augusten Hotel Munich',
   price: 106,
   stars: 3,
   description: "Just 500 m from the main train station, this 3-star hotel in Munich offers stylish rooms with free Wi-Fi and a flat-screen TV. The Old Town district is only 750 m from Augusten Hotel München.
@@ -54,7 +54,8 @@ We speak your language!",
   photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372524/Hotels/Augusten_2_mcs0go.jpg',
   photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372524/Hotels/Augusten_4_p6mr4p.jpg',
   photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372524/Hotels/Augusten_3_wbbnof.jpg',
-  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372524/Hotels/Augusten_5_c3vzje.jpg'
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372524/Hotels/Augusten_5_c3vzje.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575387338/Hotels/AH_Logo_w3w2b8.png'
   )
 
 Hotel.create!(
@@ -77,7 +78,8 @@ This is our guests' favourite part of Munich, according to independent reviews. 
   photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372523/Hotels/Ibis_4_b0mfcu.jpg',
   photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372523/Hotels/Ibis_5_ucqnuk.jpg',
   photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372523/Hotels/Ibis_3_ujxwvf.jpg',
-  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372523/Hotels/Ibis_2_sace9v.jpg'
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372523/Hotels/Ibis_2_sace9v.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575385789/ibis_hotel_hoaubk.png'
   )
 
 Hotel.create!(
@@ -98,11 +100,12 @@ The main train station is only 400 m from the Mirabell. From here, trams, S-Bahn
   photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/Mirabel_3_qu8mjv.jpg',
   photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/Mirabel_1_ufhkmz.jpg',
   photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/Mirabel_4_sol7gf.jpg',
-  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/Mirabel_2_ihjxcd.jpg'
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/Mirabel_2_ihjxcd.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575385789/hotel-mirabell_gceool.png'
   )
 
 Hotel.create!(
-  name: 'Holiday Inn Munich City Centre',
+  name: 'Holiday Inn Munich City',
   price: 210,
   stars: 5,
 
@@ -118,12 +121,13 @@ The Munich Holiday Inn’s reception is open 24 hours a day. Free WiFi is availa
   photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/HolidayInn_3_bslx1o.jpg',
   photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/HolidayInn_4_szqtfp.jpg',
   photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1574775896/holidayinn_dpnmnl.png',
-  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/HolidayInn_2_xecdco.jpg'
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/HolidayInn_2_xecdco.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575385789/Holiday_Inn_Logo.svg_zy0c1h.png'
 
   )
 
 Hotel.create!(
-  name: 'Sheraton München Arabellapark Hotel',
+  name: 'Sheraton Munich',
   price: 130,
   stars: 4,
   description: "This hotel in Munich’s Bogenhausen district features 2 restaurants with a beer garden and bar, as well as a 22nd-floor spa with a pool, gym and sauna area. It is just 400 m from Arabellapark Underground Station and 10 minutes from central Munich.
@@ -138,8 +142,25 @@ International food is served in the SixtySix Grill and Dine and Audrey’s Food 
   photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373887/Hotels/Sheraton_4_rnklsp.jpg',
   photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373887/Hotels/Sheraton_5_oxrj6s.jpg',
   photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373887/Hotels/Sheraton_1_xlp2wq.jpg',
-  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373887/Hotels/Sheraton_2_tl5faj.jpg'
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373887/Hotels/Sheraton_2_tl5faj.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575385789/sheraton_lhi5iq.png'
   )
+
+Hotel.create!(
+  name: 'Hilton Munich City',
+  price: 159,
+  stars: 4,
+  description: "A free 24-hour gym and a restaurant are offered by this hotel. It is located directly above Rosenheimer Platz S-Bahn Station, which offers fast connections to the city centre, Munich Airport and Munich Central Station.
+  The air-conditioned rooms at the Hilton Munich City feature a flat-screen TV, a large desk, and tea/coffee facilities. Some rooms overlook the quiet courtyard. Free WiFi is available in public areas.",
+  address: 'Rosenheimer Str. 15,81667 Munich',
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575386248/Hilton3_j6hjnd.jpg',
+  photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575386248/Hilton4_msuw9q.jpg',
+  photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575386248/Hilton1_tcq49l.jpg',
+  photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575386248/Hilton2_wboyo3.jpg',
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575386248/Hilton5_qvqrpx.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575386114/Hilton_l4vxyn.png'
+  )
+
 
 # -----------------------------------------------------------------------------------------
 puts "Creating cars.."
@@ -330,7 +351,7 @@ days_amount = 7
         train_from: tf,
         train_to: tt,
         dep_city: 'Berlin, Germany',
-        arr_city: 'Munich, Bayern, Germany',
+        arr_city: 'Munich, Germany',
         overnights: end_date_index,
         car_price: c.price * end_date_index,
         hotel_price: h.price * end_date_index,
