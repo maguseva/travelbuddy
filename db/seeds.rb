@@ -26,7 +26,7 @@ User.create!(email: "user@example.com", password: "123456", first_name: "Moritz"
 User.create!(email: "admin@example.com", password: "123456", first_name: "HR", last_name: "person", admin: true, company: Company.first)
 
 puts "Creating a company policy"
-CompanyPolicy.create!(company: Company.first, max_price_train: 150, max_price_hotel: 130, max_price_car: 35)
+CompanyPolicy.create!(company: Company.first, max_price_train: 200, max_price_hotel: 200, max_price_car: 200)
 
 
 puts "Creating hotels.."
@@ -166,47 +166,52 @@ Hotel.create!(
 puts "Creating cars.."
 Car.create!(
   company_name:'Sixt',
-  price: 32,
-  name: 'VW Golf',
-  car_category: 'Premium Sedan',
+  price: 92,
+  name: 'BMW M140i',
+  car_category: 'Premium Limousine',
   address: 'Bayerstraße 10A,80335 Munich',
-  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/sixt-logo_eggczu.jpg'
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/sixt-logo_eggczu.jpg',
+  picture: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575391699/Cars/BMW_M140i_plnvmv.png'
   )
 
 Car.create!(
   company_name:'Sixt',
-  price: 81,
-  name: 'Mercedes-Benz A-Class',
-  car_category: 'Premium',
+  price: 96,
+  name: 'Mercedes-Benz CLA',
+  car_category: 'Premium Sport',
   address: 'Bayerstraße 10A,80335 Munich',
-  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/sixt-logo_eggczu.jpg'
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/sixt-logo_eggczu.jpg',
+  picture: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575391699/Cars/Mercedes-Benz_CLA_crea5i.png'
   )
 
 Car.create!(
   company_name: 'Sixt',
-  price: 29,
-  name: 'Fiat 500',
-  car_category: 'Small',
+  price: 84,
+  name: 'Audi A4 Avant Aut.',
+  car_category: 'Kombi',
   address: 'Bayerstraße 10A,80335 Munich',
-  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/sixt-logo_eggczu.jpg'
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/sixt-logo_eggczu.jpg',
+  picture: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575391699/Cars/audi-a4-kombi-brown-2016_gl2haj.png'
   )
 
 Car.create!(
   company_name: 'Europcar',
-  price: 35,
-  name: 'BMW 1 Series',
-  car_category: 'Premium Sedan',
+  price: 91,
+  name: 'BMW X5',
+  car_category: 'Premium SUV',
   address: 'Bahnhofplatz 2,80335 Munich',
-  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/europcar-logo_cclxsx.jpg'
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/europcar-logo_cclxsx.jpg',
+  picture:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575391699/Cars/Premium_SUV_kgbjkx.png'
   )
 
 Car.create!(
   company_name:'Europcar',
-  price: 45,
-  name: 'Ford Eco Sport',
-  car_category: 'Premium',
+  price: 89,
+  name: 'VW Passat Variant',
+  car_category: 'Kombi',
   address: 'Bahnhofplatz 2,80335 Munich',
-  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/europcar-logo_cclxsx.jpg'
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/europcar-logo_cclxsx.jpg',
+  picture:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575391699/Cars/vw-passat-kombi-blau-2015_ccrqjk.png'
   )
 
 # -----------------------------------------------------------------------------------------
@@ -351,7 +356,7 @@ days_amount = 7
         train_from: tf,
         train_to: tt,
         dep_city: 'Berlin, Germany',
-        arr_city: 'Munich, Germany',
+        arr_city: 'Munich, Bayern, Germany',
         overnights: end_date_index,
         car_price: c.price * end_date_index,
         hotel_price: h.price * end_date_index,
