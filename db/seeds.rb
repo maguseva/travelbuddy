@@ -25,6 +25,12 @@ puts "Creating users"
 User.create!(email: "user@example.com", password: "123456", first_name: "Moritz", last_name: "Gosmann", company: Company.first)
 User.create!(email: "admin@example.com", password: "123456", first_name: "HR", last_name: "person", admin: true, company: Company.first)
 
+User.create!(email: "user1@example.com", password: "123456", first_name: "Anna", last_name: "Meyer", company: Company.first)
+User.create!(email: "user2@example.com", password: "123456", first_name: "Emma", last_name: "Scott", company: Company.first)
+User.create!(email: "user3@example.com", password: "123456", first_name: "John", last_name: "Edwards", company: Company.first)
+User.create!(email: "user4@example.com", password: "123456", first_name: "Elizabeth", last_name: "May", company: Company.first)
+User.create!(email: "user5@example.com", password: "123456", first_name: "Mark", last_name: "Ricker", company: Company.first)
+
 puts "Creating a company policy"
 CompanyPolicy.create!(company: Company.first, max_price_train: 150, max_price_hotel: 130, max_price_car: 35)
 
@@ -340,5 +346,52 @@ days_amount = 7
   }
 }
 
+puts "Creating past bookings for stats!"
+date_start = Date.new(2019, 12, 1)
+days_amount = 3
+(date_start..date_start + days_amount).each_with_index { |start_date, index|
+  (1..days_amount-index).each do |end_date_index|
+    tf = Train.where(dep_city: 'Berlin Hbf').where('price <= ?', User.first.company.company_policy.max_price_train).sample
+    tt = Train.where(arr_city: 'Berlin Hbf').where('price <= ?', User.first.company.company_policy.max_price_train).sample
+    h = Hotel.where('price <= ?', User.first.company.company_policy.max_price_hotel).sample
+    c = Car.where('price <= ?', User.first.company.company_policy.max_price_car).sample
+    # p1 = Package.create!(
+    #   start_date: start_date,
+    #   end_date: start_date + end_date_index,
+    #   hotel: h,
+    #   car: c,
+    #   train_from: tf,
+    #   train_to: tt,
+    #   dep_city: 'Berlin, Germany',
+    #   arr_city: 'Munich, Bayern, Germany',
+    #   overnights: end_date_index,
+    #   car_price: c.price * end_date_index,
+    #   hotel_price: h.price * end_date_index,
+    #   train_price: tf.price + tt.price,
+    #   price: c.price * end_date_index + h.price * end_date_index + tf.price + tt.price)
+    # p2 = Package.create!(
+    #   start_date: start_date,
+    #   end_date: start_date + end_date_index,
+    #   hotel: h,
+    #   car: c,
+    #   train_from: tf,
+    #   train_to: tt,
+    #   dep_city: 'Berlin, Germany',
+    #   arr_city: 'Munich, Bayern, Germany',
+    #   overnights: end_date_index,
+    #   car_price: c.price * end_date_index,
+    #   hotel_price: h.price * end_date_index,
+    #   train_price: tf.price + tt.price,
+    #   price: c.price * end_date_index + h.price * end_date_index + tf.price + tt.price)
+    Booking.create!(
+      user: User.where(admin: false).sample,
+      package: Package.all.sample,
+      status: 'paid')
+    Booking.create!(
+      user: User.where(admin: false).sample,
+      package: Package.all.sample,
+      status: 'paid')
+  end
+}
 puts "Data seeded"
 
