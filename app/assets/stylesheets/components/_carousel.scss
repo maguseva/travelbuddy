@@ -1,6 +1,25 @@
-#myCarousel {
-  height: 450px;
-  width: 450px;
+#carouselExampleIndicators{
+  height: 500px;
+  width: 860px;
   display: flex;
-  margin: 30px auto;
+  margin: 70px auto;
+  border-radius: 5px;
+}
+
+.carousel-control-next   {
+  background-color: black;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  margin-top: 220px;
+  margin-right: 10px;
+}
+
+.carousel-control-prev {
+  background-color: black;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  margin-top: 220px;
+  margin-left: 10px;
 }
