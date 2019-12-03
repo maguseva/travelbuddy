@@ -5,7 +5,7 @@
   padding: 46px;
   margin: 0 auto -440px;
   width: 860px;
-  height: 460px;
+  height: 390px;
   top: -130px;
   background: $gradient-small;
   border: 1px solid rgba(255,255,255, 0.4);
@@ -76,13 +76,28 @@
       font-style: bold;
       font-size: 16px;
     }
+.new_booking {
+  position: relative;
 
+  &:after {
+    content: "";
+    position: absolute;
+    height: 80px;
+    width: 1px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.4);
+    z-index: 1;
+  }
+
+}
 
 .cards-row {
   display: flex;
   width: 85vw;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 50px auto 0;
 }
 
 .billboard-card {
