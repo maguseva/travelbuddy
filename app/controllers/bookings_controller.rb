@@ -10,8 +10,7 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking.all)
   end
 
-  def show
-  end
+  def show; end
 
   def create
     @booking = Booking.new(booking_params)

@@ -310,7 +310,11 @@ days_amount = 7
         train_to: tt,
         dep_city: 'Berlin, Germany',
         arr_city: 'Munich, Bayern, Germany',
-        price: tf.price + tt.price + h.price * end_date_index + c.price * end_date_index)
+        overnights: end_date_index,
+        car_price: c.price * end_date_index,
+        hotel_price: h.price * end_date_index,
+        train_price: tf.price + tt.price,
+        price: c.price * end_date_index + h.price * end_date_index + tf.price + tt.price)
     end
   }
 }
