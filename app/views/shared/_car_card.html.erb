@@ -2,7 +2,7 @@
   <div class="card card-2">
     <div class="card-content">
       <div class="misc">
-        <%= image_tag @package.car.photo %>
+         <%= image_tag @package.car.picture %>
         <span>
           <abbr><%= @package.car.name %></abbr>
             <small>
@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="card-provider">
-        <img src="" alt="logo">
+        <%= image_tag @package.car.photo %>
         <small>
           <%= @package.car.address.split(",")[0] %>
           <br>

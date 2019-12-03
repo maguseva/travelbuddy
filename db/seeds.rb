@@ -32,12 +32,12 @@ User.create!(email: "user4@example.com", password: "123456", first_name: "Elizab
 User.create!(email: "user5@example.com", password: "123456", first_name: "Mark", last_name: "Ricker", company: Company.first)
 
 puts "Creating a company policy"
-CompanyPolicy.create!(company: Company.first, max_price_train: 150, max_price_hotel: 130, max_price_car: 35)
+CompanyPolicy.create!(company: Company.first, max_price_train: 200, max_price_hotel: 200, max_price_car: 200)
 
 
 puts "Creating hotels.."
 Hotel.create!(
-  name: 'Augusten Hotel München',
+  name: 'Augusten Hotel Munich',
   price: 106,
   stars: 3,
   description: "Just 500 m from the main train station, this 3-star hotel in Munich offers stylish rooms with free Wi-Fi and a flat-screen TV. The Old Town district is only 750 m from Augusten Hotel München.
@@ -60,7 +60,8 @@ We speak your language!",
   photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372524/Hotels/Augusten_2_mcs0go.jpg',
   photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372524/Hotels/Augusten_4_p6mr4p.jpg',
   photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372524/Hotels/Augusten_3_wbbnof.jpg',
-  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372524/Hotels/Augusten_5_c3vzje.jpg'
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372524/Hotels/Augusten_5_c3vzje.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575387338/Hotels/AH_Logo_w3w2b8.png'
   )
 
 Hotel.create!(
@@ -83,7 +84,8 @@ This is our guests' favourite part of Munich, according to independent reviews. 
   photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372523/Hotels/Ibis_4_b0mfcu.jpg',
   photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372523/Hotels/Ibis_5_ucqnuk.jpg',
   photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372523/Hotels/Ibis_3_ujxwvf.jpg',
-  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372523/Hotels/Ibis_2_sace9v.jpg'
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575372523/Hotels/Ibis_2_sace9v.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575385789/ibis_hotel_hoaubk.png'
   )
 
 Hotel.create!(
@@ -104,11 +106,12 @@ The main train station is only 400 m from the Mirabell. From here, trams, S-Bahn
   photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/Mirabel_3_qu8mjv.jpg',
   photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/Mirabel_1_ufhkmz.jpg',
   photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/Mirabel_4_sol7gf.jpg',
-  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/Mirabel_2_ihjxcd.jpg'
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/Mirabel_2_ihjxcd.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575385789/hotel-mirabell_gceool.png'
   )
 
 Hotel.create!(
-  name: 'Holiday Inn Munich City Centre',
+  name: 'Holiday Inn Munich City',
   price: 210,
   stars: 5,
 
@@ -124,12 +127,13 @@ The Munich Holiday Inn’s reception is open 24 hours a day. Free WiFi is availa
   photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/HolidayInn_3_bslx1o.jpg',
   photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/HolidayInn_4_szqtfp.jpg',
   photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1574775896/holidayinn_dpnmnl.png',
-  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/HolidayInn_2_xecdco.jpg'
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373888/Hotels/HolidayInn_2_xecdco.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575385789/Holiday_Inn_Logo.svg_zy0c1h.png'
 
   )
 
 Hotel.create!(
-  name: 'Sheraton München Arabellapark Hotel',
+  name: 'Sheraton Munich',
   price: 130,
   stars: 4,
   description: "This hotel in Munich’s Bogenhausen district features 2 restaurants with a beer garden and bar, as well as a 22nd-floor spa with a pool, gym and sauna area. It is just 400 m from Arabellapark Underground Station and 10 minutes from central Munich.
@@ -144,54 +148,76 @@ International food is served in the SixtySix Grill and Dine and Audrey’s Food 
   photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373887/Hotels/Sheraton_4_rnklsp.jpg',
   photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373887/Hotels/Sheraton_5_oxrj6s.jpg',
   photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373887/Hotels/Sheraton_1_xlp2wq.jpg',
-  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373887/Hotels/Sheraton_2_tl5faj.jpg'
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575373887/Hotels/Sheraton_2_tl5faj.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575385789/sheraton_lhi5iq.png'
   )
+
+Hotel.create!(
+  name: 'Hilton Munich City',
+  price: 159,
+  stars: 4,
+  description: "A free 24-hour gym and a restaurant are offered by this hotel. It is located directly above Rosenheimer Platz S-Bahn Station, which offers fast connections to the city centre, Munich Airport and Munich Central Station.
+  The air-conditioned rooms at the Hilton Munich City feature a flat-screen TV, a large desk, and tea/coffee facilities. Some rooms overlook the quiet courtyard. Free WiFi is available in public areas.",
+  address: 'Rosenheimer Str. 15,81667 Munich',
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575386248/Hilton3_j6hjnd.jpg',
+  photo2:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575386248/Hilton4_msuw9q.jpg',
+  photo3:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575386248/Hilton1_tcq49l.jpg',
+  photo4:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575386248/Hilton2_wboyo3.jpg',
+  photo5:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575386248/Hilton5_qvqrpx.jpg',
+  logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575386114/Hilton_l4vxyn.png'
+  )
+
 
 # -----------------------------------------------------------------------------------------
 puts "Creating cars.."
 Car.create!(
   company_name:'Sixt',
-  price: 32,
-  name: 'VW Golf',
-  car_category: 'Premium Sedan',
+  price: 92,
+  name: 'BMW M140i',
+  car_category: 'Premium Limousine',
   address: 'Bayerstraße 10A,80335 Munich',
-  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/sixt-logo_eggczu.jpg'
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/sixt-logo_eggczu.jpg',
+  picture: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575391699/Cars/BMW_M140i_plnvmv.png'
   )
 
 Car.create!(
   company_name:'Sixt',
-  price: 81,
-  name: 'Mercedes-Benz A-Class',
-  car_category: 'Premium',
+  price: 96,
+  name: 'Mercedes-Benz CLA',
+  car_category: 'Premium Sport',
   address: 'Bayerstraße 10A,80335 Munich',
-  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/sixt-logo_eggczu.jpg'
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/sixt-logo_eggczu.jpg',
+  picture: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575391699/Cars/Mercedes-Benz_CLA_crea5i.png'
   )
 
 Car.create!(
   company_name: 'Sixt',
-  price: 29,
-  name: 'Fiat 500',
-  car_category: 'Small',
+  price: 84,
+  name: 'Audi A4 Avant Aut.',
+  car_category: 'Kombi',
   address: 'Bayerstraße 10A,80335 Munich',
-  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/sixt-logo_eggczu.jpg'
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/sixt-logo_eggczu.jpg',
+  picture: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575391699/Cars/audi-a4-kombi-brown-2016_gl2haj.png'
   )
 
 Car.create!(
   company_name: 'Europcar',
-  price: 35,
-  name: 'BMW 1 Series',
-  car_category: 'Premium Sedan',
+  price: 91,
+  name: 'BMW X5',
+  car_category: 'Premium SUV',
   address: 'Bahnhofplatz 2,80335 Munich',
-  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/europcar-logo_cclxsx.jpg'
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/europcar-logo_cclxsx.jpg',
+  picture:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575391699/Cars/Premium_SUV_kgbjkx.png'
   )
 
 Car.create!(
   company_name:'Europcar',
-  price: 45,
-  name: 'Ford Eco Sport',
-  car_category: 'Premium',
+  price: 89,
+  name: 'VW Passat Variant',
+  car_category: 'Kombi',
   address: 'Bahnhofplatz 2,80335 Munich',
-  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/europcar-logo_cclxsx.jpg'
+  photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/europcar-logo_cclxsx.jpg',
+  picture:'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575391699/Cars/vw-passat-kombi-blau-2015_ccrqjk.png'
   )
 
 # -----------------------------------------------------------------------------------------

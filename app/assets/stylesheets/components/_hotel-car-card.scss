@@ -73,7 +73,7 @@ body {
     display: flex;
     align-items: center;
     img {
-      object-fit: cover;
+      object-fit: contain;
       display: inline-block;
       margin-right: 8px;
       height: 36px;
@@ -106,7 +106,7 @@ body {
   display: flex;
 
   img {
-    object-fit: cover;
+    object-fit: contain;
     margin-right: 12px;
     width: 60px;
     height: 60px;
