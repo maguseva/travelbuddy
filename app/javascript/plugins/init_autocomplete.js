@@ -4,8 +4,8 @@ const initAutocomplete = () => {
   const addressInputs = document.querySelectorAll('.search-input');
   if (addressInputs) {
     addressInputs.forEach(input => {
-      places({ container: addressInputs[0] })
-      places({ container: addressInputs[1] });
+      places({ container: input })
+      // places({ container: addressInputs[1] });
     })
   }
 };
