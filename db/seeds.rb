@@ -25,6 +25,12 @@ puts "Creating users"
 User.create!(email: "user@example.com", password: "123456", first_name: "Moritz", last_name: "Gosmann", company: Company.first)
 User.create!(email: "admin@example.com", password: "123456", first_name: "HR", last_name: "person", admin: true, company: Company.first)
 
+User.create!(email: "user1@example.com", password: "123456", first_name: "Anna", last_name: "Meyer", company: Company.first)
+User.create!(email: "user2@example.com", password: "123456", first_name: "Emma", last_name: "Scott", company: Company.first)
+User.create!(email: "user3@example.com", password: "123456", first_name: "John", last_name: "Edwards", company: Company.first)
+User.create!(email: "user4@example.com", password: "123456", first_name: "Elizabeth", last_name: "May", company: Company.first)
+User.create!(email: "user5@example.com", password: "123456", first_name: "Mark", last_name: "Ricker", company: Company.first)
+
 puts "Creating a company policy"
 CompanyPolicy.create!(company: Company.first, max_price_train: 150, max_price_hotel: 130, max_price_car: 35)
 
@@ -340,5 +346,20 @@ days_amount = 7
   }
 }
 
+puts "Creating past bookings for stats!"
+date_start = Date.new(2019, 12, 1)
+days_amount = 3
+(date_start..date_start + days_amount).each_with_index { |start_date, index|
+  (1..days_amount-index).each do |end_date_index|
+    Booking.create!(
+      user: User.where(admin: false).sample,
+      package: Package.all.sample,
+      status: 'paid')
+    Booking.create!(
+      user: User.where(admin: false).sample,
+      package: Package.all.sample,
+      status: 'paid')
+  end
+}
 puts "Data seeded"
 

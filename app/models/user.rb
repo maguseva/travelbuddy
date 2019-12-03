@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :company
   has_many :bookings
+  has_many :packages, through: :bookings
 
   validates :first_name, presence: true
   validates :last_name, presence: true

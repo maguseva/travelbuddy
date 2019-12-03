@@ -1,0 +1,17 @@
+.hr-card {
+  min-width: 320px;
+
+  .misc span abbr {
+    width: calc(55%);
+  }
+
+  .misc p {
+    margin-bottom: 0;
+    font-size: 20px;
+  }
+
+  .misc small {
+    color: $grey_primary;
+  }
+}
+
