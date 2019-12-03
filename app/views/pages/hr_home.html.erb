@@ -2,14 +2,44 @@
   <div class="container page-top-space">
     <%= render 'shared/hr_header' %>
     <%= render 'shared/hr_navigation' %>
-    <div class="row">
-      <div class="column">
-        <br>
-        <h2>Costs per category</h2>
-        <p> Trains: <%= current_user.company.spend_on_trains %> €</p>
-        <p> Hotels: <%= current_user.company.spend_on_hotels %> €</p>
-        <p> Cars: <%= current_user.company.spend_on_cars %> €</p>
+    <h2>Costs per category</h2>
+    <div class="cards-row">
+      <div class="card card-2 hr-card">
+        <div class="card-content">
+          <div class="misc">
+            <span>
+              <abbr>Hotel</abbr>
+              <p><%= current_user.company.spend_on_hotels %> €</i></p>
+              <small>Total cost in selected month</small>
+            </span>
+          </div>
+        </div>
       </div>
+      <div class="card card-2 hr-card">
+        <div class="card-content">
+          <div class="misc">
+            <span>
+              <abbr>Train</abbr>
+              <p><%= current_user.company.spend_on_trains %> €</i></p>
+              <small>Total cost in selected month</small>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="card card-2 hr-card">
+        <div class="card-content">
+          <div class="misc">
+            <span>
+              <abbr>Car rental</abbr>
+              <p><%= current_user.company.spend_on_cars %> €</i></p>
+              <small>Total cost in selected month</small>
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- <p> Trains: <%= current_user.company.spend_on_trains %> €</p> -->
+      <!-- <p> Hotels: <%= current_user.company.spend_on_hotels %> €</p> -->
+      <!-- <p> Cars: <%= current_user.company.spend_on_cars %> €</p> -->
     </div>
   </div>
 <% else %>
