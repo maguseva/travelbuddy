@@ -19,4 +19,8 @@ class Company < ApplicationRecord
   def spend_total
     bookings.sum { |booking| booking.package.price }
   end
+
+  def top_users
+    bookings.includes(:package).group(:user).order('sum_packages_price DESC').limit(5).sum('packages.price')
+  end
 end

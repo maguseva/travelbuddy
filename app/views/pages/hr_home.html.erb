@@ -37,10 +37,12 @@
           </div>
         </div>
       </div>
-      <!-- <p> Trains: <%= current_user.company.spend_on_trains %> €</p> -->
-      <!-- <p> Hotels: <%= current_user.company.spend_on_hotels %> €</p> -->
-      <!-- <p> Cars: <%= current_user.company.spend_on_cars %> €</p> -->
     </div>
+  <br>
+  <h2>Employees travel costs</h2>
+  <% current_user.company.top_users.each do |user, total| %>
+    <p><%= user.first_name %> <%= user.last_name %>: <%= number_with_delimiter(total, :delimiter => ' ') %> €</p>
+  <% end %>
   </div>
 <% else %>
   <div class="container page-top-space">

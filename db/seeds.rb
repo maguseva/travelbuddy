@@ -355,34 +355,6 @@ days_amount = 3
     tt = Train.where(arr_city: 'Berlin Hbf').where('price <= ?', User.first.company.company_policy.max_price_train).sample
     h = Hotel.where('price <= ?', User.first.company.company_policy.max_price_hotel).sample
     c = Car.where('price <= ?', User.first.company.company_policy.max_price_car).sample
-    # p1 = Package.create!(
-    #   start_date: start_date,
-    #   end_date: start_date + end_date_index,
-    #   hotel: h,
-    #   car: c,
-    #   train_from: tf,
-    #   train_to: tt,
-    #   dep_city: 'Berlin, Germany',
-    #   arr_city: 'Munich, Bayern, Germany',
-    #   overnights: end_date_index,
-    #   car_price: c.price * end_date_index,
-    #   hotel_price: h.price * end_date_index,
-    #   train_price: tf.price + tt.price,
-    #   price: c.price * end_date_index + h.price * end_date_index + tf.price + tt.price)
-    # p2 = Package.create!(
-    #   start_date: start_date,
-    #   end_date: start_date + end_date_index,
-    #   hotel: h,
-    #   car: c,
-    #   train_from: tf,
-    #   train_to: tt,
-    #   dep_city: 'Berlin, Germany',
-    #   arr_city: 'Munich, Bayern, Germany',
-    #   overnights: end_date_index,
-    #   car_price: c.price * end_date_index,
-    #   hotel_price: h.price * end_date_index,
-    #   train_price: tf.price + tt.price,
-    #   price: c.price * end_date_index + h.price * end_date_index + tf.price + tt.price)
     Booking.create!(
       user: User.where(admin: false).sample,
       package: Package.all.sample,
