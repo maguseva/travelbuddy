@@ -1,0 +1,8 @@
+<div class="row hr-nav mt-4">
+  <div class="column content-down">
+    <%= link_to 'Dashboard', hr_home_path, class: "#{action_name == 'hr_home' ? 'active' : ''}" %>
+    <%= link_to 'Company policy', edit_company_policy_path(current_user.company.company_policy), class: "#{request.path_info.include?('company_policies') ? 'active' : ''}" %>
+    <%= link_to 'Corporate payment', "#" %>
+    <%= link_to 'All bookings', "#" %>
+  </div>
+</div>

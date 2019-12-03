@@ -1,19 +1,22 @@
-
 <%if current_user.admin %>
   <div class="container page-top-space">
+    <%= render 'shared/hr_header' %>
+    <%= render 'shared/hr_navigation' %>
     <div class="row">
       <div class="column">
-        <%= link_to 'Company policy', edit_company_policy_path(current_user.company.company_policy), class: "card-train"%>
-        <%= link_to 'Set up payment', "#", class: "card-train" %>
-        <%= link_to 'HR dashboard', "#", class: "card-train" %>
+        <br>
+        <h2>Costs per category</h2>
+        <p> Trains: <%= current_user.company.spend_on_trains %> €</p>
+        <p> Hotels: <%= current_user.company.spend_on_hotels %> €</p>
+        <p> Cars: <%= current_user.company.spend_on_cars %> €</p>
       </div>
     </div>
   </div>
 <% else %>
-  <div class="container">
+  <div class="container page-top-space">
     <div class="row">
       <div class="column">
-        <h1>You're not authorized to perform this action</h1>
+        <h1 class="text-center">You're not authorized to perform this action</h1>
       </div>
     </div>
   </div>

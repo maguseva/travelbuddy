@@ -4,29 +4,48 @@
   background: $gradient-small;
   border-radius: 12px;
   padding: 10px;
-  text-align: center;
+  // text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   color: white;
   width: 400px;
 
   form {
-    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 60px;
   }
 }
 
-.search-form .btn {
-  top: 8px;
-  bottom: 8px;
-  right: 8px;
+.search-label {
+  color: white;
+}
+
+.home-search .btn-custom {
+  position: absolute;
+  // bottom: 8px;
+  // right: 50px;
   border: 1px solid black;
-  text-align: center;
+  text-align: right;
   color: white;
   border-radius: 12px;
   background-color: $black_dark;
   background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
-  padding: 8px 16px;
+  margin: 8px 16px;
   font-size: $font_medium;
+  position: absolute;
+  top: 290px !important;
+  right: 19px !important;
 }
+
+// border-radius: 12px;
+//   background-color: $black_dark;
+//   background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
+//   padding: 8px 16px;
+//   font-size: $font_medium;
+
+
+
+
+
 
 .search-form .btn:hover {
   background-color: $black_primary;
@@ -34,19 +53,24 @@
 }
 
 .search-form .form-group {
-  // display: flex;
-  // justify-content: center;
-  margin: 10px;
-  padding: 5px;
+  margin: 20px;
+  padding: 0 5px;
 
   input {
     width: 100%;
+    margin-bottom: 10px;
   }
 }
 
-.form-group-duo {
+.search-form-class {
+  color: black;
+}
+
+.form-group-dates {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+  margin-top: 0;
 }
 
 .labeled-input {
@@ -56,6 +80,7 @@
   width: 100%;
   text-transform: capitalize;
 }
+
 .flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay  {
   background: $grey_primary !important;
   border-color: $grey-primary !important;
@@ -68,29 +93,28 @@
   background-color: $black_primary;
   border-radius: 12px;
   padding: 10px;
-  text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   color: white;
   width: 100%;
   margin-top: -20px;
   margin-bottom: 20px;
+  padding-right: 120px;
 
   form {
     margin: 0 auto;
   }
 }
 
-.full-screen .btn {
-  bottom: 8px;
-  right: 8px;
-  border: 1px solid black;
-  text-align: center;
+.full-screen .btn-custom {
   color: white;
   border-radius: 12px;
   background-color: $black_dark;
   background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
-  margin: 8px 16px;
+  padding: 8px 16px;
   font-size: $font_medium;
+  top: 46px;
+  right: 30px;
+  position: absolute;
 }
 
 .full-screen .btn:hover {
@@ -117,7 +141,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 15px;
-  margin: -20px 0;
+  margin-top: -20px;
+  margin-bottom: -10px;
 }
 
 .full-screen .labeled-input {

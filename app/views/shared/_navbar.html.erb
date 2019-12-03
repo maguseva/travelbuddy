@@ -1,7 +1,7 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= 'navbar-lewagon-white' if request.path_info.include?('hr_home') %>">
   <div class="container">
 
-    <%= link_to root_path, class: "navbar-brand" do %>
+    <%= link_to home_path, class: "navbar-brand" do %>
       <%= image_tag "https://image.flaticon.com/icons/svg/433/433334.svg" %>
       <% end %>
 
@@ -24,11 +24,11 @@
             </div>
             <% if current_user.admin %>
               <div class="nav-item">
+                <%= link_to "HR Dashboard", hr_home_path, class: "nav-link" %>
+              </div>
+              <!-- <div class="nav-item">
                 <%= link_to "All Bookings", all_bookings_path, class: "nav-link" %>
-              </div>
-              <div class="nav-item">
-                <%= link_to "Company policy", edit_company_policy_path(current_user.company.company_policy.id), class: "nav-link" %>
-              </div>
+              </div> -->
             <% end %>
             <div class="nav-item">
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>

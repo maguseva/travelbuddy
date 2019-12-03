@@ -1,20 +1,25 @@
 <div class="container page-top-space">
+  <%= render 'shared/hr_header' %>
+  <%= render 'shared/hr_navigation' %>
   <div class="row">
-    <div class="col-8 offset-2">
-      <h2>Company policy for <strong><%= @company_policy.company.name %></strong></h2>
-
+    <div class="column">
       <%= simple_form_for(@company_policy) do |f| %>
-        <strong><p>Train policy (ticket to one direction)</p></strong>
+        <strong><h4>Train policy (ticket to one direction)</h4></strong>
+        <p>Max price train</p>
         <div class="form-inputs">
-          <%= f.input :max_price_train%>
+          <span id="rs-bullet" class="rs-label">0</span>
+          <%= f.input :max_price_train, as: :range, value: @company_policy.max_price_train, label: false, input_html: { min: "0", max: "500" }, class:'rs-range' %>
+        </div>
+        <div class="box-minmax">
+          <span>0</span><span>500</span>
         </div>
 
-        <strong><p>Hotel policy (per night)</p></strong>
+        <strong><h4>Hotel policy (per night)</h4></strong>
         <div class="form-inputs">
           <%= f.input :max_price_hotel%>
         </div>
 
-        <strong><p>Car rental policy (per night)</p></strong>
+        <strong><h4>Car rental policy (per night)</h4></strong>
         <div class="form-inputs">
           <%= f.input :max_price_car%>
         </div>
