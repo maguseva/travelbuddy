@@ -1,7 +1,6 @@
 <!-- index.html.erb -->
 <div class="container page-top-space">
 </div>
-
   <% if @bookings.empty? %>
     <h1 class="text-center">You don't have any bookings yet</h1>
     <div class="btn-center">
@@ -10,104 +9,133 @@
   <% else %>
     <h1 class="text-center">Your bookings</h1>
 
-      <%@bookings.each do |booking| %>
-          <div class="cards-row index-border">
-            <div class="card card-2 index-item">
-              <div class="card-content">
-                <div class="schedules">
-                  <ul>
-                    <li class="tab active">Inward</li>
-                    <li class="tab">Outward</li>
-                  </ul>
-                  <div class="schedule">
-                    <span>
-                      <abbr><%= booking.package.train_from.dep_city %> – <%=booking.package.train_from.arr_city%></abbr>
-                      <small>
-                        <i><%= booking.package.train_from.category %></i>
-                        <p><%= booking.package.start_date.strftime('%b %d, %Y') %>, <%= booking.package.train_from.dep_time %> – <%= booking.package.train_from.arr_time %></p>
-                      </small>
-                    </span>
-                  </div>
-                  <div class="schedule hidden">
-                    <span>
-                      <abbr><%= booking.package.train_to.dep_city %> – <%=booking.package.train_to.arr_city%></abbr>
-                      <small>
-                        <i><%= booking.package.train_from.category %></i>
-                        <p><%= booking.package.start_date.strftime('%b %d, %Y') %>, <%= booking.package.train_to.dep_time %> – <%= booking.package.train_to.arr_time %></p>
-                      </small>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="card-provider">
-                <img src="" alt="logo">
-                <small>
-                  Deutsche Bahn
-                  <br>
-                  <%= booking.package.train_from.train_number %>
-                </small>
-              </div>
-              <div class="card-price">
-                <p><%= booking.package.train_price %>€ per Trip</p>
-              </div>
-            </div>
+    <%@bookings.each do |booking| %>
+        <div class="cards-row index-border">
 
-            <div class="card card-2 index-item">
-              <div class="card-content">
-                <div class="misc">
-                  <%= image_tag booking.package.hotel.photo %>
+          <div class="card card-2 index-item">
+            <div class="card-content">
+              <div class="schedules">
+                <ul>
+                  <li class="tab active">Inward</li>
+                  <li class="tab">Outward</li>
+                </ul>
+                <div class="schedule">
                   <span>
-                    <abbr><%= booking.package.hotel.name %></abbr>
+                    <abbr><%= booking.package.train_from.dep_city %> – <%=booking.package.train_from.arr_city%></abbr>
                     <small>
-                      <i><% booking.package.hotel.stars.times do %>
-                        ⭐️
-                        <% end %></i>
-                      <p><%= booking.package.start_date.strftime('%b %d, %Y') %> – <%= booking.package.end_date.strftime('%b %d, %Y') %></p>
+                      <i><%= booking.package.train_from.category %></i>
+                      <p><%= booking.package.start_date.strftime('%b %d, %Y') %>, <%= booking.package.train_from.dep_time %> – <%= booking.package.train_from.arr_time %></p>
+                    </small>
+                  </span>
+                </div>
+                <div class="schedule hidden">
+                  <span>
+                    <abbr><%= booking.package.train_to.dep_city %> – <%=booking.package.train_to.arr_city%></abbr>
+                    <small>
+                      <i><%= booking.package.train_from.category %></i>
+                      <p><%= booking.package.start_date.strftime('%b %d, %Y') %>, <%= booking.package.train_to.dep_time %> – <%= booking.package.train_to.arr_time %></p>
                     </small>
                   </span>
                 </div>
               </div>
-              <div class="card-provider">
-                <img src="" alt="logo">
-                <small>
-                  <%= booking.package.hotel.address.split(",")[0] %>
-                  <br>
-                  <%= booking.package.hotel.address.split(",")[1] %>
-                </small>
-              </div>
-              <div class="card-price">
-                <p><%=booking.package.hotel.price %>€ per Night</p>
-              </div>
             </div>
-
-            <div class="card card-2 index-item">
-              <div class="card-content">
-                <div class="misc">
-                  <%= image_tag booking.package.car.photo %>
-                  <span>
-                    <abbr><%= booking.package.car.name %></abbr>
-                    <small>
-                      <i><%= booking.package.car.car_category %></i>
-                      <p><%= booking.package.start_date.strftime('%b %d, %Y') %> – <%= booking.package.end_date.strftime('%b %d, %Y') %></p>
-                    </small>
-                  </span>
-                </div>
-              </div>
-              <div class="card-provider">
-                <img src="" alt="logo">
-                <small>
-                  <%= booking.package.car.address.split(",")[0] %>
-                  <br>
-                  <%= booking.package.car.address.split(",")[1] %>
-                </small>
-              </div>
-              <div class="card-price">
-                <p><%=booking.package.car.price %>€ per Day</p>
-              </div>
+            <div class="card-provider">
+              <img src="" alt="logo">
+              <small>
+                Deutsche Bahn
+                <br>
+                <%= booking.package.train_from.train_number %>
+              </small>
             </div>
-
-            <%= link_to 'Cancel this booking', booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel your booking for #{booking.package.start_date.strftime('%b %d, %Y')} - #{booking.package.end_date.strftime('%b %d, %Y')}?" }, class: "btn btn-custom btn-index" %>
+            <div class="card-price">
+              <p><%= booking.package.train_price %>€ per Trip</p>
+            </div>
           </div>
-      <% end %>
-    </div>
+
+          <div class="card card-2 index-item">
+            <div class="card-content">
+              <div class="misc">
+                <%= image_tag booking.package.hotel.photo %>
+                <span>
+                  <abbr><%= booking.package.hotel.name %></abbr>
+                  <small>
+                    <i><% booking.package.hotel.stars.times do %>
+                      ⭐️
+                      <% end %></i>
+                    <p><%= booking.package.start_date.strftime('%b %d, %Y') %> – <%= booking.package.end_date.strftime('%b %d, %Y') %></p>
+                  </small>
+                </span>
+              </div>
+            </div>
+            <div class="card-provider">
+              <img src="" alt="logo">
+              <small>
+                <%= booking.package.hotel.address.split(",")[0] %>
+                <br>
+                <%= booking.package.hotel.address.split(",")[1] %>
+              </small>
+            </div>
+            <div class="card-price">
+              <p><%=booking.package.hotel.price %>€ per Night</p>
+            </div>
+          </div>
+
+          <div class="card card-2 index-item">
+            <div class="card-content">
+              <div class="misc">
+                <%= image_tag booking.package.car.photo %>
+                <span>
+                  <abbr><%= booking.package.car.name %></abbr>
+                  <small>
+                    <i><%= booking.package.car.car_category %></i>
+                    <p><%= booking.package.start_date.strftime('%b %d, %Y') %> – <%= booking.package.end_date.strftime('%b %d, %Y') %></p>
+                  </small>
+                </span>
+              </div>
+            </div>
+            <div class="card-provider">
+              <img src="" alt="logo">
+              <small>
+                <%= booking.package.car.address.split(",")[0] %>
+                <br>
+                <%= booking.package.car.address.split(",")[1] %>
+              </small>
+            </div>
+            <div class="card-price">
+              <p><%=booking.package.car.price %>€ per Day</p>
+            </div>
+          </div>
+
+          <div class="index-item-buttons">
+            <%= link_to 'View your booking', booking_path(booking), class: "btn btn-custom btn-bookings" %>
+            <%= link_to 'Cancel your booking', booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel your booking for #{booking.package.start_date.strftime('%b %d, %Y')} - #{booking.package.end_date.strftime('%b %d, %Y')}?" }, class: "btn btn-custom btn-bookings" %>
+
+            <button type="button" class="btn btn-custom btn-bookings" data-toggle="modal" data-target="#exampleModalLong">
+              Get your tickets
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Your Tickets</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-center">
+                    <%= image_tag "DB_Ticket", alt: "Ticket", width:"70%" %>
+                    <button class="btn next-btn">►</button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-custom">Print</button>
+                    <button type="button" class="btn btn-custom" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+      </div>
+    <% end %>
   <% end %>
