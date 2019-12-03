@@ -20,7 +20,7 @@
             <abbr><%= @package.train_to.dep_city %> – <%=@package.train_to.arr_city%></abbr>
             <small>
               <i><%= @package.train_from.category %></i>
-              <p><%= @package.start_date.strftime('%b %d, %Y') %>, <%= @package.train_to.dep_time %> – <%= @package.train_to.arr_time %></p>
+              <p><%= @package.end_date.strftime('%b %d, %Y') %>, <%= @package.train_to.dep_time %> – <%= @package.train_to.arr_time %></p>
             </small>
           </span>
         </div>
