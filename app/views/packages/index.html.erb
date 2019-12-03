@@ -3,19 +3,18 @@
     <%= render 'shared/search_form', locals: { cl: @class } %>
   </div>
     <br>
+</div>
   <% if @packages.empty? %>
     <p class="text-center">Sorry, we couldn't find any packages for your search.</p>
 
   <% else %>
     <h1 class="text-center">The best packages</h1>
 
-    <div class="container">
-      <div id="packages">
-        <% @packages.each do |package| %>
+      <% @packages.each do |package| %>
+        <div id="packages">
+          <div class="cards-row index-border">
 
-          <div class="cards-row">
-
-            <div class="card card-2">
+            <div class="card card-2 index-item">
               <div class="card-content">
                 <div class="schedules">
                   <ul>
@@ -55,7 +54,7 @@
               </div>
             </div>
 
-            <div class="card card-2">
+            <div class="card card-2 index-item">
               <div class="card-content">
                 <div class="misc">
                   <%= image_tag package.hotel.photo %>
@@ -84,7 +83,7 @@
               </div>
             </div>
 
-            <div class="card card-2">
+            <div class="card card-2 index-item">
               <div class="card-content">
                 <div class="misc">
                   <%= image_tag package.car.photo %>
@@ -115,8 +114,7 @@
               <%= link_to 'Select', package_path(package), class: "btn-custom" %>
             </div>
           </div>
-        <% end %>
-      </div>
-    </div>
+        </div>
+    <% end %>
   <% end %>
-</div>
+
