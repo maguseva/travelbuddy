@@ -19,18 +19,12 @@
 
   .container {
     background: $gradient-small;
-    padding: 30px !important;
+    padding: 30px;
   }
 
   h2 {
   text-transform: uppercase;
   font-weight: normal;
   }
-}
-
-.container {
-  // min-width: 85vw;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
 }
 

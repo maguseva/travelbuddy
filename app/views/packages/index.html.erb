@@ -1,3 +1,4 @@
+<div class="container">
   <div class="search-index page-top-space">
     <%= render 'shared/search_form', locals: { cl: @class } %>
   </div>
@@ -7,7 +8,6 @@
     <p class="text-center">Sorry, we couldn't find any packages for your search.</p>
 
   <% else %>
-    <div class="container">
     <h1 class="header-left">The best packages</h1>
       <% @packages.each do |package| %>
         <div id="packages">
@@ -114,6 +114,6 @@
           </div>
         </div>
       <% end %>
-    </div>
   <% end %>
+    </div>
 
