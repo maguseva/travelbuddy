@@ -98,8 +98,8 @@
 
           <div class="index-item-buttons">
             <%#= link_to 'View your booking', booking_path(booking), class: "btn btn-custom btn-bookings" %>
-            <button type="button" class="btn btn-custom btn-bookings" data-toggle="modal" data-target="#exampleModalLong">
-              Get my tickets
+            <button type="button" class="btn btn-custom-green btn-bookings" data-toggle="modal" data-target="#exampleModalLong">
+              Tickets
             </button>
             <!-- Modal -->
             <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -123,7 +123,7 @@
               </div>
             </div>
 
-            <%= link_to 'Cancel my booking', booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel your booking for #{booking.package.start_date.strftime('%b %d, %Y')} - #{booking.package.end_date.strftime('%b %d, %Y')}?" }, class: "btn btn-custom btn-bookings" %>
+            <%= link_to 'Cancel', booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel your booking for #{booking.package.start_date.strftime('%b %d, %Y')} - #{booking.package.end_date.strftime('%b %d, %Y')}?" }, class: "btn btn-custom btn-bookings" %>
 
           </div>
       </div>
