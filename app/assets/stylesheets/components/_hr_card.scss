@@ -1,8 +1,35 @@
 .hr-card {
+  padding: 16px 20px;
   min-width: 320px;
 
+  .misc span {
+    width: 100%;
+
+    .card-hr-details {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 26px;
+
+      .card-hr-content {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
   .misc span abbr {
-    width: calc(55%);
+    width: 100%;
+
+    &:after {
+      top: 14px;
+      left: 70%;
+    }
+
+    small {
+      margin-left: 12px;
+      color: rgba(255,255,255,0.6);
+    }
   }
 
   .misc p {
