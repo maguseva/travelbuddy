@@ -3,6 +3,6 @@
     <%= link_to 'Dashboard', hr_home_path, class: "#{action_name == 'hr_home' ? 'active' : ''}" %>
     <%= link_to 'Company policy', edit_company_policy_path(current_user.company.company_policy), class: "#{request.path_info.include?('company_policies') ? 'active' : ''}" %>
     <%= link_to 'Corporate payment', "#" %>
-    <%= link_to 'All bookings', "#" %>
+    <%= link_to 'All bookings', all_bookings_path, class: "#{action_name == 'all_bookings' ? 'active' : ''}" %>
   </div>
 </div>
