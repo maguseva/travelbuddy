@@ -1,13 +1,12 @@
 <!-- index.html.erb -->
 <div class="container page-top-space">
-</div>
   <% if @bookings.empty? %>
-    <h1 class="text-center">You don't have any bookings yet</h1>
+    <h1 class="text-center">I don't have any bookings yet</h1>
     <div class="btn-center">
       <%= link_to 'Book your first trip now', packages_path, class: "btn btn-custom" %>
     </div>
   <% else %>
-    <h1 class="text-center">Your bookings</h1>
+    <h1 class="header-left">My bookings</h1>
 
     <%@bookings.each do |booking| %>
         <div class="cards-row index-border">
@@ -47,9 +46,6 @@
                 <%= booking.package.train_from.train_number %>
               </small>
             </div>
-            <div class="card-price">
-              <p><%= booking.package.train_price %>€ per Trip</p>
-            </div>
           </div>
 
           <div class="card card-2 index-item">
@@ -75,9 +71,6 @@
                 <%= booking.package.hotel.address.split(",")[1] %>
               </small>
             </div>
-            <div class="card-price">
-              <p><%=booking.package.hotel.price %>€ per Night</p>
-            </div>
           </div>
 
           <div class="card card-2 index-item">
@@ -101,24 +94,19 @@
                 <%= booking.package.car.address.split(",")[1] %>
               </small>
             </div>
-            <div class="card-price">
-              <p><%=booking.package.car.price %>€ per Day</p>
-            </div>
           </div>
 
           <div class="index-item-buttons">
-            <%= link_to 'View your booking', booking_path(booking), class: "btn btn-custom btn-bookings" %>
-            <%= link_to 'Cancel your booking', booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel your booking for #{booking.package.start_date.strftime('%b %d, %Y')} - #{booking.package.end_date.strftime('%b %d, %Y')}?" }, class: "btn btn-custom btn-bookings" %>
-
+            <%#= link_to 'View your booking', booking_path(booking), class: "btn btn-custom btn-bookings" %>
             <button type="button" class="btn btn-custom btn-bookings" data-toggle="modal" data-target="#exampleModalLong">
-              Get your tickets
+              Get my tickets
             </button>
             <!-- Modal -->
             <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Your Tickets</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">My Tickets</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -135,7 +123,11 @@
               </div>
             </div>
 
+            <%= link_to 'Cancel my booking', booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel your booking for #{booking.package.start_date.strftime('%b %d, %Y')} - #{booking.package.end_date.strftime('%b %d, %Y')}?" }, class: "btn btn-custom btn-bookings" %>
+
           </div>
       </div>
     <% end %>
   <% end %>
+
+</div>

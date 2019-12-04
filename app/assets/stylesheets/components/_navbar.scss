@@ -6,7 +6,7 @@
   top: 0;
   width: 100%;
   z-index: 10;
-  font-size: $font_small;
+  font-size: $font_medium;
 
   .nav-item {
     margin: 5px;
@@ -15,7 +15,7 @@
       border-radius: 12px;
       background-color: $black_dark;
       padding: 8px 16px;
-      font-size: $font_small;
+      font-size: $font_medium;
       font-family: $displaylight;
       background: $gradient-small;
     }
@@ -36,7 +36,7 @@
       border-radius: 12px;
       background-color: $black_dark;
       padding: 8px 16px;
-      font-size: $font_small;
+      font-size: $font_medium;
       font-family: $displaylight;
       background: $gradient-small;
       border: 1px solid $black_dark;
