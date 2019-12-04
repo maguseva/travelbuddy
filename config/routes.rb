@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  # root to: 'packages#index'
+
   get 'home', to: 'pages#home', as: :home
   get 'hr_home', to: 'pages#hr_home', as: :hr_home
   root to: 'passthrough#index'
@@ -14,8 +14,7 @@ Rails.application.routes.draw do
 
   scope :hr_home do
     resources :company_policies, only: [:edit, :update]
+    get 'all_bookings', to: 'pages#all_bookings', as: :all_bookings
   end
-
-  get 'all_bookings', to: 'pages#all_bookings', as: :all_bookings
 end
 

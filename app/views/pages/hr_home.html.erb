@@ -2,48 +2,88 @@
   <div class="container page-top-space">
     <%= render 'shared/hr_header' %>
     <%= render 'shared/hr_navigation' %>
-    <h2>Costs per category</h2>
-    <div class="cards-row">
-      <div class="card card-2 hr-card">
-        <div class="card-content">
-          <div class="misc">
-            <span>
-              <abbr>Hotel</abbr>
-              <p><%= current_user.company.spend_on_hotels %> €</i></p>
-              <small>Total cost in selected month</small>
-            </span>
+
+    <div class="row cost-category">
+      <h2>Costs per category</h2>
+      <div class="cards-row">
+        <div class="card card-2 hr-card">
+          <div class="card-content">
+            <div class="misc">
+              <span>
+                <abbr>Hotel <small>Average - <%= current_user.company.spend_on_hotels / User.count %>  € / employee</small></abbr>
+
+                <div class="card-hr-details">
+                  <div class="card-hr-content">
+                    <p><%= number_with_delimiter(current_user.company.spend_on_hotels, :delimiter => ' ') %> €</i></p>
+                    <small>Total cost in selected month</small>
+                  </div>
+
+                  <div class="card-provider">
+                    <%= image_tag Hotel.fifth.logo %>
+                    <%= image_tag Hotel.second.logo %>
+                    <%= image_tag Hotel.third.logo %>
+                  </div>
+                </div>
+              </span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="card card-2 hr-card">
-        <div class="card-content">
-          <div class="misc">
-            <span>
-              <abbr>Train</abbr>
-              <p><%= current_user.company.spend_on_trains %> €</i></p>
-              <small>Total cost in selected month</small>
-            </span>
+        <div class="card card-2 hr-card">
+          <div class="card-content">
+            <div class="misc">
+              <span>
+                <abbr>Train <small>Average - <%= current_user.company.spend_on_trains / User.count %>  € / employee</small></abbr>
+
+                <div class="card-hr-details">
+                  <div class="card-hr-content">
+                    <p><%= number_with_delimiter(current_user.company.spend_on_trains, :delimiter => ' ') %> €</i></p>
+                    <small>Total cost in selected month</small>
+                  </div>
+                   <div class="card-provider">
+                    <%= image_tag Train.first.photo %>
+                  </div>
+                </div>
+              </span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="card card-2 hr-card">
-        <div class="card-content">
-          <div class="misc">
-            <span>
-              <abbr>Car rental</abbr>
-              <p><%= current_user.company.spend_on_cars %> €</i></p>
-              <small>Total cost in selected month</small>
-            </span>
+        <div class="card card-2 hr-card">
+          <div class="card-content">
+            <div class="misc">
+              <span>
+                <abbr>Car rental <small>Average - <%= current_user.company.spend_on_cars / User.count %>  € / employee</small></abbr>
+
+                <div class="card-hr-details">
+                  <div class="card-hr-content">
+                    <p><%= number_with_delimiter(current_user.company.spend_on_cars, :delimiter => ' ') %> €</i></p>
+                    <small>Total cost in selected month</small>
+                  </div>
+                  <div class="card-provider">
+                    <%= image_tag Car.first.photo %>
+                  </div>
+                </div>
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  <br>
-  <h2>Employees travel costs</h2>
-  <% current_user.company.top_users.each do |user, total| %>
-    <p><%= user.first_name %> <%= user.last_name %>: <%= number_with_delimiter(total, :delimiter => ' ') %> €</p>
-  <% end %>
-  </div>
+
+    <div class="row employees-cost">
+      <h2>Employees travel costs</h2>
+      <div class="progress-items">
+        <% max_costs = current_user.company.top_users.first[1] %>
+        <% current_user.company.top_users.each do |user, total| %>
+          <div class="progress-item">
+            <p><%= user.first_name %> <%= user.last_name %> <small><%= number_with_delimiter(total, :delimiter => ' ') %> €</small></p>
+            <div class="progress">
+              <% num = (100 * total) / max_costs %>
+              <div class="progress-bar" role="progressbar" style="width: <%=num %>%"></div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
 <% else %>
   <div class="container page-top-space">
     <div class="row">

@@ -4,7 +4,7 @@
     <p class="no-margin-bottom">From <strong><%= Date.new(2019,12,01).strftime('%b %d') %></strong> to <strong><%= Date.today.strftime('%b %d, %Y') %></strong></p>
   </div>
   <div class="column content-down total-price">
-    <p class="content-down no-margin-bottom" id="total-price">€ <%= number_with_delimiter(Company.first.spend_total, :delimiter => ' ') %><i class="fas fa-sort-up"></i></p>
+    <div id="total-price">€ <%= number_with_delimiter(Company.first.spend_total, :delimiter => ' ') %><i class="fas fa-sort-up"></i></div>
     <small class="no-margin-bottom">Total costs in selected month</small>
   </div>
 </div>

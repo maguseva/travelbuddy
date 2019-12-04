@@ -1,6 +1,9 @@
 <!-- index.html.erb -->
 <%if current_user.admin %>
   <div class="container page-top-space">
+    <%= render 'shared/hr_header' %>
+    <%= render 'shared/hr_navigation' %>
+
     <div class="row">
       <div class="col-12">
         <% if @bookings.empty? %>
@@ -9,7 +12,7 @@
             <%= link_to 'Book your first trip now', packages_path, class: "btn btn-custom" %>
           </div>
         <% else %>
-          <h1>Bookings for <%= current_user.company.name %></h1>
+          <h2>Bookings for <%= current_user.company.name %></h2>
           <ul style="list-style-type: none;">
           <div class="container">
             <div class="row">
