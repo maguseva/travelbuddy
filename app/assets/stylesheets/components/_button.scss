@@ -18,3 +18,18 @@
   color: grey;
   text-decoration: none;
 }
+
+.btn-custom-green {
+  color: white;
+  border-radius: 12px;
+  background-color: $green_primary;
+  top: 9px;
+  position: relative;
+  padding: 12px 36px;
+  font-size: $font_medium;
+  font-family: $displaylight;
+  background: $gradient-small;
+  border: 1px solid $black_dark;
+  text-decoration: none;
+  z-index: 2;
+}
