@@ -16,20 +16,23 @@
         <% if user_signed_in? %>
 
           <div class="nav-flex">
-            <div class="nav-item">
-              <%= current_user.first_name %> <%= current_user.last_name %> (<%= current_user.company.name %>)
-            </div>
-            <div class="nav-item">
-              <%= link_to "My Bookings", bookings_path, class: "nav-link" %>
-            </div>
+
             <% if current_user.admin %>
               <div class="nav-item">
-                <%= link_to "HR Dashboard", hr_home_path, class: "nav-link" %>
+                <%= link_to "Le Wagon", hr_home_path, class: "nav-link" %>
               </div>
             <% end %>
             <div class="nav-item">
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+              <%= link_to "My Bookings", bookings_path, class: "nav-link" %>
             </div>
+
+            <li class="nav-item dropdown">
+              <%= image_tag "ROG.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-right" id="navbar-dropdown" aria-labelledby="navbarDropdown">
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-item" %>
+              </div>
+            </li>
+
           </div>
 
         <% else %>
