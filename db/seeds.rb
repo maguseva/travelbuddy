@@ -18,7 +18,7 @@ Company.destroy_all # if Rails.env.development?
 
 
 puts "Creating a company"
-Company.create!(name: "LeWagon")
+Company.create!(name: "Le Wagon")
 
 
 puts "Creating users"
