@@ -1,6 +1,6 @@
 // _index-billboard.scss
 .index-border {
-  border: 1px solid $black_dark;
+  border-bottom: 1px solid &black_dark;
   background-color: $black_primary;
   padding: 30px;
   // width: 100%;
@@ -33,3 +33,4 @@
   height: 200px;
   display: inline-block;
 }
+

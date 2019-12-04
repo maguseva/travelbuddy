@@ -7,6 +7,8 @@
 .page-content {
   position: relative;
   margin-top: -60px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .hr-content {
@@ -16,7 +18,7 @@
 
   .container {
     background: $gradient-small;
-    padding: 30px;
+    padding: 30px !important;
   }
 
   h2 {
@@ -24,3 +26,10 @@
   font-weight: normal;
   }
 }
+
+.container {
+  // min-width: 85vw;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
