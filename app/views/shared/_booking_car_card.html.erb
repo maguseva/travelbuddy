@@ -2,7 +2,7 @@
   <div class="card card-2">
     <div class="card-content">
       <div class="misc">
-        <%= image_tag @booking.package.car.photo %>
+        <%= image_tag @booking.package.car.picture %>
         <span>
           <abbr><%= @booking.package.car.name %></abbr>
             <small>
@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="card-provider">
-        <img src="" alt="logo">
+        <%= image_tag @booking.package.car.photo %>
         <small>
           <%= @booking.package.car.address.split(",")[0] %>
           <br>
@@ -21,7 +21,7 @@
         </small>
       </div>
       <div class="card-price">
-        <p><%=@booking.package.car.price*(@booking.package.end_date - @booking.package.start_date).to_i%>€ per Day</p>
+       <p><%=@booking.package.car.price %>€ per Day</p>
       </div>
     </div>
 </div>
