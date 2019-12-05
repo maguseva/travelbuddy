@@ -9,7 +9,118 @@
 
   <% else %>
     <h1 class="header-left">The best packages</h1>
-      <% @packages.each do |package| %>
+        <div id="packages">
+          <div class="cards-row index-border">
+
+            <div class="card card-2 index-item">
+              <div class="card-content">
+                <div class="schedules">
+                  <ul>
+                    <li class="tab active">Inward</li>
+                    <li class="tab">Outward</li>
+                  </ul>
+                  <div class="schedule">
+                    <span>
+                      <abbr><%= @first_package.train_from.dep_city %> – <%=@first_package.train_from.arr_city%></abbr>
+                      <small>
+                        <i><%= @first_package.train_from.category %></i>
+                        <p><%= @first_package.start_date.strftime('%b %d, %Y') %>, <%= @first_package.train_from.dep_time %> – <%= @first_package.train_from.arr_time %></p>
+                      </small>
+                    </span>
+                  </div>
+                  <div class="schedule hidden">
+                    <span>
+                      <abbr><%= @first_package.train_to.dep_city %> – <%=@first_package.train_to.arr_city%></abbr>
+                      <small>
+                        <i><%= @first_package.train_from.category %></i>
+                        <p><%= @first_package.end_date.strftime('%b %d, %Y') %>, <%= @first_package.train_to.dep_time %> – <%= @first_package.train_to.arr_time %></p>
+                      </small>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-provider">
+                <%= image_tag @first_package.train_from.photo %>
+                <small>
+                  Deutsche Bahn
+                  <br>
+                  <%= @first_package.train_from.train_number %>
+                </small>
+              </div>
+              <div class="card-price">
+                <p><%= @first_package.train_price %>€ / Trip</p>
+              </div>
+            </div>
+
+            <div class="card card-2 index-item">
+              <div class="card-content">
+                <div class="misc">
+                  <%= image_tag @first_package.hotel.photo %>
+                  <span>
+                    <abbr><%= @first_package.hotel.name %></abbr>
+                    <small>
+                      <i><% @first_package.hotel.stars.times do %>
+                        ⭐️
+                        <% end %></i>
+                      <p><%= @first_package.start_date.strftime('%b %d, %Y') %> – <%= @first_package.end_date.strftime('%b %d, %Y') %></p>
+                    </small>
+                  </span>
+                </div>
+              </div>
+              <div class="card-provider">
+                <%= image_tag @first_package.hotel.logo %>
+                <small>
+                  <%= @first_package.hotel.address.split(",")[0] %>
+                  <br>
+                  <%= @first_package.hotel.address.split(",")[1] %>
+                </small>
+              </div>
+              <div class="card-price">
+                <p><%=@first_package.hotel.price %>€ / Night</p>
+              </div>
+            </div>
+
+            <div class="card card-2 index-item">
+              <div class="card-content">
+                <div class="misc">
+                  <%= image_tag @first_package.car.picture %>
+                  <span>
+                    <abbr><%= @first_package.car.name %></abbr>
+                      <small>
+                        <i><%= @first_package.car.car_category %></i>
+                        <p><%= @first_package.start_date.strftime('%b %d, %Y') %> – <%= @first_package.end_date.strftime('%b %d, %Y') %></p>
+                      </small>
+                  </span>
+                </div>
+              </div>
+              <div class="card-provider">
+                   <%= image_tag @first_package.car.photo %>
+                <small>
+                  <%= @first_package.car.address.split(",")[0] %>
+                  <br>
+                  <%= @first_package.car.address.split(",")[1] %>
+                </small>
+              </div>
+              <div class="card-price">
+                <p><%=@first_package.car.price %>€ / Day</p>
+              </div>
+            </div>
+
+            <div class="total-price-item">
+              <%= image_tag "tag.png", alt: "price-tag", class: "cheap-icon" %>
+              <p><%= @first_package.price %> €</p>
+              <%= link_to 'Select', package_path(@first_package), class: "btn-custom-green" %>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+      <% @packages.drop(1).each do |package| %>
         <div id="packages">
           <div class="cards-row index-border">
 
@@ -114,6 +225,7 @@
           </div>
         </div>
       <% end %>
+
   <% end %>
-    </div>
+</div>
 
