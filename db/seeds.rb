@@ -260,7 +260,7 @@ Hotel.create!(
   )
 
 cheap_hotel = Hotel.create!(
-  name: 'Innside',
+  name: 'Innside Hotel',
   price: 101,
   stars: 4,
   description: "This 4-star hotel in Munich’s Parkstadt Schwabing business park is a 20-minute walk from the English Garden. It offers modern accommodation, underground parking and a fully equipped fitness room.
