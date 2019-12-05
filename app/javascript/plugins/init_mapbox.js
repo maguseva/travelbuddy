@@ -22,20 +22,37 @@ const fitMapToMarkers = (map, markers) => {
         .addTo(map);
     });
     fitMapToMarkers(map, markers);
+
+    map.on("load", function() {
+      map.addLayer({
+        id: "route",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: {
+            type: "Feature",
+            properties: {},
+            geometry: {
+              type: "LineString",
+              coordinates: [
+                // Coordinates of Berlin - Munich
+                [13.3888599, 52.517036],
+                [11.5753822, 48.1371079]
+              ]
+            }
+          }
+        },
+        layout: {
+          "line-join": "round",
+          "line-cap": "round"
+        },
+        paint: {
+          "line-color": "#54CEBE",
+          "line-width": 4
+        }
+      });
+    });
   }
-};
-
-const addMarkersToMap = (map, markers) => {
-  markers.forEach((marker) => {
-
-    const element = document.createElement('div');
-    element.className = 'marker';
-    element.style.color = '#20d395';
-
-    new mapboxgl.Marker(element)
-      .setLngLat([ marker.lng, marker.lat ])
-      .addTo(map);
-  });
 };
 
 export { initMapbox };
