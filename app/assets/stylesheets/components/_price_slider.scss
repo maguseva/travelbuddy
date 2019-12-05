@@ -5,6 +5,18 @@
   font-size: 16px;
   color: #FFFFFF;
   font-family: $displaysemibold;
+  margin-bottom: 20px;
+}
+
+.form-group.range {
+  margin-bottom: 0 !important;
+}
+
+.edit_company_policy {
+  h2 {
+    margin-top: 30px;
+    margin-bottom: 0 !important;
+  }
 }
 
 .rs-range {
