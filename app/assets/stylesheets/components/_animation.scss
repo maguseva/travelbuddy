@@ -6,7 +6,7 @@ $color: invert(#444b54);
   width: 80px;
   &:before,
   &:after {
-    background-color: $color;
+    background-color: white;
     border-radius: 4px;
     content: '';
     display: block;
@@ -24,7 +24,7 @@ $color: invert(#444b54);
 
 .ties {
   animation: track 1s infinite linear;
-  background-color: $color;
+  background-color: white;
   border-radius: 4px;
   display: inline-block;
   height: 3px;
@@ -44,7 +44,7 @@ $color: invert(#444b54);
 
 .train {
   animation: train 1.5s infinite ease-in-out;
-  background-color: $color;
+  background-color: #54CEBE;
   border-radius: 10px;
   height: 60px;
   position: relative;
@@ -53,7 +53,7 @@ $color: invert(#444b54);
 }
 
 .windows {
-  background-color: invert($color);
+  background-color: #1E1D1E;
   border-radius: 4px;
   height: 23px;
   margin: 1px auto 0 auto;
@@ -61,7 +61,7 @@ $color: invert(#444b54);
   top: 12px;
   width: 80%;
   &:before {
-    background-color: invert($color);
+    background-color: #1E1D1E;
     border-radius: 3px;
     content: '';
     display: block;
@@ -75,7 +75,7 @@ $color: invert(#444b54);
 
 .lights:before,
 .lights:after {
-  background-color: invert($color);
+  background-color: white;
   border-radius: 50%;
   content: '';
   display: block;
@@ -134,4 +134,20 @@ $color: invert(#444b54);
   flex-flow: column nowrap;
   height: 65vh;
   justify-content: center;
+}
+
+#animation-one {
+  margin-top: -100px;
+  font-size: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#animation-two {
+  margin-top: 20px;
+  font-size: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#packages-index-animation {
+  height: 100vh;
 }
