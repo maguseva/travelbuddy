@@ -28,7 +28,7 @@ User.create!(email: "admin@example.com", password: "123456", first_name: "Moritz
 User.create!(email: "user1@example.com", password: "123456", first_name: "Sarah", last_name: "Lafer", company: Company.first)
 User.create!(email: "user2@example.com", password: "123456", first_name: "Cédric", last_name: "Menteau", company: Company.first)
 # User.create!(email: "user3@example.com", password: "123456", first_name: "Rich", last_name: "O'Grady", company: Company.first)
-User.create!(email: "user4@example.com", password: "123456", first_name: "Dimitri", last_name: "Bosch", company: Company.first)
+dimitri = User.create!(email: "user4@example.com", password: "123456", first_name: "Dimitri", last_name: "Bosch", company: Company.first, admin: true)
 User.create!(email: "user5@example.com", password: "123456", first_name: "Arbi", last_name: "Velaj", company: Company.first)
 
 puts "Creating a company policy"
@@ -554,7 +554,7 @@ days_amount = 2
 (date_start..date_start + days_amount).each_with_index { |start_date, index|
   (1..days_amount-index).each do |end_date_index|
     Booking.create!(
-      user: User.where(admin: false).sample,
+      user: dimitri,
       package: Package.all.sample,
       status: 'paid')
     Booking.create!(
