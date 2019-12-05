@@ -22,14 +22,14 @@ Company.create!(name: "Le Wagon")
 
 
 puts "Creating users"
-User.create!(email: "user@example.com", password: "123456", first_name: "Moritz", last_name: "Gosmann", company: Company.first)
-User.create!(email: "admin@example.com", password: "123456", first_name: "HR", last_name: "person", admin: true, company: Company.first)
+User.create!(email: "user@example.com", password: "123456", first_name: "Leon", last_name: "Entrup", company: Company.first)
+User.create!(email: "admin@example.com", password: "123456", first_name: "Moritz", last_name: "Gosmann", admin: true, company: Company.first)
 
-User.create!(email: "user1@example.com", password: "123456", first_name: "Anna", last_name: "Meyer", company: Company.first)
-User.create!(email: "user2@example.com", password: "123456", first_name: "Emma", last_name: "Scott", company: Company.first)
-User.create!(email: "user3@example.com", password: "123456", first_name: "John", last_name: "Edwards", company: Company.first)
-User.create!(email: "user4@example.com", password: "123456", first_name: "Elizabeth", last_name: "May", company: Company.first)
-User.create!(email: "user5@example.com", password: "123456", first_name: "Mark", last_name: "Ricker", company: Company.first)
+User.create!(email: "user1@example.com", password: "123456", first_name: "Sarah", last_name: "Lafer", company: Company.first)
+User.create!(email: "user2@example.com", password: "123456", first_name: "Cédric", last_name: "Menteau", company: Company.first)
+# User.create!(email: "user3@example.com", password: "123456", first_name: "Rich", last_name: "O'Grady", company: Company.first)
+User.create!(email: "user4@example.com", password: "123456", first_name: "Dimitri", last_name: "Bosch", company: Company.first)
+User.create!(email: "user5@example.com", password: "123456", first_name: "Arbi", last_name: "Velaj", company: Company.first)
 
 puts "Creating a company policy"
 CompanyPolicy.create!(company: Company.first, max_price_train: 200, max_price_hotel: 250, max_price_car: 200)
@@ -345,7 +345,7 @@ Car.create!(
 
 cheap_car = Car.create!(
   company_name: 'Sixt',
-  price: 59,
+  price: 55,
   name: 'Audi A4 Avant Aut.',
   car_category: 'Kombi',
   address: 'Bayerstr. 10A, 80335 Munich',
@@ -355,7 +355,7 @@ cheap_car = Car.create!(
 
 Car.create!(
   company_name: 'Europcar',
-  price: 91,
+  price: 98,
   name: 'BMW X5',
   car_category: 'Premium SUV',
   address: 'Bahnhofplatz 2, 80335 Munich',
