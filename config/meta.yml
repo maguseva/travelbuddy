@@ -1,8 +1,9 @@
 # config/meta.yml
 
-meta_product_name: "Travelbuddy"
-meta_title: "Travelbuddy - reinventing business traveling"
-meta_description: "Book your entire business trip with just 3 clicks.
-Find one of our tailored travel packages, which have been curated for you based on your company policy and personal preferences."
+meta_product_name: "TravelBuddy"
+meta_title: "TravelBuddy – Reinventing Business Traveling"
+meta_description: "Book your entire business trip with just 3 clicks. Find your tailored travel package from TravelBuddy."
+TravelBuddy's algorithm ensures that trips are curated based on your personal preferences and company policy.
 meta_image: "meta_photo.jpg" # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards
+
