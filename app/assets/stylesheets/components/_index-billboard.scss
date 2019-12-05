@@ -1,15 +1,23 @@
 // _index-billboard.scss
 .index-border {
-  border: 1px solid $black_dark;
-  background-color: $black_primary;
-  padding: 30px;
+  position: relative;
+  padding: 0 0 40px;
   width: 100%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  background: $gradient-small;
   justify-content: flex-start;
   align-items: center;
   align-content: stretch;
-  margin: 20px 0;
+  margin: 20px 0 40px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    height: 146px;
+    top: 33px;
+    left: -13px;
+    width: calc(100% + 25px);
+    border: 1px solid white;
+    border-radius: 20px;
+  }
 }
 
 .index-item {
