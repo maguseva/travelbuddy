@@ -29,7 +29,7 @@ const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
 
     const element = document.createElement('div');
-    element.className = 'marker-green';
+    element.className = 'marker';
     element.style.color = '#20d395';
 
     new mapboxgl.Marker(element)
