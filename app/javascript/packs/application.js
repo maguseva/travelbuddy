@@ -5,9 +5,11 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 import { initAutocomplete } from '../plugins/init_autocomplete'
 import { priceRange } from '../plugins/custom_price';
+import {initFlickity} from '../plugins/init_flickity';
 
 initMapbox();
 initAutocomplete();
+initFlickity();
 
 // TABS
 const tabs = document.querySelectorAll('.tab');
@@ -28,16 +30,17 @@ const indexPage = document.getElementById('packages-index');
 const animationOne = document.getElementById('animation-one');
 const animationTwo = document.getElementById('animation-two');
 
+if (animation) {
+  setTimeout(() => {
+    animationOne.classList.remove('d-none');
+  }, 200);
 
-setTimeout(() => {
-  animationOne.classList.remove('d-none');
-}, 200);
+  setTimeout(() => {
+    animationTwo.classList.remove('d-none');
+  }, 1500);
 
-setTimeout(() => {
-  animationTwo.classList.remove('d-none');
-}, 1500);
-
-setTimeout(() => {
-  animation.classList.add('d-none');
-  indexPage.classList.remove('d-none');
-}, 3200);
+  setTimeout(() => {
+    animation.classList.add('d-none');
+    indexPage.classList.remove('d-none');
+  }, 3200);
+}
