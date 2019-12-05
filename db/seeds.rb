@@ -540,7 +540,11 @@ days_amount = 7
       car_price: cheap_car.price * end_date_index,
       hotel_price: cheap_hotel.price * end_date_index,
       train_price: cheap_train_from.price + cheap_tran_to.price,
-      price: cheap_car.price * end_date_index + cheap_hotel.price * end_date_index + cheap_train_from.price + cheap_tran_to.price)
+      price: cheap_car.price * end_date_index + cheap_hotel.price * end_date_index + cheap_train_from.price + cheap_tran_to.price,
+      latitude: 52.5170365,
+      longitude: 13.3888599,
+      latitude2: 48.1371079,
+      longitude2: 11.5753822)
   }
 }
 
