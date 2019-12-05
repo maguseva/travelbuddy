@@ -15,7 +15,7 @@
                 <div class="card-hr-details">
                   <div class="card-hr-content">
                     <p><%= number_with_delimiter(current_user.company.spend_on_hotels, :delimiter => ' ') %> €</i></p>
-                    <small>Total cost in this month</small>
+                    <small>Total cost this month</small>
                   </div>
 
                   <div class="card-provider">
@@ -37,7 +37,7 @@
                 <div class="card-hr-details">
                   <div class="card-hr-content">
                     <p><%= number_with_delimiter(current_user.company.spend_on_trains, :delimiter => ' ') %> €</i></p>
-                    <small>Total cost in selected month</small>
+                    <small>Total cost this month</small>
                   </div>
                    <div class="card-provider">
                     <%= image_tag Train.first.photo %>
@@ -56,7 +56,7 @@
                 <div class="card-hr-details">
                   <div class="card-hr-content">
                     <p><%= number_with_delimiter(current_user.company.spend_on_cars, :delimiter => ' ') %> €</i></p>
-                    <small>Total cost in selected month</small>
+                    <small>Total cost this month</small>
                   </div>
                   <div class="card-provider">
                     <%= image_tag Car.first.photo %>
