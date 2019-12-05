@@ -1,8 +1,7 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('banner.jpg');;
+  padding: 100px 0;
 }
 
 #home-banner {
@@ -34,8 +33,9 @@
 }
 
 .booking-headline {
-  background-color: #20d395;
+  background-color: #00CCBC;
   width: 860px;
   padding: 14px;
   opacity: 0.9;
+  height: 100px;
 }

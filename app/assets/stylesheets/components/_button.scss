@@ -28,8 +28,14 @@
   padding: 12px 36px;
   font-size: $font_medium;
   font-family: $displaylight;
-  background: $gradient-small;
+  background: #00CCBC !important;
   border: 1px solid $black_dark;
   text-decoration: none;
   z-index: 2;
+}
+
+.btn-custom-green:hover {
+  background-color: #00a89a !important;
+  text-decoration: none;
+  color: white;
 }
