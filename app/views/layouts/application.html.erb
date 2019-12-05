@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= favicon_link_tag 'favicon2.ico' %>
     <title>Travelbuddy</title>
+    <meta name="description" content="Book your entire business trip in just 3 clicks. Your train, hotel and rental car in one package.">
+    <%= favicon_link_tag 'favicon2.ico' %>
+    <meta property="og:title" content="Travelbuddy - manage business trips easily">
+    <meta property="og:image" content="og_photo.jpg">
+    <meta property="og:description" content="Book your entire business trip in just 3 clicks. Your train, hotel and rental car in one package.">
+    <meta property="og:site_name" content="Travelbuddy"/>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>

@@ -3,13 +3,13 @@
   border: 1px solid $black_dark;
   background-color: $black_primary;
   padding: 30px;
-  // width: 100%;
+  width: 100%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   background: $gradient-small;
   justify-content: flex-start;
   align-items: center;
   align-content: stretch;
-  margin: 20px 0 auto;
+  margin: 20px 0;
 }
 
 .index-item {
