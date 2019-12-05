@@ -14,7 +14,7 @@ class PackagesController < ApplicationController
     elsif params[:start_date].present?
       @packages = @packages.where(start_date: converted_start_date, end_date: converted_end_date).order(price: :asc)
     else
-      @packages = @packages.order(price: :asc)
+      @packages = Package.all.order(price: :asc)
     end
     @first_package = @packages.first
     @class = "full-screen"
