@@ -21,3 +21,28 @@ tabs.forEach(tab => tab.addEventListener("click", (event) => {
 }));
 
 priceRange();
+
+
+const animation = document.getElementById('packages-index-animation');
+const indexPage = document.getElementById('packages-index');
+const animationOne = document.getElementById('animation-one');
+const animationTwo = document.getElementById('animation-two');
+const animationThree = document.getElementById('animation-three');
+
+
+setTimeout(() => {
+  animationOne.classList.remove('d-none');
+}, 1000);
+
+setTimeout(() => {
+  animationTwo.classList.remove('d-none');
+}, 2000);
+
+setTimeout(() => {
+  animationThree.classList.remove('d-none');
+}, 3000);
+
+setTimeout(() => {
+  animation.classList.add('d-none');
+  indexPage.classList.remove('d-none');
+}, 4500);
