@@ -41,14 +41,22 @@
   width: 4%;
   right: 140px;
   top: 365px;
-  // background-color: white;
-  // border-radius: 12px;
-  // padding: 4px;
 }
+
+.blink {
+  animation: blinker 2s linear;
+}
+
+@keyframes blinker {
+  50% { opacity: 0.0; }
+}
+
+
+
 
 .card-item-img {
   width: 100px;
-  border-radius: 50%;
+  border-radius: 80%;
 }
 
 .package-card h4 {
