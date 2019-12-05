@@ -32,7 +32,7 @@ User.create!(email: "user4@example.com", password: "123456", first_name: "Elizab
 User.create!(email: "user5@example.com", password: "123456", first_name: "Mark", last_name: "Ricker", company: Company.first)
 
 puts "Creating a company policy"
-CompanyPolicy.create!(company: Company.first, max_price_train: 200, max_price_hotel: 200, max_price_car: 200)
+CompanyPolicy.create!(company: Company.first, max_price_train: 200, max_price_hotel: 250, max_price_car: 200)
 
 
 puts "Creating hotels.."
@@ -259,9 +259,9 @@ Hotel.create!(
   logo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575406801/Hotels/PullmannLogo_wi57f2.png'
   )
 
-Hotel.create!(
+cheap_hotel = Hotel.create!(
   name: 'Innside',
-  price: 114,
+  price: 101,
   stars: 4,
   description: "This 4-star hotel in Munich’s Parkstadt Schwabing business park is a 20-minute walk from the English Garden. It offers modern accommodation, underground parking and a fully equipped fitness room.
   All of the designer rooms and studio apartments include air conditioning and a flat-screen TV with free Sky channels. They also include free drinks from the minibar, which can be refilled once a day upon request.",
@@ -343,9 +343,9 @@ Car.create!(
   picture: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575391699/Cars/Mercedes-Benz_CLA_crea5i.png'
   )
 
-Car.create!(
+cheap_car = Car.create!(
   company_name: 'Sixt',
-  price: 84,
+  price: 59,
   name: 'Audi A4 Avant Aut.',
   car_category: 'Kombi',
   address: 'Bayerstr. 10A, 80335 Munich',
@@ -375,13 +375,13 @@ Car.create!(
 
 # -----------------------------------------------------------------------------------------
 puts "Creating trains.."
-Train.create!(
+cheap_train_from = Train.create!(
   carrier_name: 'DB',
-  price: 99,
+  price: 79,
   train_number: 'ICE501',
   dep_city: 'Berlin Hbf',
   arr_city: 'Munich Hbf',
-  category: '1st class',
+  category: '2nd class',
   photo: 'https://res.cloudinary.com/dpk0jilwo/image/upload/v1575375269/DB_logo_red_outlined_200px_rgb_azo3ns.png',
   dep_time: '04:28',
   arr_time: '09:17'
@@ -484,9 +484,9 @@ Train.create!(
   arr_time: '20:26'
   )
 
-Train.create!(
+cheap_tran_to = Train.create!(
   carrier_name: 'DB',
-  price: 67,
+  price: 60,
   train_number: 'ICE 1700',
   dep_city: 'Munich Hbf',
   arr_city: 'Berlin Hbf',
@@ -502,11 +502,11 @@ date_start = Date.today
 days_amount = 7
 (date_start..date_start + days_amount).each_with_index { |start_date, index|
   (1..days_amount-index).each { |end_date_index|
-    3.times do
-      tf = Train.where(dep_city: 'Berlin Hbf').where('price <= ?', User.first.company.company_policy.max_price_train).sample
-      tt = Train.where(arr_city: 'Berlin Hbf').where('price <= ?', User.first.company.company_policy.max_price_train).sample
-      h = Hotel.where('price <= ?', User.first.company.company_policy.max_price_hotel).sample
-      c = Car.where('price <= ?', User.first.company.company_policy.max_price_car).sample
+    2.times do
+      tf = Train.where(dep_city: 'Berlin Hbf').where('price <= ? AND price != 79', User.first.company.company_policy.max_price_train).sample
+      tt = Train.where(arr_city: 'Berlin Hbf').where('price <= ? AND price != 60', User.first.company.company_policy.max_price_train).sample
+      h = Hotel.where('price <= ? AND price != 101', User.first.company.company_policy.max_price_hotel).sample
+      c = Car.where('price <= ? AND price != 59', User.first.company.company_policy.max_price_car).sample
       Package.create!(
         start_date: start_date,
         end_date: start_date + end_date_index,
@@ -522,6 +522,21 @@ days_amount = 7
         train_price: tf.price + tt.price,
         price: c.price * end_date_index + h.price * end_date_index + tf.price + tt.price)
     end
+    # cheap package
+    Package.create!(
+      start_date: start_date,
+      end_date: start_date + end_date_index,
+      hotel: cheap_hotel,
+      car: cheap_car,
+      train_from: cheap_train_from,
+      train_to: cheap_tran_to,
+      dep_city: 'Berlin, Germany',
+      arr_city: 'Munich, Bayern, Germany',
+      overnights: end_date_index,
+      car_price: cheap_car.price * end_date_index,
+      hotel_price: cheap_hotel.price * end_date_index,
+      train_price: cheap_train_from.price + cheap_tran_to.price,
+      price: cheap_car.price * end_date_index + cheap_hotel.price * end_date_index + cheap_train_from.price + cheap_tran_to.price)
   }
 }
 
