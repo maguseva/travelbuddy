@@ -77,7 +77,10 @@
       font-size: 16px;
     }
 .new_booking {
-  position: relative;
+  position: absolute;
+  bottom: -75px;
+  left: 50%;
+  transform: translateX(-50%);
 
   &:after {
     content: "";
@@ -94,10 +97,11 @@
 }
 
 .cards-row {
+  position: relative;
   display: flex;
   width: 85vw;
   justify-content: space-between;
-  margin: 50px auto 60px;
+  margin: 50px auto 100px;
 }
 
 .billboard-card {
