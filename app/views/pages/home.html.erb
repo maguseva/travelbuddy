@@ -1,15 +1,14 @@
   <div class="banner" id= "home-banner">
   <div class="container">
-    <div class="row", id="home-banner-items">
-
-      <div class="col-6">
+    <div id="home-banner-items">
+      <div style ="padding-right: 25px;">
         <h1 id="subheader-home" class="uppcase-font">Reinventing business traveling</h1>
         <br>
-        <p class="text-left", id="subheader-home">Book your entire business trip with just 3 clicks. <br> Find one of our tailored travel packages, which have been curated for you based on your company policy and personal preferences. </p>
-        <br>
+        <p class="text-left", id="subheader-home">Book your entire business trip with just 3 clicks. Find your tailored travel package from <strong style="color:#54CEBE">Travel Buddy</strong>.</p>
+        <p class="text-left", id="subheader-home">Travel Buddy's algorithm ensures that trips are curated based on your <br>personal preferences and company policy</p>
       </div>
 
-      <div class="col-6">
+      <div>
         <%= render 'shared/search_form', locals: { cl: @class }  %>
       </div>
 
