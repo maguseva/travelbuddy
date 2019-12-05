@@ -4,3 +4,10 @@
   border: 1px solid $black_primary;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+.confirmed-options {
+  a {
+    min-width: 210px !important;
+    font-family: $displaysemibold !important;
+  }
+}

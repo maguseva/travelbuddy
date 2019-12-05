@@ -31,8 +31,8 @@
 }
 
 .btn-bookings {
+  font-family: $displaysemibold;
   padding: 10px 15px;
-  margin: 10px;
   width: 100%;
 }
 
@@ -40,6 +40,9 @@
   text-align: right;
   width: 200px;
   height: 130px;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 100px;
 }
 
