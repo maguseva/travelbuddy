@@ -520,7 +520,11 @@ days_amount = 7
         car_price: c.price * end_date_index,
         hotel_price: h.price * end_date_index,
         train_price: tf.price + tt.price,
-        price: c.price * end_date_index + h.price * end_date_index + tf.price + tt.price)
+        price: c.price * end_date_index + h.price * end_date_index + tf.price + tt.price,
+        latitude: 52.5170365,
+        longitude: 13.3888599,
+        latitude2: 48.1371079,
+        longitude2: 11.5753822)
     end
     # cheap package
     Package.create!(

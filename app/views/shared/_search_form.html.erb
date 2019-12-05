@@ -18,16 +18,16 @@
 
           <div class="form-group form-group-dates">
             <div class="labeled-input">
-              <label class="search-label" for="dep_city">Start-Date</label>
+              <label class="search-label" for="dep_city">Start date</label>
                 <%= text_field_tag :start_date, nil, as: :string, required: false, class: "datepicker form-control", value: params[:start_date] %>
             </div>
             <div class="labeled-input">
-              <label class="search-label" for="dep_city">End-Date</label>
+              <label class="search-label" for="dep_city">End date</label>
                 <%= text_field_tag :end_date, nil, as: :string, required: false, class: "datepicker form-control", value: params[:end_date] %>
             </div>
           </div>
           </div>
-          <%= submit_tag "Search", class: "btn-custom" %>
+          <%= submit_tag "Search", class: "btn-custom btn-custom-green" %>
         </div>
     <% end %>
   </div>

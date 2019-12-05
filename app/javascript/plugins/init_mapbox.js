@@ -25,4 +25,17 @@ const fitMapToMarkers = (map, markers) => {
   }
 };
 
+const addMarkersToMap = (map, markers) => {
+  markers.forEach((marker) => {
+
+    const element = document.createElement('div');
+    element.className = 'marker';
+    element.style.color = '#20d395';
+
+    new mapboxgl.Marker(element)
+      .setLngLat([ marker.lng, marker.lat ])
+      .addTo(map);
+  });
+};
+
 export { initMapbox };
