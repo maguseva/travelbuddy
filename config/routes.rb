@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get 'home', to: 'pages#home', as: :home
+  get '', to: 'pages#home', as: :home
   get 'hr_home', to: 'pages#hr_home', as: :hr_home
   root to: 'passthrough#index'
 

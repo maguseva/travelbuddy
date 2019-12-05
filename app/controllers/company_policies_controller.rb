@@ -7,7 +7,6 @@ class CompanyPoliciesController < ApplicationController
   def update
     if @company_policy.update(company_policy_params)
       redirect_to hr_home_path
-      flash[:notice] = "Company policy has been successfully updated"
     else
       render :edit
     end

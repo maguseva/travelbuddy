@@ -1,7 +1,7 @@
 <div class="row hr-header">
   <div class="column">
     <h1><%= current_user.company.name %></h1>
-    <p class="no-margin-bottom">From <strong><%= Date.new(2019,12,01).strftime('%b %d') %></strong> to <strong><%= Date.today.strftime('%b %d, %Y') %></strong></p>
+    <p class="no-margin-bottom">From <strong><%= Date.new(2019,12,01).strftime('%b %d') %></strong> to <strong><%= Date.new(2019,12,31).strftime('%b %d, %Y') %></strong></p>
   </div>
   <div class="column content-down total-price">
     <div id="total-price">€ <%= number_with_delimiter(Company.first.spend_total, :delimiter => ' ') %><i class="fas fa-sort-up"></i></div>
