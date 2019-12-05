@@ -6,7 +6,7 @@
       <%= link_to 'Book your first trip now', packages_path, class: "btn btn-custom btn-center" %>
     </div>
   <% else %>
-    <h1 class="header-left">My bookings</h1>
+    <h2 class="header-left uppcase-font">Previously booked business trips</h2>
 
     <%@bookings.each do |booking| %>
         <div class="cards-row index-border">
