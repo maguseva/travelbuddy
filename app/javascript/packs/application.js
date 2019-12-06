@@ -9,7 +9,11 @@ import {initFlickity} from '../plugins/init_flickity';
 
 initMapbox();
 initAutocomplete();
-initFlickity();
+
+if (document.querySelector('.carousel')) {
+  initFlickity();
+};
+
 
 // TABS
 const tabs = document.querySelectorAll('.tab');
